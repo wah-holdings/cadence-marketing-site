@@ -1,0 +1,494 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<style>
+.security-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+.security-card {
+  background: white;
+  border-radius: 14px;
+  padding: 28px;
+  border: 1px solid var(--gray-100);
+  transition: all 0.2s;
+}
+.security-card:hover { box-shadow: 0 6px 20px rgba(30,58,95,0.08); transform: translateY(-2px); }
+.security-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  background: var(--gray-50);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+.security-card h4 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.security-card p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+
+.compliance-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gray-100);
+  margin-top: 40px;
+}
+.compliance-table table { width: 100%; border-collapse: collapse; }
+.compliance-table th {
+  background: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 14px 20px;
+  text-align: left;
+}
+.compliance-table td {
+  padding: 14px 20px;
+  font-size: 13px;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: top;
+  line-height: 1.55;
+}
+.compliance-table tr:last-child td { border-bottom: none; }
+.compliance-table tr:nth-child(even) td { background: var(--gray-50); }
+.reg-name { font-weight: 700; color: var(--primary); }
+.posture-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+.tag-green { background: rgba(16,185,129,0.1); color: var(--success); }
+.tag-orange { background: rgba(245,158,11,0.1); color: var(--warning); }
+.tag-blue { background: rgba(74,144,217,0.1); color: var(--secondary-dark); }
+
+.retention-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gray-100);
+  margin-top: 32px;
+}
+.retention-table table { width: 100%; border-collapse: collapse; }
+.retention-table th { background: var(--gray-900); color: rgba(255,255,255,0.8); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 12px 20px; text-align: left; }
+.retention-table td { padding: 12px 20px; font-size: 13px; color: var(--gray-700); border-bottom: 1px solid var(--gray-100); line-height: 1.5; }
+.retention-table tr:last-child td { border-bottom: none; }
+
+.consent-steps { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+.consent-step { display: flex; gap: 16px; align-items: flex-start; }
+.step-number {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.step-content h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.step-content p { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+
+.roadmap-list { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
+.roadmap-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+}
+.roadmap-status {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.status-done { background: rgba(16,185,129,0.1); color: var(--success); }
+.status-active { background: rgba(74,144,217,0.1); color: var(--secondary-dark); }
+.status-planned { background: rgba(245,158,11,0.1); color: var(--warning); }
+.roadmap-item h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
+.roadmap-item p { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
+
+@media (max-width: 768px) {
+  .security-grid { grid-template-columns: 1fr; }
+  .compliance-table th:last-child, .compliance-table td:last-child { display: none; }
+}
+</style>
+
+<BaseLayout title="Security &amp; Trust — Cadence Privacy, Compliance, and Data Handling" description="How Cadence handles your workforce data: encryption standards, consent architecture, SOC 2 roadmap, GDPR/CCPA posture, BIPA commitments, and data processing agreement process." activeNav="security">
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Security &amp; Trust</div>
+    <div class="section-badge" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.25);color:#6EE7B7;">Security &amp; Trust</div>
+    <h1>Built with privacy at the center, <span class="accent">not bolted on later.</span></h1>
+    <p>Cadence operates on sensitive workforce data — 1:1 conversations, performance records, HR cases, compensation context. We hold this data with the care it demands. Here's exactly how we think about security, consent, and compliance.</p>
+  </div>
+</div>
+
+<!-- SECURITY FOUNDATIONS -->
+<section class="section section-light" id="security">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Security Architecture</div>
+      <h2 class="section-headline">The fundamentals — without the marketing spin.</h2>
+      <p class="section-subhead">This page is for security-conscious buyers, legal teams, and IT professionals who need specifics, not vague reassurances.</p>
+    </div>
+    <div class="security-grid">
+      <div class="security-card">
+        <div class="security-icon">🔐</div>
+        <h4>Encryption</h4>
+        <p>All data encrypted at rest (AES-256) and in transit (TLS 1.3). Encryption keys are per-tenant. AI processing runs over encrypted channels and returns results to isolated tenant environments.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-icon">🏗️</div>
+        <h4>Infrastructure</h4>
+        <p>Hosted on Google Cloud Platform (GCP) in us-central1. Production workloads run on Cloud Run (containerized, auto-scaling). Database: Cloud SQL (PostgreSQL) with point-in-time recovery. Redis for caching only — no PII.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-icon">🔒</div>
+        <h4>Access Control</h4>
+        <p>Role-based access controls enforced at the API layer. Manager coaching is separated from employee coaching at the data layer — not just the UI. ER records have separate access controls with HR-only visibility.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-icon">📋</div>
+        <h4>Audit Logging</h4>
+        <p>All administrative actions, data exports, and access to sensitive records (ER cases, AI outputs) generate immutable audit logs. Logs retained 7 years. Available for export on request.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-icon">🧪</div>
+        <h4>AI Data Handling</h4>
+        <p>Cadence does not train AI models on customer data. Meeting transcripts and 1:1 content are processed for the specific tenant's coaching outputs and are not used in model training. Coaching outputs are tenant-isolated.</p>
+      </div>
+      <div class="security-card">
+        <div class="security-icon">🛡️</div>
+        <h4>Vulnerability Management</h4>
+        <p>Dependency scanning on every CI build. Container image scanning before deploy. Security patches applied within 48 hours for critical CVEs. Penetration test cadence: annual. Bug bounty program: coming Q3 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSENT ARCHITECTURE -->
+<section class="section section-white" id="consent">
+  <div class="container">
+    <div class="feature-block">
+      <div>
+        <div class="section-badge">Meeting Consent</div>
+        <h2 class="section-headline">All-party consent. No exceptions.</h2>
+        <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:20px;">Cadence's policy is stricter than most applicable laws: explicit, all-party consent before any recording or AI processing of a meeting. The system is fail-closed — if consent isn't received from every participant, the recording doesn't start. There is no override for administrators or managers.</p>
+        <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:24px;">This isn't a legal position — it's a design philosophy. Meeting content is inherently sensitive. The default should protect employees, not the organization's administrative convenience.</p>
+        <div style="background:var(--gray-50);border-radius:12px;border:1px solid rgba(74,144,217,0.2);padding:20px 24px;margin-top:8px;">
+          <strong style="font-size:14px;color:var(--primary);">Recording defaults:</strong>
+          <ul style="list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px;">
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Every 1:1 starts in non-recorded mode by default</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Recording requires explicit opt-in from each participant</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Revocation stops processing immediately — no retroactive capture</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Unknown jurisdictions default to recording off</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> AI summaries and coaching require the same consent as recording</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="section-badge">Consent Flow</div>
+        <h3 style="font-size:18px;font-weight:700;color:var(--primary);margin-bottom:24px;">How consent works in a 1:1</h3>
+        <div class="consent-steps">
+          <div class="consent-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Tenant enables recording</h4>
+              <p>Recording capability is off by default. A tenant admin enables it only after completing privacy prerequisites (jurisdiction review, legal basis, DPA).</p>
+            </div>
+          </div>
+          <div class="consent-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>Meeting starts in non-recorded mode</h4>
+              <p>Every session starts without recording. No passive capture. The recording state is visible to both participants at all times.</p>
+            </div>
+          </div>
+          <div class="consent-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Consent prompt with full disclosure</h4>
+              <p>Each participant sees: what is being captured, the retention period, how AI uses the data, and a clear decline path.</p>
+            </div>
+          </div>
+          <div class="consent-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>All-party consent mints a token</h4>
+              <p>When every required participant consents, the system mints an immutable consent receipt and unlocks capture. One decline = no recording.</p>
+            </div>
+          </div>
+          <div class="consent-step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h4>Revocation stops processing</h4>
+              <p>Any participant can revoke consent at any time. Revocation stops capture and blocks future transcript or AI processing on that session.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPLIANCE -->
+<section class="section section-light" id="compliance">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Compliance Posture</div>
+      <h2 class="section-headline">Where we stand on each regulation.</h2>
+      <p class="section-subhead">Honest, current, with GA gate requirements stated clearly. Last updated: May 2026.</p>
+    </div>
+    <div class="compliance-table">
+      <table>
+        <thead>
+          <tr><th>Regulation</th><th>Cadence Posture</th><th>Status / Gate</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="reg-name">GDPR</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">EU / EEA employee data</div></td>
+            <td>Cadence acts as a data processor for customer workforce data. Consent UX provides transparency and control; it is not the sole lawful basis. EU employee recording requires lawful-basis mapping, DPIA, and non-recording fallback.</td>
+            <td><span class="posture-tag tag-orange">In Progress</span><br>DPIA, lawful basis mapping, DSR workflow, and transfer register required before EU production launch.</td>
+          </tr>
+          <tr>
+            <td><div class="reg-name">CCPA / CPRA</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">California employee data</div></td>
+            <td>Cadence is a service provider / contractor by default. No sale or sharing of workforce data. Employee rights workflow covers access, deletion, and correction requests.</td>
+            <td><span class="posture-tag tag-green">Ready</span><br>Notice at collection, access/delete/correct workflows, and sensitive personal information review complete.</td>
+          </tr>
+          <tr>
+            <td><div class="reg-name">BIPA</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">Illinois biometric data</div></td>
+            <td>Voiceprint and speaker identification are biometric data under BIPA. Cadence's position: plain audio transcript is allowed under recording consent controls; speaker ID, voice profiling, and voice matching are disabled without specific BIPA approval. No biometric features without written release.</td>
+            <td><span class="posture-tag tag-green">Protected</span><br>No identity-capable voice features without explicit BIPA-compliant written release and retention policy.</td>
+          </tr>
+          <tr>
+            <td><div class="reg-name">Recording Law</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">Multi-jurisdiction</div></td>
+            <td>Product policy is all-party consent everywhere — stricter than most applicable laws. Jurisdiction resolution happens at session time. Unknown jurisdictions default to recording off.</td>
+            <td><span class="posture-tag tag-green">Implemented</span><br>Consent receipt chain, visible recording state, stop-on-revoke, and non-recording fallback all in production.</td>
+          </tr>
+          <tr>
+            <td><div class="reg-name">SOC 2 Type II</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">Security audit</div></td>
+            <td>SOC 2 Type II audit is on the security roadmap for H2 2026. Current controls are designed to the SOC 2 Type II Trust Services Criteria. Controls documentation available to enterprise customers under NDA.</td>
+            <td><span class="posture-tag tag-orange">Roadmap H2 2026</span><br>Controls in place. Audit engagement target: Q3 2026. Report expected Q4 2026.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- DATA RETENTION -->
+<section class="section section-white" id="privacy">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Data Retention</div>
+      <h2 class="section-headline">Default retention — no surprises.</h2>
+      <p class="section-subhead">We believe in stating retention periods clearly. These are defaults; Enterprise customers can configure custom periods within policy bounds.</p>
+    </div>
+    <div class="retention-table">
+      <table>
+        <thead>
+          <tr><th>Data Class</th><th>Default Retention</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Raw audio (if recorded)</strong></td>
+            <td>30 days</td>
+            <td>Auto-deleted unless legal hold or approved customer extension. Never used for AI training.</td>
+          </tr>
+          <tr>
+            <td><strong>Meeting transcript (draft)</strong></td>
+            <td>180 days</td>
+            <td>Delete or promote to approved summary. Employee can request deletion at any time.</td>
+          </tr>
+          <tr>
+            <td><strong>AI coaching outputs</strong></td>
+            <td>365 days</td>
+            <td>Manager and employee coaching lanes retained and deleted separately. Not shared cross-lane.</td>
+          </tr>
+          <tr>
+            <td><strong>Consent &amp; policy receipts</strong></td>
+            <td>7 years</td>
+            <td>Immutable evidence records. Tamper-evident and access-controlled. Not deletable by tenant admins.</td>
+          </tr>
+          <tr>
+            <td><strong>ER case records</strong></td>
+            <td>7 years after case closure</td>
+            <td>Legal hold overrides deletion. Separate access controls from manager/employee views.</td>
+          </tr>
+          <tr>
+            <td><strong>1:1 notes and agendas</strong></td>
+            <td>Duration of employment + 1 year</td>
+            <td>Employee can export their own data at any time via DSAR process.</td>
+          </tr>
+          <tr>
+            <td><strong>Survey responses</strong></td>
+            <td>3 years</td>
+            <td>Raw responses anonymized at source. Aggregated insights retained longer.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:20px;font-size:13px;color:var(--gray-500);">Data subject access requests (DSARs) can be submitted via your HR admin or directly at <a href="mailto:privacy@cadencehr.ai" style="color:var(--secondary);">privacy@cadencehr.ai</a>. We respond within 30 days.</p>
+  </div>
+</section>
+
+<!-- SOC 2 ROADMAP -->
+<section class="section section-light" id="soc2">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Security Roadmap</div>
+      <h2 class="section-headline">Where we're going, and when.</h2>
+      <p class="section-subhead">Our security maturity roadmap — honest about current state and committed target dates.</p>
+    </div>
+    <div class="roadmap-list">
+      <div class="roadmap-item">
+        <div class="roadmap-status status-done">Done</div>
+        <div>
+          <h4>Encryption at rest and in transit</h4>
+          <p>AES-256 at rest, TLS 1.3 in transit, per-tenant key management on GCP.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-done">Done</div>
+        <div>
+          <h4>All-party consent architecture</h4>
+          <p>Fail-closed consent system with immutable receipt chain, revocation hooks, and non-recording fallback. In production.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-done">Done</div>
+        <div>
+          <h4>Role-based access control at API layer</h4>
+          <p>Manager / employee / HR / CHRO / admin roles with separate data access controls enforced server-side.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-done">Done</div>
+        <div>
+          <h4>CCPA employee rights workflow</h4>
+          <p>Access, deletion, correction, and export workflows in production. DSAR response SLA: 30 days.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-active">Q3 2026</div>
+        <div>
+          <h4>SOC 2 Type II audit engagement</h4>
+          <p>Audit firm engaged, controls documentation complete. Audit period: Q3 2026. Report expected Q4 2026.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-active">Q3 2026</div>
+        <div>
+          <h4>GDPR DPIA and EU launch prerequisites</h4>
+          <p>Data Protection Impact Assessment, lawful basis mapping, and EU data residency option in progress.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-planned">Q4 2026</div>
+        <div>
+          <h4>Penetration test (annual)</h4>
+          <p>External penetration test by certified third party. Summary report available to Enterprise customers on request.</p>
+        </div>
+      </div>
+      <div class="roadmap-item">
+        <div class="roadmap-status status-planned">Q4 2026</div>
+        <div>
+          <h4>Bug bounty program</h4>
+          <p>Responsible disclosure program with CVSSv3-based rewards. Details to be published at cadencehr.ai/security/bounty.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DPA PROCESS -->
+<section class="section section-white">
+  <div class="container">
+    <div class="feature-block" style="border-bottom:none;">
+      <div>
+        <div class="section-badge">Data Processing Agreement</div>
+        <h2 class="section-headline">DPA process for enterprise customers.</h2>
+        <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:20px;">Enterprise customers — and any customer with EU employees or GDPR obligations — can request a Data Processing Agreement (DPA). Our standard DPA covers:</p>
+        <ul class="feature-list" style="margin-top:0;">
+          <li>Processing scope and data categories</li>
+          <li>Sub-processor list with geographic locations</li>
+          <li>Security measures and audit rights</li>
+          <li>Data subject rights obligations</li>
+          <li>Data breach notification procedures (72-hour GDPR timeline)</li>
+          <li>Data transfer mechanisms (SCCs for EU/EEA)</li>
+          <li>Deletion and return of data on contract end</li>
+        </ul>
+        <div style="margin-top:28px;">
+          <a href="mailto:privacy@cadencehr.ai?subject=DPA%20Request" class="btn btn-primary btn-lg">Request a DPA →</a>
+        </div>
+      </div>
+      <div>
+        <div class="section-badge">Sub-Processors</div>
+        <h3 style="font-size:18px;font-weight:700;color:var(--primary);margin-bottom:20px;">Current sub-processor list</h3>
+        <div style="background:var(--gray-50);border-radius:12px;border:1px solid var(--gray-100);overflow:hidden;">
+          <table style="width:100%;border-collapse:collapse;">
+            <thead>
+              <tr style="background:var(--gray-900);">
+                <th style="padding:12px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-align:left;text-transform:uppercase;letter-spacing:0.06em;">Sub-Processor</th>
+                <th style="padding:12px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-align:left;text-transform:uppercase;letter-spacing:0.06em;">Purpose</th>
+                <th style="padding:12px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,0.7);text-align:left;text-transform:uppercase;letter-spacing:0.06em;">Location</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid var(--gray-100);">
+                <td style="padding:11px 16px;font-size:13px;color:var(--primary);font-weight:600;">Google Cloud Platform</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">Infrastructure, storage, database</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">US (us-central1)</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--gray-100);">
+                <td style="padding:11px 16px;font-size:13px;color:var(--primary);font-weight:600;">Anthropic</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">AI coaching generation</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">US</td>
+              </tr>
+              <tr style="border-bottom:1px solid var(--gray-100);">
+                <td style="padding:11px 16px;font-size:13px;color:var(--primary);font-weight:600;">Cloudflare</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">CDN, DDoS protection, email routing</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">Global edge</td>
+              </tr>
+              <tr>
+                <td style="padding:11px 16px;font-size:13px;color:var(--primary);font-weight:600;">Stripe</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">Payment processing</td>
+                <td style="padding:11px 16px;font-size:12px;color:var(--gray-500);">US / EU</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top:14px;font-size:12px;color:var(--gray-500);">Full sub-processor list with notification policy available to customers on request.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta">
+  <div class="container">
+    <h2>Security questions? Talk to us directly.</h2>
+    <p>If you have specific security or compliance requirements, we'd rather have a real conversation than send you a generic PDF. Reach out and we'll schedule time with our engineering and legal team.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="mailto:security@cadencehr.ai" class="btn btn-white btn-lg">Contact security team</a>
+      <a href="/beta" class="btn btn-white-outline btn-lg">Request beta access</a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>

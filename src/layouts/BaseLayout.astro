@@ -1,0 +1,116 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  activeNav?: string;
+}
+const { title, description = 'The AI-powered operating plane that makes every manager your best manager.', activeNav } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{title}</title>
+<meta name="description" content={description}>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/cadence.css">
+<slot name="head" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">Cadence</a>
+    <ul class="nav-links">
+      <li><a href="/product" class={activeNav === 'product' ? 'active' : ''}>Product</a></li>
+      <li><a href="/solutions" class={activeNav === 'solutions' ? 'active' : ''}>Solutions</a></li>
+      <li><a href="/pricing" class={activeNav === 'pricing' ? 'active' : ''}>Pricing</a></li>
+      <li><a href="/resources" class={activeNav === 'resources' ? 'active' : ''}>Resources</a></li>
+    </ul>
+    <div class="nav-actions">
+      <span class="beta-pill"><span class="beta-dot"></span>Beta · Invitation only</span>
+      <a href="https://app.cadencehr.ai/" class="btn-signin">Sign in</a>
+      {activeNav !== 'beta' && <a href="/beta" class="btn-demo">Request Access</a>}
+    </div>
+  </div>
+</nav>
+
+<slot />
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">Cadence</span>
+        <p class="footer-tagline">Management by design, not by luck. The AI-powered operating plane for the new shape of work.</p>
+        <p class="footer-contact"><a href="mailto:hello@cadencehr.ai">hello@cadencehr.ai</a></p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="/product">Platform Overview</a>
+          <a href="/product#one-on-ones">1:1 Engine</a>
+          <a href="/product#goals">Goals &amp; OKRs</a>
+          <a href="/product#nine-box">9-Box</a>
+          <a href="/product#culture-scorecard">Culture Scorecard</a>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <a href="/solutions#individual-contributors">For ICs</a>
+          <a href="/solutions#managers">For Managers</a>
+          <a href="/solutions#senior-leaders">For Leaders</a>
+          <a href="/solutions#chro">For CHROs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="/about">About</a>
+          <a href="/resources#manifesto">Manifesto</a>
+          <a href="/beta">Beta Access</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="/resources">All Resources</a>
+          <a href="/resources#competitive">vs. Competitors</a>
+          <a href="/resources#manifesto">Management Manifesto</a>
+        </div>
+        <div class="footer-col">
+          <h4>Trust</h4>
+          <a href="/security">Security</a>
+          <a href="/security#privacy">Privacy</a>
+          <a href="/security#compliance">Compliance</a>
+          <a href="/pricing">Pricing</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Cadence. Built for the new shape of work.</span>
+      <span style="font-size:11px;opacity:0.7;">Beta access is currently invitation-only. Pricing reflects GA targets.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav!.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { (entry.target as HTMLElement).classList.add('visible'); observer.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+fadeEls.forEach(el => observer.observe(el));
+setTimeout(() => {
+  fadeEls.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
+  });
+}, 50);
+</script>
+
+</body>
+</html>

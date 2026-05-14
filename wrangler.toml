@@ -1,9 +1,9 @@
 name = "cadence-marketing"
-pages_build_output_dir = "."
+pages_build_output_dir = "dist"
 
 # Production: cadencehr.ai
 # Preview: *.cadence-marketing.pages.dev
 #
 # Deploy command:
 #   CLOUDFLARE_API_TOKEN=<token> CLOUDFLARE_ACCOUNT_ID=2f47a99fe84602c6d08059fa488b02df \
-#   npx wrangler pages deploy . --project-name cadence-marketing --branch main
+#   npx wrangler pages deploy dist --project-name cadence-marketing --branch main
