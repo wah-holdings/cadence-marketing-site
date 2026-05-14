@@ -25,7 +25,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: cadence-marketing-site
+          projectName: cadence-marketing
           directory: .
           # Optional: Configure GitHub deployment environment
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
