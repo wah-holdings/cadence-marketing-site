@@ -125,6 +125,17 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   letter-spacing: 0.1em;
   margin-bottom: 12px;
 }
+.product-shot-frame {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.product-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
 @media (max-width: 768px) {
   .module-nav { top: 64px; }
   .mock-kpi-row { grid-template-columns: repeat(2, 1fr); }
@@ -178,11 +189,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-1on1-mid-meeting-workspace-2026-05-14.png"
+          src="/screenshots/cadence-1on1-mid-meeting-workspace-hero-2026-05-16.png"
           alt="Cadence 1:1 workspace — agenda, AI meeting notes, and private post-meeting coaching rail"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top right;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -208,11 +219,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-goals-okrs-1on1-goal-progress-panel-2026-05-14.png"
+          src="/screenshots/cadence-goals-okrs-1on1-goal-progress-panel-hero-2026-05-16.png"
           alt="Cadence Goals &amp; OKR tracking — live goal progress panel in 1:1 context"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -238,11 +249,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-9box-calibration-matrix-view-2026-05-14.png"
+          src="/screenshots/cadence-9box-calibration-matrix-view-hero-2026-05-16.png"
           alt="Cadence 9-Box talent calibration matrix — blind dual-rating with L1/L2 divergence coaching"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -268,11 +279,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-er-command-center-active-case-view-2026-05-14.png"
+          src="/screenshots/cadence-er-command-center-active-case-view-hero-2026-05-16.png"
           alt="Cadence ER Command Center — active case view with full management record context"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -298,11 +309,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-recognition-manager-ratio-panel-2026-05-14.png"
+          src="/screenshots/cadence-recognition-manager-ratio-panel-hero-2026-05-16.png"
           alt="Cadence Recognition — manager ratio panel showing 5:1 rule tracking and recognition gaps"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -327,11 +338,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-survey-engine-pulse-results-view-2026-05-14.png"
+          src="/screenshots/cadence-survey-engine-pulse-results-view-hero-2026-05-16.png"
           alt="Cadence Survey Engine — pulse results with manager-level signal attribution"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -356,11 +367,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-job-architecture-role-in-1on1-context-2026-05-14.png"
+          src="/screenshots/cadence-job-architecture-role-in-1on1-context-hero-2026-05-16.png"
           alt="Cadence Job Architecture — role definition and career path visible in 1:1 context"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
@@ -385,11 +396,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);">
         <img
-          src="/screenshots/cadence-chro-culture-scorecard-full-view-2026-05-14.png"
+          src="/screenshots/cadence-chro-culture-scorecard-full-view-hero-2026-05-16.png"
           alt="Cadence Culture Scorecard — CHRO 90-day view with org health score, turnover prediction, and manager effectiveness"
+          class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
-          style="width:100%;height:340px;object-fit:cover;object-position:top center;display:block;border-radius:16px;"
         />
       </div>
     </div>
