@@ -40,6 +40,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   padding: 24px;
   min-height: 280px;
 }
+.module-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(30,58,95,0.12);
+  background: #0a1628;
+}
 .mock-dark {
   background: #0a1628;
   border-radius: 12px;
@@ -177,26 +185,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">1:1 · Sarah Chen &amp; Marcus Webb</div>
-          <div class="mock-row">
-            <div style="display:flex;justify-content:space-between;align-items:center;">
-              <div class="mock-row-title">Today's Agenda</div>
-              <span class="mock-badge badge-green">In Progress</span>
-            </div>
-            <div class="mock-row-sub" style="margin-top:8px;">📋 Q2 goal progress review · ⚡ Blocker: infra team delay · 🎯 Career growth conversation</div>
-          </div>
-          <div class="mock-row">
-            <div class="mock-row-title">AI Meeting Summary</div>
-            <div class="mock-row-sub">3 decisions · 2 action items · 34 min · Marcus: 58% talk time</div>
-          </div>
-          <div class="ai-coaching-box">
-            <div class="ai-coaching-label">✦ Private Manager Coaching</div>
-            <div class="ai-coaching-item">→ Sarah raised the blocker twice — follow up with Priya by Friday</div>
-            <div class="ai-coaching-item">→ Career conversation went unfinished — schedule dedicated 30 min</div>
-            <div class="ai-coaching-item">→ Talk time balance: aim for 60/40 employee lead next session</div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-1on1-mid-meeting-workspace-2026-05-14.png"
+          alt="Cadence 1:1 workspace mid-meeting — live agenda with private AI Insights rail showing risk flags, talking points, coaching notes, and goal updates for the direct report"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -220,26 +217,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">Goals — Q2 2026 · Sarah Chen</div>
-          <div class="mock-row">
-            <div class="mock-row-title">Launch API v2 to 3 enterprise customers</div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;">
-              <span class="mock-badge badge-orange">At Risk</span>
-              <span style="font-size:12px;font-weight:700;color:white;">62%</span>
-            </div>
-            <div class="prog-bar-bg"><div class="prog-bar-fill prog-orange" style="width:62%;"></div></div>
-            <div class="mock-row-sub" style="margin-top:5px;">Blocker flagged in last 2 1:1s · Due Jun 30</div>
-          </div>
-          <div class="mock-row">
-            <div class="mock-row-title">Complete SOC 2 Type II readiness</div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;">
-              <span class="mock-badge badge-green">On Track</span>
-              <span style="font-size:12px;font-weight:700;color:white;">88%</span>
-            </div>
-            <div class="prog-bar-bg"><div class="prog-bar-fill prog-green" style="width:88%;"></div></div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-goals-okrs-1on1-goal-progress-panel-2026-05-14.png"
+          alt="Cadence Goals &amp; OKRs panel — live goal progress with at-risk and on-track status, visible in the 1:1 sidebar"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -263,28 +249,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">9-Box Calibration · Engineering Team · Q2 2026</div>
-          <div class="nine-box-grid">
-            <div class="nine-box-cell cell-ll"></div>
-            <div class="nine-box-cell cell-lm"><div class="cell-dot"></div></div>
-            <div class="nine-box-cell cell-lh"></div>
-            <div class="nine-box-cell cell-ml"><div class="cell-dot"></div></div>
-            <div class="nine-box-cell cell-mm"><div class="cell-dot"></div><div class="cell-dot" style="margin-left:4px;"></div></div>
-            <div class="nine-box-cell cell-mh"><div class="cell-dot"></div></div>
-            <div class="nine-box-cell cell-hl"></div>
-            <div class="nine-box-cell cell-hm"><div class="cell-dot"></div></div>
-            <div class="nine-box-cell cell-hh" style="background:rgba(16,185,129,0.3);">
-              <div class="cell-dot" style="background:#10B981;"></div>
-              <div class="cell-dot" style="background:#10B981;margin-left:4px;"></div>
-            </div>
-          </div>
-          <div class="ai-coaching-box" style="margin-top:10px;">
-            <div class="ai-coaching-label">↑ L1/L2 Divergence Detected</div>
-            <div class="ai-coaching-item">→ Sarah Chen: L1 rates High/High · L2 rates Medium/High</div>
-            <div class="ai-coaching-item">→ Recency gap likely: L1 in daily contact, L2 based on Q1 data</div>
-          </div>
-        </div>
+        {/* TODO(CAD-2059 / Devon Park): current asset uses 3 repeated names (Alex Chen, Maya Park, Jordan Lee) across cells. Devon to fix with 20-30 unique seeded names + avatars + count badges before next durable design pass. */}
+        <img
+          src="/screenshots/cadence-9box-calibration-matrix-view-2026-05-14.png"
+          alt="Cadence 9-Box Calibration Matrix — dual blind L1/L2 ratings on Performance × Potential axes, with named cell categories (Future VP, Scale leaders, KVD nominees, etc.) and seeded employee chips per cell"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -308,21 +282,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">ER Command Center</div>
-          <div class="mock-kpi-row">
-            <div class="mock-kpi"><div class="mock-kpi-label">Active Cases</div><div class="mock-kpi-val" style="color:#EF4444;">4</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">In PIP</div><div class="mock-kpi-val" style="color:#F59E0B;">2</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">Resolved (90d)</div><div class="mock-kpi-val" style="color:#10B981;">7</div></div>
-          </div>
-          <div class="mock-row">
-            <div style="display:flex;justify-content:space-between;">
-              <div class="mock-row-title">Jordan Mills — Performance PIP</div>
-              <span class="mock-badge badge-orange">Week 3/8</span>
-            </div>
-            <div class="mock-row-sub">Mgr: Chris Park · Last check-in: 2 days ago · Prior: 3 recognition gaps flagged</div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-er-command-center-active-case-view-2026-05-14.png"
+          alt="Cadence ER Command Center — active case view with full lifecycle status, manager context, recognition gap history, and PIP check-in cadence"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -346,18 +314,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">Recognition · Manager Dashboard</div>
-          <div class="mock-kpi-row">
-            <div class="mock-kpi"><div class="mock-kpi-label">Your Ratio (30d)</div><div class="mock-kpi-val" style="color:#10B981;">6.2:1</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">Team Avg</div><div class="mock-kpi-val" style="color:#F59E0B;">4.1:1</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">At-Risk</div><div class="mock-kpi-val" style="color:#EF4444;">1</div></div>
-          </div>
-          <div class="mock-row" style="border-left:2px solid #EF4444;">
-            <div class="mock-row-title">⚠ Marcus Webb — 31 days without recognition</div>
-            <div class="mock-row-sub">AI suggests: acknowledge the Q1 incident response work</div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-recognition-manager-ratio-panel-2026-05-14.png"
+          alt="Cadence Recognition panel — manager 5:1 ratio dashboard with team average, at-risk flags, and AI-suggested recognition prompts"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -380,18 +345,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">Q2 2026 Engagement Survey · Results</div>
-          <div class="mock-kpi-row">
-            <div class="mock-kpi"><div class="mock-kpi-label">Participation</div><div class="mock-kpi-val" style="color:#10B981;">91%</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">eNPS</div><div class="mock-kpi-val" style="color:#4A90D9;">+42</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">Mgr Score</div><div class="mock-kpi-val" style="color:#10B981;">7.8</div></div>
-          </div>
-          <div class="mock-row" style="border-left:2px solid #EF4444;">
-            <div class="mock-row-title">⚠ Engineering Team — Below avg on "I know what's expected"</div>
-            <div class="mock-row-sub">Correlated: Chris Park has lowest 1:1 completion rate (58%) in org</div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-survey-engine-pulse-results-view-2026-05-14.png"
+          alt="Cadence Survey Engine results — pulse engagement survey with participation, eNPS, manager-level signal attribution and cross-signal correlation to 1:1 completion rate"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -414,17 +376,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel">
-        <div class="mock-dark">
-          <div class="mock-title">Job Architecture · Software Engineer L3</div>
-          <div class="mock-row">
-            <div class="mock-row-title">Core Expectations — L3</div>
-            <div class="mock-row-sub" style="margin-top:6px;">✓ Delivers independently · ✓ Reviews peers effectively · → Ready: Cross-team influence (L4 gate)</div>
-          </div>
-          <div class="ai-coaching-box">
-            <div class="ai-coaching-label">1:1 Context</div>
-            <div class="ai-coaching-item">→ Sarah is ready for L4 cross-team project — suggest Q3 ownership</div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-job-architecture-role-in-1on1-context-2026-05-14.png"
+          alt="Cadence Job Architecture — living role definition surfaced in 1:1 context with core expectations, level-gate readiness, and AI promotion-readiness coaching"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
@@ -447,15 +407,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </ul>
       </div>
       <div class="mock-panel" style="background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);">
-        <div class="mock-dark" style="background:rgba(0,0,0,0.3);">
-          <div class="mock-title">Culture Scorecard · Q2 2026</div>
-          <div class="mock-kpi-row" style="grid-template-columns:repeat(2,1fr);">
-            <div class="mock-kpi"><div class="mock-kpi-label">Org Health Score</div><div class="mock-kpi-val" style="color:#10B981;font-size:28px;">82</div><div style="font-size:10px;color:#10B981;margin-top:3px;">↑ +5 from Q1</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">Turnover Risk</div><div class="mock-kpi-val" style="color:#F59E0B;">Medium</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">Manager Effectiveness</div><div class="mock-kpi-val" style="color:#4A90D9;">87/100</div></div>
-            <div class="mock-kpi"><div class="mock-kpi-label">A-Player Retention</div><div class="mock-kpi-val" style="color:#10B981;">94%</div></div>
-          </div>
-        </div>
+        <img
+          src="/screenshots/cadence-chro-culture-scorecard-full-view-2026-05-14.png"
+          alt="Cadence CHRO Culture Scorecard — 90-day org health view with composite manager effectiveness scoring, turnover prediction, heat maps across teams, and indicator sparklines for cadence, coaching, goal health, recognition and calibration"
+          class="module-screenshot"
+          loading="lazy"
+          decoding="async"
+          width="1440"
+          height="900"
+        />
       </div>
     </div>
   </div>
