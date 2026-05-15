@@ -57,6 +57,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 .av3 { background: #F5A623; }
 .av4 { background: #8B5CF6; }
 .hero-mockup-wrap { position: relative; padding-top: 20px; }
+.hero-mockup-frame {
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(30,58,95,0.18), 0 4px 16px rgba(30,58,95,0.1);
+}
+.hero-mockup-shot {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
 .browser-chrome {
   background: #E8ECEF;
   border-radius: 12px 12px 0 0;
@@ -247,16 +259,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
         <div class="chrome-bar">app.cadencehr.ai / workspace</div>
       </div>
-      <div style="border-radius:0 0 12px 12px;overflow:hidden;box-shadow:0 20px 60px rgba(30,58,95,0.18), 0 4px 16px rgba(30,58,95,0.1);">
-        {/* Hero-region crop of the 1:1 workspace screenshot — drops the empty left nav and the empty bottom dark canvas to make text legible at hero scale. Source: cadence-1on1-mid-meeting-workspace-2026-05-14.png. Durable polish (proper hero-resolution export with right aspect) tracked on CAD-2059 follow-up for Devon. */}
+      <div class="hero-mockup-frame">
         <img
-          src="/screenshots/cadence-1on1-hero-crop-2026-05-15.png"
-          alt="Cadence 1:1 workspace — structured agenda, AI meeting notes, and private coaching rail with AI Insights showing risk flags, talking points, and coaching notes"
-          width="4199"
-          height="778"
+          src="/screenshots/cadence-homepage-tile-2026-05-15.png"
+          alt="Cadence People Operating System — culture health score 83, 4 KPIs, and engagement trend"
+          class="hero-mockup-shot"
+          width="1400"
+          height="900"
           loading="eager"
           decoding="async"
-          style="width:100%;height:auto;display:block;"
         />
       </div>
     </div>
