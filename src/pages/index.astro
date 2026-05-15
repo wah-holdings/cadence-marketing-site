@@ -64,10 +64,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 }
 .hero-mockup-shot {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: auto;
+  aspect-ratio: 7 / 4;
   display: block;
   object-fit: cover;
   object-position: center;
+  background: var(--primary);
 }
 .browser-chrome {
   background: #E8ECEF;
@@ -265,7 +267,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           alt="Cadence People Operating System — culture health score 83, 4 KPIs, and engagement trend"
           class="hero-mockup-shot"
           width="1400"
-          height="900"
+          height="800"
           loading="eager"
           decoding="async"
         />
