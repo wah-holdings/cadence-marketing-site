@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; align-items: start; }
@@ -63,7 +64,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Pricing</div>
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Pricing</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Transparent Pricing</div>
     <h1>Replace five tools. <span class="accent">Pay less.</span></h1>
     <p>The average fragmented management stack costs $25–30 per seat per month — across tools that share no data and produce no intelligence. Cadence replaces all of it, starting at $12/seat/month.</p>
@@ -85,7 +86,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="price-big"><sup>$</sup>12</div>
         <div class="price-period">per seat / month, billed annually</div>
         <div class="best-for"><strong>Best for:</strong> Organizations of 50–300 people building systematic management practices.</div>
-        <a href="/beta" class="pricing-cta-btn cta-outline-btn">Request beta access</a>
+        <a href={withBase('/beta')} class="pricing-cta-btn cta-outline-btn">Request beta access</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Includes</div>
         <ul class="features-list">
@@ -106,7 +107,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="price-big"><sup>$</sup>24</div>
         <div class="price-period">per seat / month, billed annually</div>
         <div class="best-for"><strong>Best for:</strong> Organizations of 100–1,000 people where the CHRO needs full Culture Scorecard visibility.</div>
-        <a href="/beta" class="pricing-cta-btn cta-secondary-btn">Request beta access</a>
+        <a href={withBase('/beta')} class="pricing-cta-btn cta-secondary-btn">Request beta access</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Essentials, plus</div>
         <ul class="features-list">
@@ -126,7 +127,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="price-custom">Custom</div>
         <div class="price-period">500+ seats · Annual contract</div>
         <div class="best-for"><strong>Best for:</strong> Organizations with 500+ employees or complex enterprise security requirements.</div>
-        <a href="/beta" class="pricing-cta-btn cta-outline-btn">Talk to us</a>
+        <a href={withBase('/beta')} class="pricing-cta-btn cta-outline-btn">Talk to us</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Professional, plus</div>
         <ul class="features-list">
@@ -209,7 +210,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>Ready to consolidate your stack?</h2>
     <p>Tell us about your org and we'll build a consolidation model showing exactly what you'd replace and what you'd save.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="/beta" class="btn btn-white btn-lg">Request beta access</a>
+      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
       <a href="mailto:hello@cadencehr.ai?subject=Pricing%20question" class="btn btn-white-outline btn-lg">Talk to us</a>
     </div>
   </div>

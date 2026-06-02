@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 .module-nav {
@@ -146,12 +147,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Product</div>
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Product</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Eight Modules · One Platform</div>
     <h1>Everything people management requires — <span class="accent">in one place.</span></h1>
     <p>Most organizations run management across five or six disconnected tools. Cadence replaces them with one connected operating plane — and produces intelligence none of them can individually.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="/beta" class="btn btn-accent btn-lg">Request beta access</a>
+      <a href={withBase('/beta')} class="btn btn-accent btn-lg">Request beta access</a>
       <a href="#one-on-ones" class="btn btn-white-outline btn-lg">Explore the modules ↓</a>
     </div>
   </div>
@@ -189,7 +190,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-1on1-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-1on1-tile-2026-05-15.png')}
           alt="Cadence 1:1 Engine — AI coaching insights panel with risk flags, coaching notes, and goal updates"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -219,7 +220,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-goals-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-goals-tile-2026-05-15.png')}
           alt="Cadence Goals &amp; OKRs — 3 goal bars with On Track, At Risk, Behind status and live % readouts"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -249,7 +250,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-9box-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-9box-tile-2026-05-15.png')}
           alt="Cadence 9-Box talent calibration — 3x3 grid with name pills, category labels, and performance axis"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -279,7 +280,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-er-tile-2026-05-15-v2.png"
+          src={withBase('/screenshots/cadence-er-tile-2026-05-15-v2.png')}
           alt="Cadence ER Command Center — active case card with lifecycle stages and severity badge"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -309,7 +310,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-recognition-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-recognition-tile-2026-05-15.png')}
           alt="Cadence Recognition — 3 stacked recognition cards with value badges and 6.2:1 manager ratio"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -338,7 +339,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-surveys-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-surveys-tile-2026-05-15.png')}
           alt="Cadence Survey Engine — eNPS +42 score with 12-month trend, dimension heatmap, and top manager"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -367,7 +368,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
-          src="/screenshots/cadence-jobarch-tile-2026-05-15-v2.png"
+          src={withBase('/screenshots/cadence-jobarch-tile-2026-05-15-v2.png')}
           alt="Cadence Job Architecture — L1-L4 ladder with current level highlighted and L4 ready badge"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -396,7 +397,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.12);">
         <img
-          src="/screenshots/cadence-culture-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-culture-tile-2026-05-15.png')}
           alt="Cadence Culture Scorecard — composite score 83 with 4 KPIs and dimension x department heatmap"
           class="product-shot-frame product-shot"
           loading="lazy"
@@ -412,8 +413,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>See it for yourself.</h2>
     <p>Beta access is currently invitation-only. Request access and we'll reach out to schedule a walkthrough of the full platform.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="/beta" class="btn btn-white btn-lg">Request beta access</a>
-      <a href="/pricing" class="btn btn-white-outline btn-lg">View pricing</a>
+      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
+      <a href={withBase('/pricing')} class="btn btn-white-outline btn-lg">View pricing</a>
     </div>
   </div>
 </section>

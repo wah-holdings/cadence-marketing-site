@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 .persona-hero { padding: 72px 0 64px; position: relative; overflow: hidden; }
@@ -55,13 +56,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Solutions</div>
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Solutions</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Built for every layer</div>
     <h1>One platform. <span class="accent">Four perspectives.</span></h1>
     <p>Cadence looks different depending on where you sit. The IC sees their career path and coaching. The manager sees their team health and 1:1 workspace. The CHRO sees the whole organization — in one view. Same platform, different lenses.</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="#individual-contributors" class="btn btn-white btn-lg">Find your role ↓</a>
-      <a href="/beta" class="btn btn-white-outline btn-lg">Request access</a>
+      <a href={withBase('/beta')} class="btn btn-white-outline btn-lg">Request access</a>
     </div>
   </div>
 </div>
@@ -180,7 +181,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <div class="use-case-card" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);"><div class="icon">📉</div><h4 style="color:white;">Turnover prediction</h4><p style="color:rgba(255,255,255,0.65);">AI early warning at the individual and team level — before someone accepts a competing offer.</p></div>
         </div>
         <div style="text-align:center;margin-top:32px;">
-          <a href="/beta" class="btn btn-accent btn-lg">Request a CHRO walkthrough →</a>
+          <a href={withBase('/beta')} class="btn btn-accent btn-lg">Request a CHRO walkthrough →</a>
         </div>
       </div>
     </div>
@@ -192,8 +193,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>Ready to see it in action?</h2>
     <p>Beta access is by invitation. Tell us about your org and we'll walk you through the experience built for your role.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="/beta" class="btn btn-white btn-lg">Request beta access</a>
-      <a href="/product" class="btn btn-white-outline btn-lg">Explore the platform</a>
+      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
+      <a href={withBase('/product')} class="btn btn-white-outline btn-lg">Explore the platform</a>
     </div>
   </div>
 </section>

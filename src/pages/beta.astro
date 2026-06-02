@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 .beta-layout {
@@ -316,7 +317,7 @@ select {
               <input type="text" id="current_tools" name="current_tools" placeholder="e.g. 15Five, Lattice, Culture Amp, spreadsheets...">
             </div>
             <button type="submit" class="btn-submit" id="submit-btn">Request beta access →</button>
-            <p class="form-disclaimer">We don't sell your data. We'll use this information only to evaluate fit and reach out about Cadence. <a href="/security#privacy" style="color:var(--secondary);">Privacy policy</a>.</p>
+            <p class="form-disclaimer">We don't sell your data. We'll use this information only to evaluate fit and reach out about Cadence. <a href={withBase('/security#privacy')} style="color:var(--secondary);">Privacy policy</a>.</p>
           </form>
 
           <div class="form-success" id="form-success">
