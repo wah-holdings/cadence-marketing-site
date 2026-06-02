@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 .founder-section {
@@ -126,7 +127,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>About</div>
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>About</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Our Story</div>
     <h1>We saw the problem up close. <span class="accent">We built the fix.</span></h1>
     <p>Cadence was founded on a pattern that appeared in every organization we worked with: management quality varied wildly, nobody could measure it, and the best employees left for companies where they happened to get lucky with their manager. We decided to change that.</p>
@@ -144,8 +145,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <p class="founder-bio-short">Former Head of People Operations at ACI Learning. Built and managed people systems for distributed technical teams before founding Cadence in 2025.</p>
         <div class="founder-links">
           <a href="mailto:hello@cadencehr.ai" class="founder-link">📧 Email Phillip</a>
-          <a href="/resources#manifesto" class="founder-link">📄 Read the Manifesto</a>
-          <a href="/beta" class="founder-link">⚡ Request access</a>
+          <a href={withBase('/resources#manifesto')} class="founder-link">📄 Read the Manifesto</a>
+          <a href={withBase('/beta')} class="founder-link">⚡ Request access</a>
         </div>
       </div>
       <div class="story-text">
@@ -270,7 +271,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <h2 class="section-headline" style="font-size:clamp(24px,3vw,32px);">Currently in beta.</h2>
         <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:24px;">We're running a private beta with a select group of organizations. Beta participants are getting early access to the full platform in exchange for honest feedback and close collaboration with the product team.</p>
         <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:28px;">We're targeting general availability in late 2026. If you're evaluating tools for your organization right now, we'd rather talk to you during beta — you'll have more influence on the product and better terms.</p>
-        <a href="/beta" class="btn btn-primary btn-lg">Request beta access →</a>
+        <a href={withBase('/beta')} class="btn btn-primary btn-lg">Request beta access →</a>
       </div>
     </div>
   </div>
@@ -282,7 +283,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>We'd love to show you what we're building.</h2>
     <p>Beta is by invitation. We're selective because we want to give every participant real attention. But if Cadence sounds like it solves a problem you have, reach out.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="/beta" class="btn btn-white btn-lg">Request beta access</a>
+      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
       <a href="mailto:hello@cadencehr.ai" class="btn btn-white-outline btn-lg">Email us directly</a>
     </div>
   </div>

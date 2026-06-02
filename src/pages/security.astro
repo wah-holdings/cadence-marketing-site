@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 .security-grid {
@@ -131,7 +132,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="container">
-    <div class="breadcrumb"><a href="/">Home</a><span>/</span>Security &amp; Trust</div>
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Security &amp; Trust</div>
     <div class="section-badge" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.25);color:#6EE7B7;">Security &amp; Trust</div>
     <h1>Built with privacy at the center, <span class="accent">not bolted on later.</span></h1>
     <p>Cadence operates on sensitive workforce data — 1:1 conversations, performance records, HR cases, compensation context. We hold this data with the care it demands. Here's exactly how we think about security, consent, and compliance.</p>
@@ -486,7 +487,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p>If you have specific security or compliance requirements, we'd rather have a real conversation than send you a generic PDF. Reach out and we'll schedule time with our engineering and legal team.</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="mailto:security@cadencehr.ai" class="btn btn-white btn-lg">Contact security team</a>
-      <a href="/beta" class="btn btn-white-outline btn-lg">Request beta access</a>
+      <a href={withBase('/beta')} class="btn btn-white-outline btn-lg">Request beta access</a>
     </div>
   </div>
 </section>
