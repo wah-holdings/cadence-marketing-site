@@ -151,7 +151,7 @@ import { withBase } from '../lib/paths';
       <div class="security-card">
         <div class="security-icon">🔐</div>
         <h4>Encryption</h4>
-        <p>All data encrypted at rest (AES-256) and in transit (TLS 1.3). Per-tenant encryption key management is on our Q3 2026 roadmap. AI processing runs over encrypted channels and returns results to isolated tenant environments.</p>
+        <p>All data encrypted at rest (AES-256) and in transit (TLS 1.3). Customer-specific key management is on our Q3 2026 roadmap. AI processing runs over encrypted channels and returns results to isolated tenant environments.</p>
       </div>
       <div class="security-card">
         <div class="security-icon">🏗️</div>
@@ -171,7 +171,7 @@ import { withBase } from '../lib/paths';
       <div class="security-card">
         <div class="security-icon">🧪</div>
         <h4>AI Data Handling</h4>
-        <p>Cadence does not train AI models on customer data. Meeting transcripts and 1:1 content are processed for the specific tenant's coaching outputs and are not used in model training. Coaching outputs are tenant-isolated.</p>
+        <p>Customer audio, transcripts, coaching outputs, survey responses, ER records, performance records, recognition records, and scorecard telemetry are not used to train, fine-tune, or improve Cadence AI models by default, unless your company explicitly agrees in writing. Coaching outputs are tenant-isolated.</p>
       </div>
       <div class="security-card">
         <div class="security-icon">🛡️</div>
@@ -282,9 +282,9 @@ import { withBase } from '../lib/paths';
             <td><span class="posture-tag tag-green">Implemented</span><br>Consent receipt chain, visible recording state, stop-on-revoke, and non-recording fallback all in production.</td>
           </tr>
           <tr>
-            <td><div class="reg-name">SOC 2 Type II</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">Security audit</div></td>
-            <td>SOC 2 Type II audit is on the security roadmap for H2 2026. Current controls are designed to the SOC 2 Type II Trust Services Criteria. Controls documentation available to enterprise customers under NDA.</td>
-            <td><span class="posture-tag tag-orange">Roadmap H2 2026</span><br>Controls documentation in progress. Auditor engagement pending — no signed engagement letter yet. Report targeted H2 2026.</td>
+            <td><div class="reg-name">SOC 2 readiness</div><div style="font-size:12px;color:var(--gray-500);margin-top:4px;">Security audit readiness</div></td>
+            <td>SOC 2 readiness is in progress. Current controls are being prepared against the Trust Services Criteria. Controls documentation is available to enterprise customers under NDA.</td>
+            <td><span class="posture-tag tag-orange">Readiness in progress</span><br>Controls documentation in progress. Auditor engagement pending — no signed engagement letter yet.</td>
           </tr>
         </tbody>
       </table>
@@ -367,8 +367,8 @@ import { withBase } from '../lib/paths';
       <div class="roadmap-item">
         <div class="roadmap-status status-active">Q3 2026</div>
         <div>
-          <h4>Per-tenant encryption key management</h4>
-          <p>Encryption keys isolated per customer tenant. Targeted Q3 2026.</p>
+          <h4>Customer-specific key management</h4>
+          <p>Additional customer-specific key controls. Targeted Q3 2026.</p>
         </div>
       </div>
       <div class="roadmap-item">
@@ -395,8 +395,8 @@ import { withBase } from '../lib/paths';
       <div class="roadmap-item">
         <div class="roadmap-status status-active">Q3 2026</div>
         <div>
-          <h4>SOC 2 Type II audit engagement</h4>
-          <p>Controls documentation in progress. Auditor engagement pending — no signed engagement letter yet. Report targeted H2 2026.</p>
+          <h4>SOC 2 readiness</h4>
+          <p>Controls documentation in progress. Auditor engagement pending — no signed engagement letter yet.</p>
         </div>
       </div>
       <div class="roadmap-item">

@@ -49,6 +49,9 @@ import { withBase } from '../lib/paths';
 .quote-block p { font-size: 17px; font-style: italic; color: var(--gray-700); line-height: 1.65; margin-bottom: 12px; }
 .quote-block .attribution { font-size: 13px; font-weight: 600; color: var(--primary); }
 .quote-block .role { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
+.taxonomy-note { background: var(--white); border: 1px solid var(--gray-100); border-left: 4px solid var(--secondary); border-radius: 12px; padding: 18px 20px; margin-top: 24px; }
+.taxonomy-note strong { display: block; color: var(--primary); font-size: 14px; margin-bottom: 6px; }
+.taxonomy-note p { color: var(--gray-600); font-size: 14px; line-height: 1.65; }
 @media (max-width: 768px) { .use-case-grid { grid-template-columns: 1fr; } }
 </style>
 
@@ -144,11 +147,15 @@ import { withBase } from '../lib/paths';
           <div class="attribution">Chief Product Officer</div>
           <div class="role">Beta program participant</div>
         </div>
+        <div class="taxonomy-note">
+          <strong>Pattern detection, not personality labels.</strong>
+          <p>Cadence helps leaders see manager behavior patterns: who closes the loop, who spots issues but needs follow-through, where team risk is forming, and where management routines have gone quiet. Sensitive signals route to trained human review before coaching or leadership action.</p>
+        </div>
       </div>
       <div>
         <div class="use-case-grid" style="grid-template-columns:1fr 1fr;">
           <div class="use-case-card"><div class="icon">📡</div><h4>Chain-of-command view</h4><p>See every manager in your org: 1:1 compliance, recognition ratio, ER activity, effectiveness composite.</p></div>
-          <div class="use-case-card"><div class="icon">⚠️</div><h4>Early warning signals</h4><p>AI surfaces managers trending downward across multiple signals before problems become visible in attrition.</p></div>
+          <div class="use-case-card"><div class="icon">⚠️</div><h4>Early warning signals</h4><p>Cadence surfaces cross-signal declines for trained human review before problems become visible in attrition.</p></div>
           <div class="use-case-card"><div class="icon">⬛</div><h4>Calibration participation</h4><p>Submit your 9-box ratings independently, see calibration convergence across the team.</p></div>
           <div class="use-case-card"><div class="icon">🏆</div><h4>Top talent visibility</h4><p>Know who your Key Value Drivers are and whether they're in an environment likely to retain them.</p></div>
           <div class="use-case-card"><div class="icon">📊</div><h4>Survey signal aggregated</h4><p>Engagement and pulse results broken down by manager.</p></div>

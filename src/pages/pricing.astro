@@ -43,6 +43,30 @@ import { withBase } from '../lib/paths';
 .compare-yes { color: var(--success); font-size: 16px; font-weight: 700; }
 .compare-no { color: var(--gray-200); font-size: 16px; }
 .compare-partial { color: var(--warning); font-size: 13px; font-weight: 600; }
+.trust-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: stretch; margin-top: 40px; }
+.trust-panel,
+.checkout-panel,
+.enterprise-route-panel {
+  background: var(--white);
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 26px;
+}
+.trust-panel h3,
+.checkout-panel h3,
+.enterprise-route-panel h3 { font-size: 20px; color: var(--primary); margin-bottom: 18px; }
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.trust-card { background: var(--gray-50); border: 1px solid var(--gray-100); border-radius: 12px; padding: 18px; }
+.trust-card strong { display: block; color: var(--primary); font-size: 14px; margin-bottom: 8px; }
+.trust-card p { color: var(--gray-600); font-size: 13px; line-height: 1.55; }
+.trust-compact { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.trust-compact span { background: rgba(74,144,217,0.08); border: 1px solid rgba(74,144,217,0.18); border-radius: 999px; color: var(--primary); font-size: 12px; font-weight: 700; padding: 7px 10px; }
+.checkout-panel { display: flex; flex-direction: column; justify-content: space-between; }
+.checkout-panel p { color: var(--gray-600); font-size: 14px; line-height: 1.65; margin-bottom: 14px; }
+.checkout-note { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.18); border-radius: 10px; padding: 14px; color: var(--primary); font-size: 13px; line-height: 1.55; }
+.enterprise-route-panel { margin-top: 32px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: var(--primary); border-color: var(--primary); }
+.enterprise-route-panel h3 { color: var(--white); margin-bottom: 8px; }
+.enterprise-route-panel p { color: rgba(255,255,255,0.74); font-size: 14px; line-height: 1.65; max-width: 740px; }
 .faq-list { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
 .faq-item { background: white; border-radius: 12px; border: 1px solid var(--gray-100); padding: 24px; }
 .faq-q { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
@@ -53,6 +77,9 @@ import { withBase } from '../lib/paths';
 .beta-notice-text strong { color: var(--primary); }
 @media (max-width: 768px) {
   .pricing-grid { grid-template-columns: 1fr; }
+  .trust-section,
+  .enterprise-route-panel { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
   .compare-head { grid-template-columns: 1.5fr 1fr 1fr; }
   .compare-row { grid-template-columns: 1.5fr 1fr 1fr; }
   .compare-row > *:last-child { display: none; }
@@ -141,6 +168,47 @@ import { withBase } from '../lib/paths';
         </ul>
       </div>
     </div>
+    <div class="trust-section" aria-label="Self-serve trust and checkout details">
+      <div class="trust-panel">
+        <h3>Buy without wondering what happens to your people data.</h3>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <strong>Human decisions stay human.</strong>
+            <p>Cadence surfaces patterns, coaching prompts, and review queues. It does not decide discipline, promotion, termination, compensation, or performance ratings.</p>
+          </div>
+          <div class="trust-card">
+            <strong>Your company data is not used for model training by default.</strong>
+            <p>Customer audio, transcripts, coaching outputs, survey responses, ER records, performance records, recognition records, and scorecard telemetry are not used to train, fine-tune, or improve Cadence AI models by default, unless your company explicitly agrees in writing.</p>
+          </div>
+          <div class="trust-card">
+            <strong>Security review has a path.</strong>
+            <p>Essentials and Professional teams can start with standard terms. If you need SSO/SAML, procurement review, a security questionnaire, or enterprise DPA negotiation, route to the Enterprise path.</p>
+          </div>
+        </div>
+        <div class="trust-compact" aria-label="Trust summary">
+          <span>Human-reviewed AI</span>
+          <span>No customer-data model training by default</span>
+          <span>DPA available for review</span>
+          <span>SOC 2 readiness in progress</span>
+        </div>
+      </div>
+      <aside class="checkout-panel">
+        <div>
+          <h3>What you get after checkout</h3>
+          <p>Cadence provisions your workspace, invites your first admins, and guides your team into the first 1:1 setup flow. Your managers still lead the conversations. Cadence provides the operating system around them: agendas, action items, goals, recognition, coaching prompts, and the Culture Scorecard signals that help leaders see where management is working.</p>
+          <div class="checkout-note">AI outputs are decision-support. Formal people decisions stay with accountable humans.</div>
+        </div>
+        <p style="margin-top:18px;margin-bottom:0;">Need SSO/SAML, procurement review, a custom DPA, or more than 300 seats? Use the Enterprise path so the right human review happens before purchase.</p>
+      </aside>
+    </div>
+    <div class="enterprise-route-panel">
+      <div>
+        <h3>Some purchases should not be self-serve.</h3>
+        <p>If your team needs SSO/SAML, procurement review, security questionnaires, custom legal review, regulated privacy review, custom privacy deployment, or more than 300 seats, Cadence routes you to an Enterprise path before checkout. Regulated or custom privacy deployments use the Enterprise/legal review path before activating covered features.</p>
+        <p style="margin-top:8px;">Enterprise-shaped intent always routes to a human-led path. Self-serve is for standard Essentials and Professional starts.</p>
+      </div>
+      <a href={withBase('/beta')} class="btn btn-white btn-lg">Talk to Cadence</a>
+    </div>
     <div class="savings-row">
       <div class="savings-text">Cadence Professional at 300 seats: <strong>$86,400/year</strong> &nbsp;·&nbsp; Comparable fragmented stack: <span class="strikethrough">$108,000+/year</span> &nbsp; <span class="highlight">You save $21,600+/year — and gain a Culture Scorecard none of them can produce alone.</span></div>
       <a href="#comparison" class="savings-link">See full comparison →</a>
@@ -182,7 +250,7 @@ import { withBase } from '../lib/paths';
       <div class="compare-row"><div class="compare-feature-name">Turnover prediction</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-feature-name">Board-ready reporting</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-group">Security &amp; Compliance</div></div>
-      <div class="compare-row"><div class="compare-feature-name">SOC 2 Type II (roadmap 2026)</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">SOC 2 readiness in progress</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-feature-name">SSO / SAML</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-feature-name">Data Processing Agreement (DPA)</div><div class="compare-no">—</div><div class="compare-partial">Standard</div><div class="compare-yes">Custom</div></div>
     </div>
@@ -201,6 +269,13 @@ import { withBase } from '../lib/paths';
       <div class="faq-item"><div class="faq-q">Is there an annual commitment required?</div><div class="faq-a">The published pricing is for annual billing. Monthly billing is available at a 20% premium. Multi-year agreements receive additional discounts.</div></div>
       <div class="faq-item"><div class="faq-q">What tools does Cadence replace?</div><div class="faq-a">Cadence Essentials replaces 15Five (or equivalent), a standalone recognition platform, and your survey tool. Professional adds 9-box calibration, ER case management, and the Culture Scorecard intelligence layer. Most Professional customers consolidate 4–6 tools into one.</div></div>
       <div class="faq-item"><div class="faq-q">Do you offer a free trial?</div><div class="faq-a">During beta, access is by invitation only rather than open trial. We offer a live walkthrough with sample data. Once we move to GA, we'll offer a standard free trial.</div></div>
+      <div class="faq-item"><div class="faq-q">Is Cadence making people decisions with AI?</div><div class="faq-a">No. Cadence uses AI to surface patterns, summarize work, suggest coaching prompts, and route issues for human review. It does not make employment decisions. Discipline, promotion, termination, compensation, performance ratings, and formal ER actions require accountable human judgment and normal company process.</div></div>
+      <div class="faq-item"><div class="faq-q">What happens to 1:1 notes and meeting data?</div><div class="faq-a">1:1 notes, transcripts, summaries, coaching outputs, goals, recognition, survey signals, ER records, and scorecard telemetry are used to deliver Cadence to your company. They are not used to train, fine-tune, or improve Cadence AI models by default, unless your company explicitly agrees in writing.</div></div>
+      <div class="faq-item"><div class="faq-q">Does audio recording start automatically?</div><div class="faq-a">No. Audio capture is optional and consent-gated. Cadence is useful with or without audio: the operating plane still supports agendas, action items, goals, recognition, surveys, ER workflows, and scorecard signals.</div></div>
+      <div class="faq-item"><div class="faq-q">Can we buy self-serve before a full security review?</div><div class="faq-a">Essentials and Professional are built for teams that can start from standard terms and standard controls. If your purchase requires security review, procurement, SSO/SAML, custom legal terms, regulated privacy review, custom privacy deployment, or more than 300 seats, Cadence routes you to Enterprise before checkout.</div></div>
+      <div class="faq-item"><div class="faq-q">Is a DPA available?</div><div class="faq-a">Yes, a DPA review path is part of the buying motion. If your deployment requires a DPA before employee personal data is processed, use the Enterprise/legal review path before activating covered features.</div></div>
+      <div class="faq-item"><div class="faq-q">How does Cadence use manager taxonomy?</div><div class="faq-a">Cadence looks for management behavior patterns across operational signals such as 1:1 cadence, follow-through, recognition, goals, ER outcomes, and eligible aggregate survey signals. Taxonomy outputs are decision-support for trained human review. They are not automated employment decisions.</div></div>
+      <div class="faq-item"><div class="faq-q">Are survey comments attached to managers?</div><div class="faq-a">No. Open-text survey themes are used only after Cadence's anonymity and de-identification thresholds are met. Raw open text is not surfaced in manager taxonomy review packets.</div></div>
     </div>
   </div>
 </section>
