@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
 <style>
 /* ── HOME-SPECIFIC ── */
@@ -303,8 +304,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="hero-sub">Structured 1:1s, goal tracking, talent calibration, ER, and recognition — all connected, with AI that helps your managers show up better after every conversation.</p>
       <p class="hero-body">Remote and hybrid work removed the informal safety net. What replaced it is a lottery: some employees get a manager who coaches, advocates, and develops them. Most don't. Cadence gives every manager a consistent system — and AI that surfaces what they need to lead well. <strong>The tool does the scaffolding. Your managers do the leading.</strong></p>
       <div class="hero-ctas">
-        <a href="/beta" class="btn btn-primary btn-lg">Request beta access →</a>
-        <a href="/product" class="btn btn-secondary btn-lg">See the platform</a>
+        <a href={withBase('/beta')} class="btn btn-primary btn-lg">Request beta access →</a>
+        <a href={withBase('/product')} class="btn btn-secondary btn-lg">See the platform</a>
       </div>
       <div class="hero-trust-line">
         <span>AI surfaces signal</span>
@@ -313,7 +314,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <span class="ht-dot"></span>
         <span>Your data never trains AI models</span>
         <span class="ht-dot"></span>
-        <a href="/security">Full trust &amp; privacy details →</a>
+        <a href={withBase('/security')}>Full trust &amp; privacy details →</a>
       </div>
       <div class="social-proof" style="margin-top:20px;">
         <div class="social-proof-avatars">
@@ -336,7 +337,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <div class="hero-mockup-frame">
         <img
-          src="/screenshots/cadence-homepage-tile-2026-05-15.png"
+          src={withBase('/screenshots/cadence-homepage-tile-2026-05-15.png')}
           alt="Cadence People Operating System — culture health score 83, 4 KPIs, and engagement trend"
           class="hero-mockup-shot"
           width="1400"
@@ -386,7 +387,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="trust-pill"><span>🚫</span> Your data never trains AI models</div>
       <div class="trust-pill"><span>📄</span> DPA available on request</div>
       <div class="trust-pill"><span>✅</span> SOC 2 readiness in progress</div>
-      <div class="trust-pill"><span>🔍</span> <a href="/security">Full trust &amp; compliance details →</a></div>
+      <div class="trust-pill"><span>🔍</span> <a href={withBase('/security')}>Full trust &amp; compliance details →</a></div>
     </div>
   </div>
 </section>
@@ -463,49 +464,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="section-subhead fade-up">Each module is powerful alone. Together, they produce intelligence no point solution can.</p>
     </div>
     <div class="modules-grid">
-      <a href="/product#one-on-ones" class="module-tile fade-up">
+      <a href={withBase('/product#one-on-ones')} class="module-tile fade-up">
         <span class="module-emoji">💬</span>
         <h3>1:1 Management Engine</h3>
         <p>The heartbeat of Cadence. Structured agendas, AI-captured meeting notes, private post-meeting coaching for both participants.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#goals" class="module-tile fade-up" style="transition-delay:0.05s">
+      <a href={withBase('/product#goals')} class="module-tile fade-up" style="transition-delay:0.05s">
         <span class="module-emoji">🎯</span>
         <h3>Goals &amp; OKR Tracking</h3>
         <p>Live goal context in every conversation. Trend analysis over time. Accountability built into the 1:1, not bolted on at review time.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#nine-box" class="module-tile fade-up" style="transition-delay:0.1s">
+      <a href={withBase('/product#nine-box')} class="module-tile fade-up" style="transition-delay:0.1s">
         <span class="module-emoji">⬛</span>
         <h3>9-Box Talent Calibration</h3>
         <p>Quarterly blind dual-rating with L1/L2 gap coaching. Top-talent retention workflows and structured bottom-left interventions.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#er" class="module-tile fade-up" style="transition-delay:0.15s">
+      <a href={withBase('/product#er')} class="module-tile fade-up" style="transition-delay:0.15s">
         <span class="module-emoji">📋</span>
         <h3>ER Command Center</h3>
         <p>Full case lifecycle from verbal warning to PIP. Connected to the full management record — so context exists before the case opens.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#recognition" class="module-tile fade-up" style="transition-delay:0.2s">
+      <a href={withBase('/product#recognition')} class="module-tile fade-up" style="transition-delay:0.2s">
         <span class="module-emoji">⭐</span>
         <h3>Recognition &amp; Rewards</h3>
         <p>The 5:1 Rule enforced. Manager recognition ratios tracked in real time and visible to L2. Recognition as accountability, not wallpaper.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#surveys" class="module-tile fade-up" style="transition-delay:0.25s">
+      <a href={withBase('/product#surveys')} class="module-tile fade-up" style="transition-delay:0.25s">
         <span class="module-emoji">📊</span>
         <h3>Survey Engine</h3>
         <p>Pulse, engagement, exit and stay interviews. Aggregate signals connected to the manager responsible — not just a department score.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#job-architecture" class="module-tile fade-up" style="transition-delay:0.3s">
+      <a href={withBase('/product#job-architecture')} class="module-tile fade-up" style="transition-delay:0.3s">
         <span class="module-emoji">🏗️</span>
         <h3>Job Architecture</h3>
         <p>Living role definitions visible in every 1:1. Career paths always current. Role recasting tied to 9-box outcomes.</p>
         <span class="module-link">Learn more →</span>
       </a>
-      <a href="/product#culture-scorecard" class="module-tile fade-up" style="transition-delay:0.35s">
+      <a href={withBase('/product#culture-scorecard')} class="module-tile fade-up" style="transition-delay:0.35s">
         <span class="module-emoji">🏆</span>
         <h3>Culture Scorecard</h3>
         <p>The unified intelligence layer. Manager effectiveness scores, turnover prediction, heat maps, and A-player environment scoring.</p>
@@ -513,7 +514,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </a>
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-up">
-      <a href="/product" class="btn btn-primary btn-lg">Explore the full platform →</a>
+      <a href={withBase('/product')} class="btn btn-primary btn-lg">Explore the full platform →</a>
     </div>
   </div>
 </section>
@@ -527,29 +528,29 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <p class="section-subhead fade-up">Cadence works for the IC who wants to know where they stand, the manager who wants to be better, and the CHRO who wants to see everything.</p>
     </div>
     <div class="personas-grid">
-      <a href="/solutions#individual-contributors" class="persona-card persona-ic fade-up">
+      <a href={withBase('/solutions#individual-contributors')} class="persona-card persona-ic fade-up">
         <div class="persona-avatar">👤</div>
         <h3>Individual Contributors</h3>
         <p>Your goals, your feedback, your coaching — visible and private. Know where you stand, where you're going, and what happened in every 1:1.</p>
       </a>
-      <a href="/solutions#managers" class="persona-card persona-mgr fade-up" style="transition-delay:0.1s">
+      <a href={withBase('/solutions#managers')} class="persona-card persona-mgr fade-up" style="transition-delay:0.1s">
         <div class="persona-avatar">🧑‍💼</div>
         <h3>Managers</h3>
         <p>The workspace you actually run 1:1s in. AI coaching after every meeting. Recognition ratio tracking. 9-box guidance for every direct report.</p>
       </a>
-      <a href="/solutions#senior-leaders" class="persona-card persona-l2 fade-up" style="transition-delay:0.2s">
+      <a href={withBase('/solutions#senior-leaders')} class="persona-card persona-l2 fade-up" style="transition-delay:0.2s">
         <div class="persona-avatar">📡</div>
         <h3>Senior Leaders (L2+)</h3>
         <p>Dashboard of every manager in your chain: 1:1 compliance, recognition ratios, ER trends, survey sentiment, effectiveness composite.</p>
       </a>
-      <a href="/solutions#chro" class="persona-card persona-chro fade-up" style="transition-delay:0.3s">
+      <a href={withBase('/solutions#chro')} class="persona-card persona-chro fade-up" style="transition-delay:0.3s">
         <div class="persona-avatar">🏛️</div>
         <h3>CHROs &amp; People Leaders</h3>
         <p>Operational command center — ER pipeline, active PIPs, 9-box cycle progress, survey campaigns, merit cycle status, Culture Scorecard. Everything at scale.</p>
       </a>
     </div>
     <div style="text-align:center;margin-top:40px;" class="fade-up">
-      <a href="/solutions" class="btn btn-secondary btn-lg">See solutions by role →</a>
+      <a href={withBase('/solutions')} class="btn btn-secondary btn-lg">See solutions by role →</a>
     </div>
   </div>
 </section>
@@ -576,7 +577,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Job Architecture</li>
           <li>AI meeting summaries</li>
         </ul>
-        <a href="/beta" class="btn-pricing btn-pricing-outline">Request beta access</a>
+        <a href={withBase('/beta')} class="btn-pricing btn-pricing-outline">Request beta access</a>
       </div>
       <div class="pricing-card featured fade-up" style="transition-delay:0.1s">
         <div class="pricing-badge">Most Popular</div>
@@ -592,7 +593,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Turnover prediction</li>
           <li>Advanced integrations</li>
         </ul>
-        <a href="/beta" class="btn-pricing btn-pricing-primary">Request beta access</a>
+        <a href={withBase('/beta')} class="btn-pricing btn-pricing-primary">Request beta access</a>
       </div>
       <div class="pricing-card fade-up" style="transition-delay:0.2s">
         <div class="pricing-tier">Enterprise</div>
@@ -607,11 +608,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <li>Dedicated customer success</li>
           <li>SLA guarantees</li>
         </ul>
-        <a href="/beta" class="btn-pricing btn-pricing-outline">Talk to us</a>
+        <a href={withBase('/beta')} class="btn-pricing btn-pricing-outline">Talk to us</a>
       </div>
     </div>
     <div style="text-align:center;margin-top:36px;" class="fade-up">
-      <a href="/pricing" class="btn btn-secondary btn-lg">See full feature comparison →</a>
+      <a href={withBase('/pricing')} class="btn btn-secondary btn-lg">See full feature comparison →</a>
     </div>
     <p style="text-align:center;margin-top:16px;font-size:12px;color:var(--gray-500);">Pricing reflects GA targets. Current beta access is invitation-only.</p>
   </div>
@@ -624,8 +625,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <h2>Stop leaving management quality to chance.</h2>
     <p>Every day without a system is another day where your employees' careers depend on whether they got lucky with their manager. Cadence is the operating plane that changes that.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="/beta" class="btn btn-white btn-lg">Request beta access</a>
-      <a href="/product" class="btn btn-white-outline btn-lg">Explore the platform</a>
+      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
+      <a href={withBase('/product')} class="btn btn-white-outline btn-lg">Explore the platform</a>
     </div>
   </div>
 </section>
