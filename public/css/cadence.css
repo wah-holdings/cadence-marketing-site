@@ -448,6 +448,7 @@ footer {
   .feature-block { gap: 40px; }
 }
 @media (max-width: 768px) {
+  .nav-inner { gap: 16px; }
   .nav-links { display: none; }
   .grid-2 { grid-template-columns: 1fr; }
   .grid-3 { grid-template-columns: 1fr; }
@@ -457,6 +458,10 @@ footer {
   .footer-links { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 480px) {
+  .nav-inner { padding: 0 20px; }
+  .nav-actions .beta-pill,
+  .nav-actions .btn-signin { display: none; }
+  .btn-demo { padding: 8px 14px; }
   .grid-4 { grid-template-columns: 1fr; }
   .btn-group { flex-direction: column; }
   .btn-group .btn { justify-content: center; }
