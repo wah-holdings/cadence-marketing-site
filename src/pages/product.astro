@@ -143,14 +143,14 @@ import { withBase } from '../lib/paths';
 }
 </style>
 
-<BaseLayout title="Product — Cadence Platform: Eight Modules" description="Eight modules. One operating plane. Cadence connects 1:1s, goals, talent calibration, ER, recognition, surveys, job architecture, and culture intelligence — in one platform." activeNav="product">
+<BaseLayout title="Product — Cadence Platform" description="One operating plane. Cadence connects 1:1s, goals, ER, recognition, surveys, job architecture, and culture intelligence — with roadmap previews clearly labeled." activeNav="product">
 
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Product</div>
-    <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Eight Modules · One Platform</div>
-    <h1>Everything people management requires — <span class="accent">in one place.</span></h1>
-    <p>Most organizations run management across five or six disconnected tools. Cadence replaces them with one connected operating plane — and produces intelligence none of them can individually.</p>
+    <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Live Workflows + Roadmap Previews</div>
+    <h1>People-management workflows — <span class="accent">clearly separated from roadmap.</span></h1>
+    <p>Most organizations run management across five or six disconnected tools. Cadence is building one connected operating plane. Current beta access covers the live workflows; roadmap previews are labeled below.</p>
     <div class="btn-group" style="justify-content:center;">
       <a href={withBase('/beta')} class="btn btn-accent btn-lg">Request beta access</a>
       <a href="#one-on-ones" class="btn btn-white-outline btn-lg">Explore the modules ↓</a>
@@ -162,7 +162,7 @@ import { withBase } from '../lib/paths';
   <div class="module-nav-inner">
     <a href="#one-on-ones">💬 1:1 Engine</a>
     <a href="#goals">🎯 Goals</a>
-    <a href="#nine-box">⬛ 9-Box</a>
+    <a href="#nine-box">⬛ 9-Box preview</a>
     <a href="#er">📋 ER</a>
     <a href="#recognition">⭐ Recognition</a>
     <a href="#surveys">📊 Surveys</a>
@@ -235,17 +235,15 @@ import { withBase } from '../lib/paths';
   <div class="container">
     <div class="feature-block">
       <div>
-        <div class="module-number-tag">Module 03 · ⬛ 9-Box Talent Calibration</div>
-        <h2 class="section-headline">Calibration with intelligence, not just a view.</h2>
-        <p>The 9-box is the most consequential conversation most organizations have about their people — and most run it on gut feeling, recency bias, and whoever speaks loudest in the room.</p>
-        <p>Cadence runs blind dual-rating: the L1 manager and L2 leader submit their ratings independently, without seeing each other's. When they diverge significantly, the system triggers structured coaching on where the gap likely comes from.</p>
+        <div class="module-number-tag">Roadmap preview · ⬛ 9-Box Talent Calibration</div>
+        <h2 class="section-headline">Calibration is planned, not currently GA.</h2>
+        <p>The 9-box experience below is a product-direction preview. It is not part of current purchasable beta access and should not be read as available for paying customers today.</p>
+        <p>Planned direction: blind dual-rating, L1/L2 divergence review, and structured calibration follow-through. These claims remain roadmap until the capability ships in production.</p>
         <ul class="feature-list">
-          <li>Blind dual-rating: L1 and L2 submit independently</li>
-          <li>Divergence scoring with bias-coaching prompts when L1/L2 gap exceeds threshold</li>
-          <li>Automatic top-right KVD nominations with retention flag</li>
-          <li>Bottom-left structured intervention workflows — PIP, role recasting, or transition</li>
-          <li>9-box movement tracking across cycles</li>
-          <li>Connected to Job Architecture for role-fit analysis</li>
+          <li>Coming: blind dual-rating for L1 and L2 inputs</li>
+          <li>Coming: divergence review and calibration prompts</li>
+          <li>Coming: structured follow-through for calibration outcomes</li>
+          <li>Not included in current beta pricing or current purchasable tiers</li>
         </ul>
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
@@ -272,7 +270,7 @@ import { withBase } from '../lib/paths';
         <ul class="feature-list">
           <li>Full case lifecycle: verbal warning → written → PIP → separation</li>
           <li>Case history connected to the full management record</li>
-          <li>HR and manager views with role-appropriate access controls</li>
+          <li>Current beta access uses flat Admin/Member permissions; granular HR and manager views are roadmap</li>
           <li>PIP builder with structured check-in cadence and measurable milestones</li>
           <li>Recidivism tracking — flag employees or managers with pattern histories</li>
           <li>Manager problem-solver score: upstream prevention metric</li>
@@ -362,7 +360,7 @@ import { withBase } from '../lib/paths';
           <li>Competency frameworks with level-by-level expectations</li>
           <li>Career path mapping: horizontal and vertical growth paths</li>
           <li>Visible in every 1:1 — both parties see the role context</li>
-          <li>9-box-triggered role recasting workflows</li>
+          <li>Roadmap preview: calibration-informed role-fit workflows</li>
           <li>Compensation banding integration</li>
         </ul>
       </div>
@@ -385,12 +383,12 @@ import { withBase } from '../lib/paths';
       <div>
         <div class="module-number-tag" style="color:rgba(245,166,35,0.9);">Module 08 · 🏆 Culture Scorecard</div>
         <h2 class="section-headline white">The intelligence no fragmented stack can produce.</h2>
-        <p style="color:rgba(255,255,255,0.75);font-size:16px;line-height:1.75;margin-bottom:16px;">No competitor can correlate 1:1 quality + ER patterns + recognition ratios + survey sentiment + goal attainment + 9-box movement into one composite score. They don't own all the planes. Cadence does.</p>
+        <p style="color:rgba(255,255,255,0.75);font-size:16px;line-height:1.75;margin-bottom:16px;">Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view. Calibration movement and predictive risk are roadmap inputs, not current GA claims.</p>
         <ul class="feature-list" style="color:rgba(255,255,255,0.75);">
           <li>Manager effectiveness scoring: composite of all signals</li>
-          <li>Turnover prediction: early warning at team and individual level</li>
+          <li>Roadmap preview: predictive retention risk</li>
           <li>Heat maps: visual org health across locations, teams, levels</li>
-          <li>A-player environment scoring</li>
+          <li>Roadmap preview: high-performer environment scoring</li>
           <li>Board-ready culture reporting</li>
           <li>Trend lines: org health over time, not just snapshots</li>
         </ul>
