@@ -161,17 +161,17 @@ import { withBase } from '../lib/paths';
       <div class="security-card">
         <div class="security-icon">🔒</div>
         <h4>Access Control</h4>
-        <p>Current beta access uses flat Admin/Member permissions. Granular manager, employee, HR, and CHRO access controls are roadmap work and are not represented as production-ready today.</p>
+        <p>Current self-serve customer account management is effectively Admin/Member. Internal role gates exist, but granular manager, employee, HR, and CHRO workspaces are roadmap work and are not represented as production-ready today.</p>
       </div>
       <div class="security-card">
         <div class="security-icon">📋</div>
         <h4>Audit Logging</h4>
-        <p>All administrative actions, data exports, and access to sensitive records (ER cases, AI outputs) generate immutable audit logs. Logs retained 7 years. Available for export on request.</p>
+        <p>Administrative actions and access to sensitive ER records generate audit logs. Export packaging and full AI-output audit coverage are handled case-by-case during beta unless separately verified for a tenant.</p>
       </div>
       <div class="security-card">
         <div class="security-icon">🧪</div>
         <h4>AI Data Handling</h4>
-        <p>Cadence does not train AI models on customer data. Meeting transcripts and 1:1 content are processed for the specific tenant's coaching outputs and are not used in model training. Coaching outputs are tenant-isolated.</p>
+        <p>Cadence does not train AI models on customer data. AI summaries and coaching are preview workflows; when enabled for a tenant, meeting content is processed only for that tenant's outputs and is not used in model training.</p>
       </div>
       <div class="security-card">
         <div class="security-icon">🛡️</div>
@@ -198,7 +198,7 @@ import { withBase } from '../lib/paths';
             <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Recording requires explicit opt-in from each participant</li>
             <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Revocation stops processing immediately — no retroactive capture</li>
             <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Unknown jurisdictions default to recording off</li>
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> AI summaries and coaching require the same consent as recording</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Preview AI summaries and coaching require the same consent as recording when enabled</li>
           </ul>
         </div>
       </div>
@@ -317,9 +317,9 @@ import { withBase } from '../lib/paths';
             <td>Delete or promote to approved summary. Employee can request deletion at any time.</td>
           </tr>
           <tr>
-            <td><strong>AI coaching outputs</strong></td>
+            <td><strong>AI coaching outputs (preview, if enabled)</strong></td>
             <td>365 days</td>
-            <td>Manager and employee coaching lanes retained and deleted separately. Not shared cross-lane.</td>
+            <td>Retention and lane visibility are configured during preview tenant setup. Not used for AI model training.</td>
           </tr>
           <tr>
             <td><strong>Consent &amp; policy receipts</strong></td>
@@ -379,7 +379,7 @@ import { withBase } from '../lib/paths';
         </div>
       </div>
       <div class="roadmap-item">
-        <div class="roadmap-status status-done">Done</div>
+        <div class="roadmap-status status-planned">Roadmap</div>
         <div>
           <h4>Access control roadmap</h4>
           <p>Current beta access uses flat Admin/Member permissions. Manager / employee / HR / CHRO / admin roles with separate data controls are roadmap work.</p>
