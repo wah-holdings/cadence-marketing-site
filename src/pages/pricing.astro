@@ -49,10 +49,10 @@ import { withBase } from '../lib/paths';
 .faq-item { background: white; border-radius: 12px; border: 1px solid var(--gray-100); padding: 24px; }
 .faq-q { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
 .faq-a { font-size: 15px; color: var(--gray-700); line-height: 1.7; }
-.beta-notice { background: rgba(245,166,35,0.08); border: 1px solid rgba(245,166,35,0.25); border-radius: 12px; padding: 20px 24px; margin-top: 40px; display: flex; gap: 14px; align-items: flex-start; }
-.beta-notice-icon { font-size: 20px; flex-shrink: 0; }
-.beta-notice-text { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
-.beta-notice-text strong { color: var(--primary); }
+.signup-notice { background: rgba(74,144,217,0.08); border: 1px solid rgba(74,144,217,0.2); border-radius: 12px; padding: 20px 24px; margin-top: 40px; display: flex; gap: 14px; align-items: flex-start; }
+.signup-notice-icon { font-size: 20px; flex-shrink: 0; }
+.signup-notice-text { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
+.signup-notice-text strong { color: var(--primary); }
 @media (max-width: 768px) {
   .pricing-grid { grid-template-columns: 1fr; }
   .compare-head { grid-template-columns: 1.5fr 1fr 1fr; }
@@ -62,23 +62,23 @@ import { withBase } from '../lib/paths';
 }
 </style>
 
-<BaseLayout title="Pricing — Cadence: Transparent Pricing" description="Cadence beta pricing, current access, and roadmap-labeled feature comparison." activeNav="pricing">
+<BaseLayout title="Pricing — Cadence: Transparent Pricing" description="Cadence pricing, current access, and roadmap-labeled feature comparison." activeNav="pricing">
 
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Pricing</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Transparent Pricing</div>
-    <h1>Transparent beta pricing. <span class="accent">Roadmap clearly marked.</span></h1>
-    <p>The average fragmented management stack costs $25–30 per seat per month — across tools that share no data. Cadence beta access is invitation-only today, with GA target pricing shown below.</p>
+    <h1>Transparent pricing. <span class="accent">Roadmap clearly marked.</span></h1>
+    <p>The average fragmented management stack costs $25–30 per seat per month — across tools that share no data. Cadence self-serve access starts through the live signup funnel, with roadmap capabilities clearly labeled below.</p>
   </div>
 </div>
 
 <section class="section section-light">
   <div class="container">
-    <div class="beta-notice">
-      <div class="beta-notice-icon">⚡</div>
-      <div class="beta-notice-text">
-        <strong>About beta pricing:</strong> Cadence is currently in invitation-only beta. The pricing below reflects our general availability targets ($12 / $24 / $48 per seat per month, billed annually). Current beta participants access the platform under early-access terms. We'll provide 90+ days notice before transitioning to GA pricing.
+    <div class="signup-notice">
+      <div class="signup-notice-icon">✓</div>
+      <div class="signup-notice-text">
+        <strong>Self-serve access is live:</strong> Essentials and Professional start through the Cadence signup funnel. Enterprise remains sales-led for security review, procurement, and custom rollout planning.
       </div>
     </div>
     <div class="pricing-grid">
@@ -88,7 +88,7 @@ import { withBase } from '../lib/paths';
         <div class="price-big"><sup>$</sup>12</div>
         <div class="price-period">per seat / month, billed annually</div>
         <div class="best-for"><strong>Best for:</strong> Organizations of 50–300 people building systematic management practices.</div>
-        <a href={withBase('/beta')} class="pricing-cta-btn cta-outline-btn">Request beta access</a>
+        <a href="https://app.cadencehr.ai/signup?plan=essentials&intent=self-serve&source=apex-pricing" class="pricing-cta-btn cta-outline-btn">Start free trial</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Includes</div>
         <ul class="features-list">
@@ -109,7 +109,7 @@ import { withBase } from '../lib/paths';
         <div class="price-big"><sup>$</sup>24</div>
         <div class="price-period">per seat / month, billed annually</div>
         <div class="best-for"><strong>Best for:</strong> Organizations of 100–1,000 people where the CHRO needs full Culture Scorecard visibility.</div>
-        <a href={withBase('/beta')} class="pricing-cta-btn cta-secondary-btn">Request beta access</a>
+        <a href="https://app.cadencehr.ai/signup?plan=professional&intent=self-serve&source=apex-pricing" class="pricing-cta-btn cta-secondary-btn">Buy now</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Essentials, plus</div>
         <ul class="features-list">
@@ -129,7 +129,7 @@ import { withBase } from '../lib/paths';
         <div class="price-custom">Custom</div>
         <div class="price-period">500+ seats · Annual contract</div>
         <div class="best-for"><strong>Best for:</strong> Organizations with 500+ employees or complex enterprise security requirements.</div>
-        <a href={withBase('/beta')} class="pricing-cta-btn cta-outline-btn">Talk to us</a>
+        <a href="mailto:hello@cadencehr.ai?subject=Enterprise%20pricing" class="pricing-cta-btn cta-outline-btn">Talk to us</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Professional, plus</div>
         <ul class="features-list">
@@ -144,7 +144,7 @@ import { withBase } from '../lib/paths';
       </div>
     </div>
     <div class="savings-row">
-      <div class="savings-text">Cadence Professional at 300 seats: <strong>$86,400/year</strong> &nbsp;·&nbsp; Comparable fragmented stack: <span class="strikethrough">$108,000+/year</span> &nbsp; <span class="highlight">Savings are GA target estimates; roadmap capabilities are not counted as current beta deliverables.</span></div>
+      <div class="savings-text">Cadence Professional at 300 seats: <strong>$86,400/year</strong> &nbsp;·&nbsp; Comparable fragmented stack: <span class="strikethrough">$108,000+/year</span> &nbsp; <span class="highlight">Savings estimates exclude roadmap capabilities that are not current deliverables.</span></div>
       <a href="#comparison" class="savings-link">See full comparison →</a>
     </div>
   </div>
@@ -198,11 +198,11 @@ import { withBase } from '../lib/paths';
       <h2 class="section-headline">Answers to common questions.</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">What's the difference between beta pricing and GA pricing?</div><div class="faq-a">During beta, access is invitation-only and pricing is discussed individually. The $12 / $24 / $48 tiers reflect our GA targets. We'll provide 90+ days notice before transitioning any beta participant to GA pricing, and beta participants will receive preferential terms.</div></div>
+      <div class="faq-item"><div class="faq-q">How does pricing work?</div><div class="faq-a">Essentials and Professional start through self-serve signup. Enterprise is sales-led because larger deployments typically require security review, procurement, SSO planning, and custom rollout support.</div></div>
       <div class="faq-item"><div class="faq-q">What's the minimum seat count?</div><div class="faq-a">Essentials starts at 50 seats. Professional starts at 100 seats. Enterprise is custom. If you're below the minimums, reach out anyway.</div></div>
       <div class="faq-item"><div class="faq-q">Is there an annual commitment required?</div><div class="faq-a">The published pricing is for annual billing. Monthly billing is available at a 20% premium. Multi-year agreements receive additional discounts.</div></div>
       <div class="faq-item"><div class="faq-q">What tools does Cadence replace?</div><div class="faq-a">Cadence Essentials targets 1:1 management, goals, recognition, pulse-survey response collection, and job-architecture import workflows. Professional adds ER case management and Culture Scorecard visibility. AI summaries/coaching, 9-box calibration, turnover prediction, full survey campaign management, and living job descriptions in 1:1s are preview or roadmap items, not current beta deliverables.</div></div>
-      <div class="faq-item"><div class="faq-q">Do you offer a free trial?</div><div class="faq-a">During beta, access is by invitation only rather than open trial. We offer a live walkthrough with sample data. Once we move to GA, we'll offer a standard free trial.</div></div>
+      <div class="faq-item"><div class="faq-q">Do you offer a free trial?</div><div class="faq-a">Yes. Essentials starts with a free trial through the live signup funnel. Professional checkout starts from the same signup path.</div></div>
     </div>
   </div>
 </section>
@@ -212,7 +212,7 @@ import { withBase } from '../lib/paths';
     <h2>Ready to consolidate your stack?</h2>
     <p>Tell us about your org and we'll build a consolidation model showing exactly what you'd replace and what you'd save.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
+      <a href="https://app.cadencehr.ai/signup?plan=essentials&intent=self-serve&source=apex-pricing-cta" class="btn btn-white btn-lg">Start free trial</a>
       <a href="mailto:hello@cadencehr.ai?subject=Pricing%20question" class="btn btn-white-outline btn-lg">Talk to us</a>
     </div>
   </div>

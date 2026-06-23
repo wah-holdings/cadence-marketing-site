@@ -43,9 +43,9 @@ const { title, description = 'The AI-powered operating plane that makes every ma
       <li><a href={withBase('/resources')} class={activeNav === 'resources' ? 'active' : ''}>Resources</a></li>
     </ul>
     <div class="nav-actions">
-      <span class="beta-pill"><span class="beta-dot"></span>Beta · Invitation only</span>
+      <span class="beta-pill"><span class="beta-dot"></span>Live access</span>
       <a href="https://app.cadencehr.ai/" class="btn-signin">Sign in</a>
-      {activeNav !== 'beta' && <a href={withBase('/beta')} class="btn-demo">Request Access</a>}
+      <a href="https://app.cadencehr.ai/signup" class="btn-demo">Start free trial</a>
     </div>
   </div>
 </nav>
@@ -81,7 +81,7 @@ const { title, description = 'The AI-powered operating plane that makes every ma
           <h4>Company</h4>
           <a href={withBase('/about')}>About</a>
           <a href={withBase('/resources#manifesto')}>Manifesto</a>
-          <a href={withBase('/beta')}>Beta Access</a>
+          <a href="https://app.cadencehr.ai/signup">Start free trial</a>
         </div>
         <div class="footer-col">
           <h4>Resources</h4>
@@ -100,7 +100,7 @@ const { title, description = 'The AI-powered operating plane that makes every ma
     </div>
     <div class="footer-bottom">
       <span>© 2026 Cadence. Built for the new shape of work.</span>
-      <span style="font-size:11px;opacity:0.7;">Beta access is currently invitation-only. Pricing reflects GA targets.</span>
+      <span style="font-size:11px;opacity:0.7;">Self-serve workspace access starts through the Cadence signup funnel.</span>
     </div>
   </div>
 </footer>
