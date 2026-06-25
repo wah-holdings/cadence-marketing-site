@@ -52,17 +52,17 @@ import { withBase } from '../lib/paths';
 @media (max-width: 768px) { .use-case-grid { grid-template-columns: 1fr; } }
 </style>
 
-<BaseLayout title="Solutions — Cadence for Every Layer of the Org" description="Cadence works for ICs who want visibility, managers who want to be better, senior leaders who need signal across their chain, and CHROs who need operational command." activeNav="solutions">
+<BaseLayout title="Solutions — Cadence for Every Layer of the Org" description="Cadence works for ICs who want visibility, managers who want to be better, senior leaders who need signal across their chain, CHROs who need operational command, and CEOs who need strategic altitude." activeNav="solutions">
 
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Solutions</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Built for every layer</div>
-    <h1>One platform. <span class="accent">Four perspectives.</span></h1>
-    <p>Cadence looks different depending on where you sit. The IC sees their career path and coaching. The manager sees their team health and 1:1 workspace. The CHRO sees the whole organization — in one view. Same platform, different lenses.</p>
+    <h1>One platform. <span class="accent">Five perspectives.</span></h1>
+    <p>Cadence looks different depending on where you sit: the IC sees clarity and coaching, the manager sees team health, the L2 sees signal across the chain, the CHRO sees operational command, and the CEO sees whether the org is healthy enough to execute.</p>
     <div class="btn-group" style="justify-content:center;">
       <a href="#individual-contributors" class="btn btn-white btn-lg">Find your role ↓</a>
-      <a href={withBase('/beta')} class="btn btn-white-outline btn-lg">Request access</a>
+      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-solutions" class="btn btn-white-outline btn-lg">Start free trial</a>
     </div>
   </div>
 </div>
@@ -73,6 +73,7 @@ import { withBase } from '../lib/paths';
     <a href="#managers">🧑‍💼 Managers</a>
     <a href="#senior-leaders">📡 Senior Leaders</a>
     <a href="#chro">🏛️ CHROs</a>
+    <a href="#ceo">📈 CEOs</a>
   </div>
 </div>
 
@@ -181,7 +182,35 @@ import { withBase } from '../lib/paths';
           <div class="use-case-card" style="background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12);"><div class="icon">📉</div><h4 style="color:white;">Retention-risk roadmap</h4><p style="color:rgba(255,255,255,0.65);">Predictive retention warnings are planned, not currently available in production.</p></div>
         </div>
         <div style="text-align:center;margin-top:32px;">
-          <a href={withBase('/beta')} class="btn btn-accent btn-lg">Request a CHRO walkthrough →</a>
+          <a href="https://app.cadencehr.ai/signup?persona=chro&tier=professional&intent=trial&source=apex-solutions-chro" class="btn btn-accent btn-lg">Start a People team trial →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="persona-section" id="ceo" style="background:var(--gray-50);">
+  <div class="container">
+    <div class="feature-block reverse" style="border-bottom:none;">
+      <div>
+        <div class="section-badge">CEOs</div>
+        <h2 class="section-headline">A strategic altitude view of whether the org is healthy.</h2>
+        <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:20px;">The CEO does not need another daily workflow. The CEO needs a fast answer to a harder question: is the organization healthy enough to execute?</p>
+        <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:24px;">Cadence gives executives high-level Culture Scorecard metrics, manager-effectiveness hotspots, KVD and intervention coverage, and focused drill-down when something catches attention. Predictive retention and full KVD workflows remain roadmap until verified as live customer access.</p>
+        <div class="quote-block">
+          <p>"The CEO view should answer one question quickly: is the organization healthy enough to execute?"</p>
+          <div class="attribution">Cadence product DNA</div>
+          <div class="role">Executive view principle</div>
+        </div>
+      </div>
+      <div>
+        <div class="use-case-grid" style="grid-template-columns:1fr 1fr;">
+          <div class="use-case-card"><div class="icon">🏆</div><h4>Culture Scorecard rollup</h4><p>High-level org-health signal without forcing the CEO into every people workflow.</p></div>
+          <div class="use-case-card"><div class="icon">🔥</div><h4>Manager hotspots</h4><p>See where management quality needs attention before lagging outcomes become the only signal.</p></div>
+          <div class="use-case-card"><div class="icon">⭐</div><h4>KVD roster roadmap</h4><p>Top-talent designation and movement are roadmap views, clearly separated from current live workflows.</p></div>
+          <div class="use-case-card"><div class="icon">✅</div><h4>Intervention coverage</h4><p>Track whether bottom-left or at-risk situations have accountable follow-through.</p></div>
+          <div class="use-case-card"><div class="icon">📈</div><h4>Org health trend lines</h4><p>Understand directionality across culture, goals, recognition, ER, and survey signals.</p></div>
+          <div class="use-case-card"><div class="icon">🔎</div><h4>Targeted drill-down</h4><p>Move from board-level signal to the specific area that needs a leadership conversation.</p></div>
         </div>
       </div>
     </div>
@@ -191,9 +220,9 @@ import { withBase } from '../lib/paths';
 <section class="section-cta">
   <div class="container">
     <h2>Ready to see it in action?</h2>
-    <p>Beta access is by invitation. Tell us about your org and we'll walk you through the experience built for your role.</p>
+    <p>Start a trial workspace or explore the platform by role before you bring Cadence to a broader leadership conversation.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href={withBase('/beta')} class="btn btn-white btn-lg">Request beta access</a>
+      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-solutions-cta" class="btn btn-white btn-lg">Start free trial</a>
       <a href={withBase('/product')} class="btn btn-white-outline btn-lg">Explore the platform</a>
     </div>
   </div>
