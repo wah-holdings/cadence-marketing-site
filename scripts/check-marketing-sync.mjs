@@ -1,0 +1,109 @@
+import { readFileSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join, resolve } from "node:path";
+
+const root = dirname(dirname(fileURLToPath(import.meta.url)));
+const read = (path) => readFileSync(join(root, path), "utf8");
+
+const files = {
+  data: read("src/content/marketingData.ts"),
+  home: read("src/pages/index.astro"),
+  product: read("src/pages/product.astro"),
+  solutions: read("src/pages/solutions.astro"),
+  pricing: read("src/pages/pricing.astro"),
+  resources: read("src/pages/resources.astro"),
+  security: read("src/pages/security.astro"),
+  about: read("src/pages/about.astro"),
+  layout: read("src/layouts/BaseLayout.astro"),
+};
+
+const requiredPhrases = [
+  "Management Operating Plane for Distributed Teams",
+  "Close the remote-contributor management chasm.",
+  "See product proof",
+  "Live workspace access",
+  "Coming Q3 previews labeled",
+  "Humans own decisions",
+];
+
+const appRequiredPhrases = [
+  "Management operating plane for distributed teams",
+  "Close the remote-contributor management chasm.",
+  "See product proof",
+  "Live workspace access",
+  "Coming Q3 previews labeled",
+  "Humans own decisions",
+];
+
+const checks = [
+  {
+    name: "single public-site marketing data module carries canonical hero/trust phrases",
+    ok: requiredPhrases.every((phrase) => files.data.includes(phrase)),
+  },
+  {
+    name: "homepage renders canonical app-marketing hero and proof CTA",
+    ok:
+      files.home.includes("heroMessaging.headline") &&
+      files.home.includes("heroMessaging.secondaryCta.label") &&
+      files.home.includes('id="proof"'),
+  },
+  {
+    name: "homepage exposes expandable real product proof screenshots",
+    ok:
+      files.home.includes("proofScreenshots.map") &&
+      files.home.includes("target=\"_blank\"") &&
+      files.data.includes("cadence-homepage-hero-2026-05-16.png"),
+  },
+  {
+    name: "deeper public pages no longer use stale sales-led request-access CTAs",
+    ok: ["product", "solutions", "about"].every(
+      (key) => !/Request (beta )?access|we.ll reach out|schedule a walkthrough/i.test(files[key]),
+    ),
+  },
+  {
+    name: "public signup CTAs use app tier parameter, not stale plan parameter",
+    ok:
+      files.home.includes("tier=essentials") &&
+      files.home.includes("tier=professional") &&
+      files.pricing.includes("tier=essentials") &&
+      files.pricing.includes("tier=professional") &&
+      !Object.values(files).some((content) => /app\.cadencehr\.ai\/signup\?[^"']*plan=/.test(content)),
+  },
+  {
+    name: "beta-era primary CTA copy is not used on public non-beta pages",
+    ok: ["home", "product", "solutions", "pricing", "resources", "security", "about", "layout"].every(
+      (key) => !files[key].includes("Request beta access"),
+    ),
+  },
+];
+
+const appPagePath = process.env.CADENCE_APP_MARKETING_PAGE
+  ? resolve(process.env.CADENCE_APP_MARKETING_PAGE)
+  : resolve(root, "../code/cadence-web/src/app/page.tsx");
+const appMarketingDataPath = process.env.CADENCE_APP_MARKETING_DATA
+  ? resolve(process.env.CADENCE_APP_MARKETING_DATA)
+  : resolve(root, "../code/cadence-web/src/components/marketing/marketingData.ts");
+
+if (existsSync(appPagePath) || existsSync(appMarketingDataPath)) {
+  const appPage = existsSync(appPagePath) ? readFileSync(appPagePath, "utf8") : "";
+  const appData = existsSync(appMarketingDataPath) ? readFileSync(appMarketingDataPath, "utf8") : "";
+  const appSource = `${appPage}\n${appData}`.toLowerCase();
+  checks.push({
+    name: "canonical app marketing source contains the phrases the public site is enforcing",
+    ok: appRequiredPhrases.every((phrase) => appSource.includes(phrase.toLowerCase())),
+  });
+} else {
+  console.warn(
+    `Skipping app marketing comparison; set CADENCE_APP_MARKETING_PAGE or CADENCE_APP_MARKETING_DATA. Checked: ${appPagePath} and ${appMarketingDataPath}`,
+  );
+}
+
+const failures = checks.filter((check) => !check.ok);
+
+if (failures.length > 0) {
+  console.error("Marketing sync check failed:");
+  for (const failure of failures) console.error(`- ${failure.name}`);
+  process.exit(1);
+}
+
+console.log(`Marketing sync check passed (${checks.length}/${checks.length}).`);
