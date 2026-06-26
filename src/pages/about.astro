@@ -1,6 +1,29 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
+
+const productValues = [
+  {
+    title: 'Management quality should not be lottery-based.',
+    detail:
+      'Every employee deserves consistent coaching, clarity, and follow-through, even when their manager is still developing those habits. Cadence turns the behaviors of excellent managers into a repeatable operating rhythm: structured 1:1s, visible goals, documented decisions, recognition, and the context leaders need to intervene before people disappear.',
+  },
+  {
+    title: 'The 1:1 is the operating system.',
+    detail:
+      'Cadence starts with the leadership-subordinate conversation because that is where performance, trust, accountability, coaching, and development actually happen. The product is designed so agendas, notes, goals, decisions, and follow-up all return to that relationship instead of scattering across disconnected tools.',
+  },
+  {
+    title: 'Measure what matters, act on what you measure.',
+    detail:
+      'Telemetry only matters when it changes behavior. Cadence connects live management workflows such as 1:1 consistency, goal progress, recognition, survey sentiment, and ER patterns so leaders can act on converging evidence instead of waiting for lagging indicators like regretted attrition.',
+  },
+  {
+    title: 'AI develops managers. Managers develop people.',
+    detail:
+      'AI in Cadence is coaching infrastructure, not a replacement for human judgment. It helps managers prepare, reflect, spot patterns, and follow through, while people decisions stay with accountable humans who know the employee and own the relationship.',
+  },
+];
 ---
 <style>
 .founder-section {
@@ -102,17 +125,66 @@ import { withBase } from '../lib/paths';
 .values-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  gap: 16px;
   margin-top: 40px;
 }
 .value-card {
+  width: 100%;
+  min-height: 132px;
   padding: 24px;
-  border-radius: 14px;
-  border: 1px solid var(--gray-100);
+  border-radius: 12px;
+  border: 1px solid var(--gray-200);
   background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
 }
-.value-card h4 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
-.value-card p { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+.value-card:hover,
+.value-card:focus-visible,
+.value-card[aria-expanded="true"] {
+  border-color: var(--secondary);
+  box-shadow: 0 10px 28px rgba(30,58,95,0.1);
+  transform: translateY(-1px);
+}
+.value-card:focus-visible {
+  outline: 3px solid rgba(74,144,217,0.25);
+  outline-offset: 3px;
+}
+.value-card-label {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.25;
+  margin-bottom: 14px;
+}
+.value-card-cue {
+  display: inline-flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+.value-detail {
+  margin-top: 18px;
+  padding: 28px;
+  border-radius: 12px;
+  border: 1px solid rgba(74,144,217,0.22);
+  background: linear-gradient(135deg, rgba(74,144,217,0.08), rgba(245,166,35,0.08));
+}
+.value-detail h3 {
+  font-size: 22px;
+  line-height: 1.2;
+  font-weight: 850;
+  color: var(--primary);
+  margin: 0 0 12px;
+}
+.value-detail p {
+  font-size: 16px;
+  color: var(--gray-700);
+  line-height: 1.75;
+  margin: 0;
+}
 
 @media (max-width: 768px) {
   .founder-section { grid-template-columns: 1fr; }
@@ -226,30 +298,56 @@ import { withBase } from '../lib/paths';
 <section class="section section-white" id="values">
   <div class="container">
     <div class="center">
-      <div class="section-badge">How We Work</div>
-      <h2 class="section-headline">Four things we actually believe.</h2>
-      <p class="section-subhead">Not values-as-marketing. The principles that shape product decisions, customer interactions, and how we run ourselves.</p>
+      <div class="section-badge">Product Values</div>
+      <h2 class="section-headline">Four beliefs that shape the product.</h2>
+      <p class="section-subhead">Click a value to see how it shows up in Cadence and why it matters for distributed teams.</p>
     </div>
     <div class="values-grid">
-      <div class="value-card">
-        <h4>📐 Design beats aspiration</h4>
-        <p>We don't believe organizations improve by asking managers to "be better." We believe they improve by designing systems that make better management the default. This is the entire thesis of Cadence, and we apply it to ourselves too.</p>
-      </div>
-      <div class="value-card">
-        <h4>🔍 Honest about what we are and aren't</h4>
-        <p>We're an early-stage company with real customers and real limits. We won't oversell what Cadence can do today, paper over gaps with jargon, or claim certifications we haven't earned yet. The SOC 2 roadmap is honest. The beta pricing note is honest. We'd rather lose a deal than set up a customer to be disappointed.</p>
-      </div>
-      <div class="value-card">
-        <h4>🏗️ Long-term architecture over short-term features</h4>
-        <p>We could add more features faster if we were building point solutions. We're not. The Culture Scorecard is only possible because we own all eight planes. We make product decisions based on whether they make the system more coherent, not whether they win a feature comparison checklist.</p>
-      </div>
-      <div class="value-card">
-        <h4>👂 Close to customers, always</h4>
-        <p>Every beta customer gets a direct line to the founding team. We hold weekly check-ins. We answer questions in Slack, not support tickets. We build on the patterns we see in real usage, not on what we think customers want. This is only possible at our stage, and we're taking full advantage of it.</p>
-      </div>
+      {productValues.map((value, index) => (
+        <button
+          class="value-card"
+          type="button"
+          aria-expanded={index === 0 ? 'true' : 'false'}
+          aria-controls="product-value-detail"
+          data-value-card
+          data-title={value.title}
+          data-detail={value.detail}
+        >
+          <span class="value-card-label">{value.title}</span>
+          <span class="value-card-cue">{index === 0 ? 'Selected' : 'Read more'}</span>
+        </button>
+      ))}
+    </div>
+    <div class="value-detail" id="product-value-detail" aria-live="polite">
+      <h3>{productValues[0].title}</h3>
+      <p>{productValues[0].detail}</p>
     </div>
   </div>
 </section>
+
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-value-card]'));
+  const detail = document.getElementById('product-value-detail');
+  const detailTitle = detail?.querySelector('h3');
+  const detailBody = detail?.querySelector('p');
+
+  cards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const title = card.dataset.title || '';
+      const body = card.dataset.detail || '';
+
+      cards.forEach((item) => {
+        const isSelected = item === card;
+        item.setAttribute('aria-expanded', String(isSelected));
+        const cue = item.querySelector('.value-card-cue');
+        if (cue) cue.textContent = isSelected ? 'Selected' : 'Read more';
+      });
+
+      if (detailTitle) detailTitle.textContent = title;
+      if (detailBody) detailBody.textContent = body;
+    });
+  });
+</script>
 
 <!-- LOCATION & CONTACT -->
 <section class="section section-light">
