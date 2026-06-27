@@ -1,0 +1,24 @@
+{
+  "description": "CAD-7935 positive control: staged 9-box comparison copy may publish after registry flips real GA",
+  "registryPatches": [
+    {
+      "path": "capabilities.nine_box.calibration.status",
+      "value": "ga"
+    },
+    {
+      "path": "capabilities.nine_box.calibration.marketingLabel",
+      "value": "available"
+    },
+    {
+      "path": "capabilities.nine_box.calibration.gaDate",
+      "value": "2026-09-01"
+    }
+  ],
+  "sourcePatches": [
+    {
+      "page": "src/pages/resources.astro",
+      "find": "9-box movement and predictive retention risk are roadmap inputs, not current competitor-superiority claims.",
+      "replace": "9-box movement and predictive retention risk make Cadence structurally superior."
+    }
+  ]
+}
