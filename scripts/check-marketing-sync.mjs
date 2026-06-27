@@ -1,4 +1,5 @@
 import { readFileSync, existsSync } from "node:fs";
+import { spawnSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { dirname, join, resolve } from "node:path";
 
@@ -107,3 +108,13 @@ if (failures.length > 0) {
 }
 
 console.log(`Marketing sync check passed (${checks.length}/${checks.length}).`);
+
+const realityCheck = spawnSync(process.execPath, [join(root, "scripts/check-marketing-reality.mjs")], {
+  cwd: root,
+  env: process.env,
+  stdio: "inherit",
+});
+
+if (realityCheck.status !== 0) {
+  process.exit(realityCheck.status ?? 1);
+}

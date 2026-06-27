@@ -1,0 +1,10 @@
+{
+  "description": "CAD-7739 demo fixture: simulates the public /security page drifting back to the stale raw-audio retention claim.",
+  "sourcePatches": [
+    {
+      "page": "src/pages/security.astro",
+      "find": "{retentionFacts.rawAudio.label}",
+      "replace": "30 days"
+    }
+  ]
+}
