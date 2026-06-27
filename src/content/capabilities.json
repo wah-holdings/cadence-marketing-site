@@ -1,0 +1,142 @@
+{
+  "$schema": "./capabilities.schema.json",
+  "generatedFrom": {
+    "source": "CAD-7653 Pillar-1 Feature-Reality Sync Gate v1",
+    "owner": "Maya marketing-truth gate + engineering feature owners",
+    "updatedAt": "2026-06-27"
+  },
+  "facts": {
+    "marketing": {
+      "lastUpdated": {
+        "label": "June 2026",
+        "source": "registry.generatedFrom.updatedAt"
+      }
+    },
+    "retention": {
+      "rawAudio": {
+        "defaultDays": 15,
+        "label": "15 days",
+        "source": "prod retention policy / CAD-7617 correction"
+      },
+      "draftTranscript": {
+        "defaultDays": 180,
+        "label": "180 days"
+      },
+      "coachingOutputs": {
+        "defaultDays": 365,
+        "label": "365 days"
+      },
+      "policyReceipts": {
+        "defaultYears": 7,
+        "label": "7 years"
+      }
+    },
+    "pricing": {
+      "essentialsAnnualSeatMonthlyUsd": 12,
+      "professionalAnnualSeatMonthlyUsd": 24,
+      "enterpriseTargetSeatMonthlyUsd": 48,
+      "betaToGaNoticeDays": 90
+    }
+  },
+  "capabilities": {
+    "one_on_one.engine": {
+      "status": "ga",
+      "prodFlag": "ONE_ON_ONE_ENGINE_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "ai.meeting_summaries": {
+      "status": "ga",
+      "prodFlag": "AI_SUMMARY_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "ai.manager_coaching": {
+      "status": "ga",
+      "prodFlag": "MANAGER_COACHING_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "ai.employee_coaching": {
+      "status": "ga",
+      "prodFlag": "EMPLOYEE_COACHING_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "goals.okr_tracking": {
+      "status": "ga",
+      "prodFlag": "GOALS_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "job_architecture": {
+      "status": "ga",
+      "prodFlag": "JOB_ARCHITECTURE_ENABLED",
+      "gaDate": "2026-06-26",
+      "marketingLabel": "available_not_promoted",
+      "reviewOwner": "Maya",
+      "notes": "GA in code does not authorize public promotion until Maya flips marketingLabel."
+    },
+    "recognition.rewards": {
+      "status": "ga",
+      "prodFlag": "RECOGNITION_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "surveys.engine": {
+      "status": "ga",
+      "prodFlag": "SURVEYS_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "nine_box.calibration": {
+      "status": "preview",
+      "prodFlag": "NINE_BOX_ENABLED",
+      "gaDate": null,
+      "marketingLabel": "preview",
+      "reviewOwner": "Maya"
+    },
+    "employee_relations.command_center": {
+      "status": "ga",
+      "prodFlag": "ER_CASES_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "culture_scorecard": {
+      "status": "ga",
+      "prodFlag": "SCORECARD_ENABLED",
+      "gaDate": "2026-05-16",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    },
+    "turnover_prediction": {
+      "status": "preview",
+      "prodFlag": "TURNOVER_PREDICTION_ENABLED",
+      "gaDate": null,
+      "marketingLabel": "preview",
+      "reviewOwner": "Maya"
+    },
+    "security.sso_saml": {
+      "status": "roadmap",
+      "prodFlag": "SSO_ENTITLEMENT",
+      "gaDate": null,
+      "marketingLabel": "roadmap",
+      "reviewOwner": "Maya"
+    },
+    "security.configurable_retention": {
+      "status": "ga",
+      "prodFlag": "RETENTION_POLICY_ENABLED",
+      "gaDate": "2026-06-20",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya"
+    }
+  }
+}

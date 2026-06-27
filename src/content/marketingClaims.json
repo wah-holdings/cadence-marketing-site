@@ -1,0 +1,99 @@
+{
+  "$schema": "./marketingClaims.schema.json",
+  "scope": "CAD-7739 v1 high-consequence public claims",
+  "claims": [
+    {
+      "id": "security.last_updated.registry_sourced",
+      "page": "src/pages/security.astro",
+      "type": "last_updated",
+      "requiredSourceExpression": "marketingFacts.lastUpdated.label"
+    },
+    {
+      "id": "security.retention.raw_audio_default",
+      "page": "src/pages/security.astro",
+      "type": "retention_fact",
+      "factPath": "retention.rawAudio.label",
+      "sourceExpression": "retentionFacts.rawAudio.label",
+      "capability": "security.configurable_retention"
+    },
+    {
+      "id": "pricing.essentials.one_on_one",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "one_on_one.engine",
+      "sourceContains": "1:1 Management Engine",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.essentials.goals",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "goals.okr_tracking",
+      "sourceContains": "Goals &amp; OKR Tracking",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.essentials.surveys",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "surveys.engine",
+      "sourceContains": "Pulse survey response collection and aggregate analytics",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.professional.nine_box",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "nine_box.calibration",
+      "sourceContains": "9-Box Talent Calibration",
+      "publicPromotion": false
+    },
+    {
+      "id": "pricing.professional.er",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "employee_relations.command_center",
+      "sourceContains": "ER Command Center",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.professional.culture_scorecard",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "culture_scorecard",
+      "sourceContains": "Full Culture Scorecard",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.enterprise.sso",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "security.sso_saml",
+      "sourceContains": "SSO / SAML",
+      "publicPromotion": false
+    },
+    {
+      "id": "pricing.enterprise.configurable_retention",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "security.configurable_retention",
+      "sourceContains": "Configurable data retention",
+      "publicPromotion": true
+    },
+    {
+      "id": "resources.competitor.culture_scorecard_superiority",
+      "page": "src/pages/resources.astro",
+      "type": "competitor_superiority",
+      "capability": "culture_scorecard",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view.",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.essentials_price",
+      "page": "src/pages/pricing.astro",
+      "type": "hard_number",
+      "factPath": "pricing.essentialsAnnualSeatMonthlyUsd",
+      "expectedText": "$</sup>12"
+    }
+  ]
+}
