@@ -1,0 +1,308 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+
+const matrixRows = [
+  ['Core Management', '1:1 Management Engine', '✓', '~', '✓', '—', '✓', '—', '~'],
+  ['Core Management', 'AI meeting coaching (Cadence preview)', '~ preview', '—', '~ Kona only', '—', '~ transcript only', '—', '—'],
+  ['Goals & OKRs', 'Goals & OKR Tracking', '✓', '✓', '✓', '~', '—', '—', '✓'],
+  ['Goals & OKRs', 'Live goal context in 1:1 (Cadence preview)', '~ preview', '—', '✓', '—', '~', '—', '—'],
+  ['Talent Calibration Roadmap', '9-Box Talent Calibration (Cadence roadmap preview)', '~ roadmap', '✓', '~', '~', '—', '—', '~'],
+  ['Talent Calibration Roadmap', 'Blind dual-rating with coaching (Cadence roadmap preview)', '~ roadmap', '—', '—', '—', '—', '—', '~'],
+  ['Employee Relations', 'ER Command Center', '✓', '—', '—', '—', '—', '✓', '—'],
+  ['Recognition', 'Recognition & Rewards', '✓', '✓', '✓', '~', '—', '—', '—'],
+  ['Recognition', '5:1 ratio tracking (Cadence preview)', '~ preview', '—', '—', '—', '—', '—', '—'],
+  ['Surveys', 'Survey Engine (pulse live; broader templates roadmap)', '~ pulse live', '✓', '✓', '✓', '—', '—', '~'],
+  ['Surveys', 'Manager-level signal attribution (Cadence preview)', '~ preview', '~', '~', '~', '—', '—', '—'],
+  ['Intelligence Layer', 'Unified Culture Scorecard', '✓', '—', '—', '—', '—', '—', '—'],
+  ['Intelligence Layer', 'Cross-signal turnover prediction (Cadence roadmap preview)', '~ roadmap', '~', '—', '~', '—', '—', '—'],
+];
+
+const competitors = [
+  {
+    name: 'Lattice',
+    niche: 'Best for performance review-centric orgs at 1,000+ seats',
+    note: 'Strong performance review workflows, enterprise OKR depth, and HRIS switching-cost lock-in.',
+    cadence: 'Choose Cadence when the management operating record, ER context, 1:1s, recognition, surveys, and culture signal need to connect.',
+  },
+  {
+    name: '15Five',
+    niche: 'Best for SMBs wanting an easy, affordable people-performance entry point',
+    note: 'Transparent pricing, check-ins, manager effectiveness, and Kona-style AI coaching direction.',
+    cadence: 'Choose Cadence when ER context and Culture Scorecard visibility need to sit inside manager workflows.',
+  },
+  {
+    name: 'Culture Amp',
+    niche: 'Best for survey-first, data-driven People organizations',
+    note: 'Deep engagement survey benchmarks, people science, and comment analysis.',
+    cadence: 'Choose Cadence when survey signal must connect to manager accountability and operating workflows.',
+  },
+  {
+    name: 'Fellow',
+    niche: 'Best for teams that primarily need meeting agendas and transcription',
+    note: 'Meeting management, notes, action items, and AI meeting memory.',
+    cadence: 'Choose Cadence when meetings need to connect to goals, recognition, ER context, surveys, and culture signal.',
+  },
+  {
+    name: 'HR Acuity',
+    niche: 'Best for employee-relations-heavy organizations',
+    note: 'Deep ER case management, investigation structure, documentation, and legal-team workflows.',
+    cadence: 'Choose Cadence when ER context should connect upstream to the broader management record.',
+  },
+  {
+    name: 'Betterworks',
+    niche: 'Best for enterprise goal alignment and OKR operations',
+    note: 'Goals, performance enablement, feedback, and enterprise goal alignment.',
+    cadence: 'Choose Cadence when goal health must stay close to 1:1s, coaching, and culture signal.',
+  },
+];
+
+let previousGroup = '';
+const matrixRowsWithGroup = matrixRows.map((row) => {
+  const showGroup = row[0] !== previousGroup;
+  previousGroup = row[0];
+  return { row, showGroup };
+});
+---
+<style>
+.compare-intro-list {
+  display: grid;
+  gap: 10px;
+  max-width: 860px;
+  margin: 28px auto 0;
+  padding: 0;
+  list-style: none;
+}
+.compare-intro-list li {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.14);
+  border-radius: 10px;
+  color: rgba(255,255,255,0.78);
+  font-size: 14px;
+  line-height: 1.6;
+  padding: 12px 16px;
+}
+.matrix-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  border-radius: 14px;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 1px 3px rgba(30,58,95,0.04);
+  background: white;
+}
+.matrix {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 980px;
+}
+.matrix th {
+  background: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 14px 16px;
+  text-align: center;
+  white-space: nowrap;
+}
+.matrix th:first-child { text-align: left; }
+.matrix th.cadence-col { background: var(--secondary); }
+.matrix td {
+  padding: 12px 16px;
+  font-size: 13px;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-700);
+}
+.matrix td:first-child { text-align: left; font-weight: 500; }
+.matrix tr:last-child td { border-bottom: none; }
+.matrix-group td {
+  background: rgba(74,144,217,0.04);
+  color: var(--secondary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 9px 16px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.yes { color: var(--success); font-size: 16px; font-weight: 800; }
+.no { color: var(--gray-300); font-size: 16px; }
+.partial { color: var(--warning); font-size: 13px; font-weight: 700; }
+.wins-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+.win-card,
+.competitor-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 24px;
+}
+.win-card { border-left: 4px solid var(--secondary); }
+.win-card h3,
+.competitor-name {
+  color: var(--primary);
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.win-card p,
+.competitor-card p {
+  color: var(--gray-500);
+  font-size: 14px;
+  line-height: 1.65;
+}
+.competitor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+.competitor-niche {
+  color: var(--secondary);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.cadence-note {
+  color: var(--secondary-dark) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  margin-top: 12px;
+}
+@media (max-width: 900px) {
+  .wins-grid,
+  .competitor-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<BaseLayout
+  title="Compare Cadence — People Platform Competitive Matrix"
+  description="Compare Cadence with Lattice, 15Five, Culture Amp, Fellow, HR Acuity, and Betterworks across live people-management workflows and roadmap-labeled previews."
+  activeNav="compare"
+>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Compare</div>
+    <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Competitive Research · Q2 2026</div>
+    <h1>Cadence is the management operating plane, <span class="accent">not another point solution.</span></h1>
+    <p>Lattice, 15Five, Culture Amp, Fellow, HR Acuity, and Betterworks each solve important people problems. Cadence is built around the connected manager-employee operating record.</p>
+    <ul class="compare-intro-list">
+      <li>Cadence current claims are limited to live or explicitly enabled workflows; staged capabilities are marked preview or roadmap.</li>
+      <li>✓ = substantive current coverage · ~ = partial, shallow, preview, or roadmap · — = absent.</li>
+      <li>9-box calibration, predictive retention, and full cross-signal movement analysis remain roadmap or preview until the registry marks them GA and marketable.</li>
+    </ul>
+  </div>
+</div>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Coverage Matrix</div>
+      <h2 class="section-headline">One plane, with current claims separated from roadmap.</h2>
+      <p class="section-subhead">The comparison below keeps Cadence availability labels conservative so crawlers, buyers, and AI answer engines do not confuse product direction with shipped capability.</p>
+    </div>
+
+    <div class="matrix-wrap">
+      <table class="matrix">
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th class="cadence-col">Cadence</th>
+            <th>Lattice</th>
+            <th>15Five</th>
+            <th>Culture Amp</th>
+            <th>Fellow</th>
+            <th>HR Acuity</th>
+            <th>Betterworks</th>
+          </tr>
+        </thead>
+        <tbody>
+          {matrixRowsWithGroup.map(({ row: [group, module, cadence, lattice, fifteenFive, cultureAmp, fellow, hrAcuity, betterworks], showGroup }) => {
+            const cells = [cadence, lattice, fifteenFive, cultureAmp, fellow, hrAcuity, betterworks];
+            return (
+              <>
+                {showGroup && <tr class="matrix-group"><td colspan="8">{group}</td></tr>}
+                <tr>
+                  <td>{module}</td>
+                  {cells.map((cell) => (
+                    <td class={cell === '✓' ? 'yes' : cell === '—' ? 'no' : 'partial'}>{cell}</td>
+                  ))}
+                </tr>
+              </>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Structural Differences</div>
+      <h2 class="section-headline">Why these gaps are architectural, not tactical.</h2>
+      <p class="section-subhead">Some differences are live; others describe product direction and stay labeled as preview or roadmap.</p>
+    </div>
+    <div class="wins-grid">
+      <div class="win-card">
+        <h3>1:1 as the atomic unit</h3>
+        <p>Cadence gives the actual management conversation a structured workspace and connects it to goals, recognition, ER context, surveys, and culture signal.</p>
+      </div>
+      <div class="win-card">
+        <h3>Coaching is human-owned</h3>
+        <p>AI meeting summaries and coaching are positioned as development infrastructure. Humans remain accountable for decisions and external communication.</p>
+      </div>
+      <div class="win-card">
+        <h3>ER context connects upstream</h3>
+        <p>Cadence's live differentiator is connecting ER case management to the broader management record, while prediction and prevention claims stay roadmap-labeled.</p>
+      </div>
+      <div class="win-card">
+        <h3>Culture Scorecard spans signals</h3>
+        <p>Cadence connects 1:1 quality, ER patterns, recognition, surveys, and goal attainment into one management view. 9-box movement and retention risk remain roadmap inputs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Buyer Guide</div>
+      <h2 class="section-headline">Where each tool is genuinely best.</h2>
+      <p class="section-subhead">The useful question is not whether competitors are good products. It is which operating model your company needs.</p>
+    </div>
+    <div class="competitor-grid">
+      {competitors.map((competitor) => (
+        <article class="competitor-card">
+          <div class="competitor-name">{competitor.name}</div>
+          <div class="competitor-niche">{competitor.niche}</div>
+          <p>{competitor.note}</p>
+          <p class="cadence-note">{competitor.cadence}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container center">
+    <div class="section-badge">Next Step</div>
+    <h2 class="section-headline">Compare the architecture against your current stack.</h2>
+    <p class="section-subhead">Start with the live workflows, then review the roadmap-labeled areas with your People, Legal, and IT stakeholders.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-compare" class="btn btn-primary btn-lg">Start free trial</a>
+      <a href={withBase('/product')} class="btn btn-outline btn-lg">Review product modules</a>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>

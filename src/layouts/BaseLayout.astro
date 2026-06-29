@@ -5,8 +5,42 @@ export interface Props {
   title: string;
   description?: string;
   activeNav?: string;
+  canonicalPath?: string;
 }
-const { title, description = 'The AI-powered operating plane that makes every manager your best manager.', activeNav } = Astro.props;
+const {
+  title,
+  description = 'The AI-powered operating plane that makes every manager your best manager.',
+  activeNav,
+  canonicalPath,
+} = Astro.props;
+const siteOrigin = 'https://www.cadencehr.ai';
+const rawCanonicalPath = canonicalPath ?? Astro.url.pathname;
+const cleanCanonicalPath = rawCanonicalPath.replace(/\.html$/, '');
+const normalizedCanonicalPath =
+  cleanCanonicalPath === '/'
+    ? '/'
+    : `/${cleanCanonicalPath.replace(/^\/+/, '').replace(/\/+$/, '')}`;
+const canonicalUrl = new URL(normalizedCanonicalPath, siteOrigin).toString();
+const pageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  '@id': `${canonicalUrl}#webpage`,
+  url: canonicalUrl,
+  name: title,
+  description,
+  isPartOf: {
+    '@type': 'WebSite',
+    '@id': `${siteOrigin}#website`,
+    name: 'Cadence',
+    url: siteOrigin,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Cadence',
+    url: siteOrigin,
+  },
+};
+const pageSchemaJson = JSON.stringify(pageSchema).replace(/</g, '\\u003c');
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +49,7 @@ const { title, description = 'The AI-powered operating plane that makes every ma
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
+<link rel="canonical" href={canonicalUrl}>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href={withBase('/css/cadence.css')}>
 <link rel="icon" type="image/svg+xml" href={withBase('/favicon.svg')}>
@@ -22,6 +57,7 @@ const { title, description = 'The AI-powered operating plane that makes every ma
 <link rel="apple-touch-icon" sizes="180x180" href={withBase('/apple-touch-icon.png')}>
 <link rel="manifest" href={withBase('/site.webmanifest')}>
 <meta name="theme-color" content="#1E3A5F">
+<script type="application/ld+json" set:html={pageSchemaJson}></script>
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-y43F0IpV5uMSLp_dayM-v.js"></script>
 <script>
@@ -39,6 +75,7 @@ const { title, description = 'The AI-powered operating plane that makes every ma
     <ul class="nav-links">
       <li><a href={withBase('/product')} class={activeNav === 'product' ? 'active' : ''}>Product</a></li>
       <li><a href={withBase('/solutions')} class={activeNav === 'solutions' ? 'active' : ''}>Solutions</a></li>
+      <li><a href={withBase('/compare')} class={activeNav === 'compare' ? 'active' : ''}>Compare</a></li>
       <li><a href={withBase('/pricing')} class={activeNav === 'pricing' ? 'active' : ''}>Pricing</a></li>
       <li><a href={withBase('/resources')} class={activeNav === 'resources' ? 'active' : ''}>Resources</a></li>
     </ul>
@@ -87,7 +124,7 @@ const { title, description = 'The AI-powered operating plane that makes every ma
         <div class="footer-col">
           <h4>Resources</h4>
           <a href={withBase('/resources')}>All Resources</a>
-          <a href={withBase('/resources#competitive')}>vs. Competitors</a>
+          <a href={withBase('/compare')}>vs. Competitors</a>
           <a href={withBase('/resources#manifesto')}>Management Manifesto</a>
         </div>
         <div class="footer-col">
