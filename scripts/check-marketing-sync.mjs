@@ -12,6 +12,7 @@ const files = {
   product: read("src/pages/product.astro"),
   solutions: read("src/pages/solutions.astro"),
   pricing: read("src/pages/pricing.astro"),
+  compare: read("src/pages/compare.astro"),
   resources: read("src/pages/resources.astro"),
   security: read("src/pages/security.astro"),
   about: read("src/pages/about.astro"),
@@ -57,7 +58,7 @@ const checks = [
   },
   {
     name: "deeper public pages no longer use stale sales-led request-access CTAs",
-    ok: ["product", "solutions", "about"].every(
+    ok: ["product", "solutions", "compare", "about"].every(
       (key) => !/Request (beta )?access|we.ll reach out|schedule a walkthrough/i.test(files[key]),
     ),
   },
@@ -72,9 +73,17 @@ const checks = [
   },
   {
     name: "beta-era primary CTA copy is not used on public non-beta pages",
-    ok: ["home", "product", "solutions", "pricing", "resources", "security", "about", "layout"].every(
+    ok: ["home", "product", "solutions", "pricing", "compare", "resources", "security", "about", "layout"].every(
       (key) => !files[key].includes("Request beta access"),
     ),
+  },
+  {
+    name: "compare route is first-class and not a homepage fallback",
+    ok:
+      files.compare.includes('activeNav="compare"') &&
+      files.layout.includes("withBase('/compare')") &&
+      files.compare.includes("Cadence is the management operating plane") &&
+      !files.compare.includes("heroMessaging.headline"),
   },
 ];
 

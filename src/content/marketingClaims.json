@@ -121,6 +121,34 @@
       "publicPromotion": false
     },
     {
+      "id": "compare.competitor.culture_scorecard_superiority",
+      "page": "src/pages/compare.astro",
+      "type": "competitor_superiority",
+      "capability": "culture_scorecard",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, and goal attainment into one management view.",
+      "publicPromotion": true
+    },
+    {
+      "id": "compare.competitor.nine_box.registry_flip",
+      "page": "src/pages/compare.astro",
+      "type": "comparison_aeo_staged",
+      "capability": "nine_box.calibration",
+      "stagedSourceContains": "9-box movement and retention risk",
+      "roadmapSourceContains": "9-box movement and retention risk remain roadmap inputs.",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
+    },
+    {
+      "id": "compare.competitor.engagement_campaigns.registry_flip",
+      "page": "src/pages/compare.astro",
+      "type": "comparison_aeo_staged",
+      "capability": "surveys.engagement_campaigns",
+      "stagedSourceContains": "Survey Engine (pulse live; broader templates roadmap)",
+      "roadmapSourceContains": "broader templates roadmap",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
+    },
+    {
       "id": "pricing.essentials_price",
       "page": "src/pages/pricing.astro",
       "type": "hard_number",
