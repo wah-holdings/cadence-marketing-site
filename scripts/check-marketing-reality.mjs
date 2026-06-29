@@ -12,6 +12,25 @@ const manifest = readJson("src/content/marketingClaims.json");
 const getPath = (source, dottedPath) =>
   dottedPath.split(".").reduce((value, key) => (value == null ? undefined : value[key]), source);
 
+const setPath = (source, dottedPath, nextValue) => {
+  const keys = dottedPath.split(".");
+  const lastKey = keys.pop();
+  if (keys[0] === "capabilities" && keys.length > 1) {
+    const capabilityKey = keys.slice(1).join(".");
+    if (!source.capabilities?.[capabilityKey]) {
+      throw new Error(`Registry fixture patch references unknown capability: ${capabilityKey}`);
+    }
+    source.capabilities[capabilityKey][lastKey] = nextValue;
+    return;
+  }
+
+  const target = keys.reduce((value, key) => {
+    if (value[key] == null || typeof value[key] !== "object") value[key] = {};
+    return value[key];
+  }, source);
+  target[lastKey] = nextValue;
+};
+
 const normalizeText = (value) => String(value).replace(/\s+/g, " ").trim();
 
 const loadFixture = () => {
@@ -27,6 +46,10 @@ const loadFixture = () => {
 };
 
 const fixture = loadFixture();
+for (const patch of fixture?.registryPatches ?? []) {
+  setPath(registry, patch.path, patch.value);
+}
+
 const sourceCache = new Map();
 
 const sourceFor = (page) => {
@@ -61,10 +84,41 @@ const capabilityFor = (claim, failures) => {
 const assertCapabilityCanBePromoted = (claim, capability, failures) => {
   if (!claim.publicPromotion || !capability) return;
 
-  if (capability.marketingLabel !== "available") {
+  if (!isCapabilityMarketable(capability)) {
     failures.push(
-      `${claim.id}: ${claim.capability} is status=${capability.status} but marketingLabel=${capability.marketingLabel}; public promotion requires marketingLabel=available`,
+      `${claim.id}: ${claim.capability} is status=${capability.status}, gaDate=${capability.gaDate}, marketingLabel=${capability.marketingLabel}; public promotion requires status=ga, gaDate, and marketingLabel=available`,
     );
+  }
+};
+
+const isCapabilityMarketable = (capability) =>
+  capability?.status === "ga" && capability.marketingLabel === "available" && Boolean(capability.gaDate);
+
+const assertRegistryFlipPublishing = (claim, capability, source, failures) => {
+  if (!claim.registryFlipPublishing || !capability) return;
+
+  if (claim.stagedSourceContains && !source.includes(claim.stagedSourceContains)) {
+    failures.push(`${claim.id}: missing staged comparison/AEO source text ${JSON.stringify(claim.stagedSourceContains)} in ${claim.page}`);
+  }
+
+  if (isCapabilityMarketable(capability)) {
+    if (claim.liveSourceContains && !source.includes(claim.liveSourceContains)) {
+      failures.push(`${claim.id}: ${claim.capability} is marketable but missing live source text ${JSON.stringify(claim.liveSourceContains)} in ${claim.page}`);
+    }
+    return;
+  }
+
+  if (claim.publicPromotion) {
+    failures.push(`${claim.id}: ${claim.capability} is not marketable; staged registry-flip content must keep publicPromotion=false until real GA`);
+  }
+
+  if (!claim.roadmapSourceContains) {
+    failures.push(`${claim.id}: registry-flip staged content requires roadmapSourceContains while ${claim.capability} is not marketable`);
+    return;
+  }
+
+  if (!source.includes(claim.roadmapSourceContains)) {
+    failures.push(`${claim.id}: ${claim.capability} is not marketable; staged comparison/AEO content must stay roadmap-labeled with ${JSON.stringify(claim.roadmapSourceContains)} in ${claim.page}`);
   }
 };
 
@@ -105,6 +159,8 @@ for (const claim of manifest.claims) {
   if (claim.type === "pricing_feature" || claim.type === "competitor_superiority") {
     assertCapabilityCanBePromoted(claim, capability, failures);
   }
+
+  assertRegistryFlipPublishing(claim, capability, source, failures);
 }
 
 if (fixture) {

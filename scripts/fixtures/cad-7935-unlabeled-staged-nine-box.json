@@ -1,0 +1,10 @@
+{
+  "description": "CAD-7935 negative control: staged 9-box comparison copy loses roadmap labeling before registry GA",
+  "sourcePatches": [
+    {
+      "page": "src/pages/resources.astro",
+      "find": "9-box movement and predictive retention risk are roadmap inputs, not current competitor-superiority claims.",
+      "replace": "9-box movement and predictive retention risk make Cadence structurally superior."
+    }
+  ]
+}

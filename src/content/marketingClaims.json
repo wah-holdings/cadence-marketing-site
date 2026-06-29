@@ -1,6 +1,6 @@
 {
   "$schema": "./marketingClaims.schema.json",
-  "scope": "CAD-7739 v1 high-consequence public claims",
+  "scope": "CAD-7739 v1 high-consequence public claims + CAD-7935 registry-flip staged comparison/AEO claims",
   "claims": [
     {
       "id": "security.last_updated.registry_sourced",
@@ -46,6 +46,18 @@
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
       "sourceContains": "9-Box Talent Calibration",
+      "registryFlipPublishing": true,
+      "roadmapSourceContains": "9-Box Talent Calibration — not included in current beta access",
+      "publicPromotion": false
+    },
+    {
+      "id": "product.nine_box.registry_flip",
+      "page": "src/pages/product.astro",
+      "type": "comparison_aeo_staged",
+      "capability": "nine_box.calibration",
+      "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
+      "roadmapSourceContains": "These claims remain roadmap until the capability ships in production.",
+      "registryFlipPublishing": true,
       "publicPromotion": false
     },
     {
@@ -87,6 +99,26 @@
       "capability": "culture_scorecard",
       "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view.",
       "publicPromotion": true
+    },
+    {
+      "id": "resources.competitor.nine_box.registry_flip",
+      "page": "src/pages/resources.astro",
+      "type": "comparison_aeo_staged",
+      "capability": "nine_box.calibration",
+      "stagedSourceContains": "9-box movement and predictive retention risk",
+      "roadmapSourceContains": "9-box movement and predictive retention risk are roadmap inputs, not current competitor-superiority claims.",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
+    },
+    {
+      "id": "resources.competitor.engagement_campaigns.registry_flip",
+      "page": "src/pages/resources.astro",
+      "type": "comparison_aeo_staged",
+      "capability": "surveys.engagement_campaigns",
+      "stagedSourceContains": "Survey Engine (pulse live; broader templates roadmap)",
+      "roadmapSourceContains": "broader templates roadmap",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "pricing.essentials_price",

@@ -96,12 +96,28 @@
       "marketingLabel": "available",
       "reviewOwner": "Maya"
     },
+    "surveys.engagement_campaigns": {
+      "status": "roadmap",
+      "prodFlag": "ENGAGEMENT_SURVEY_CAMPAIGNS_ENABLED",
+      "gaDate": null,
+      "marketingLabel": "roadmap",
+      "reviewOwner": "Maya",
+      "notes": "Pulse response collection is live under surveys.engine. Full engagement survey campaigns and manager-level attribution stay roadmap until this registry entry flips to GA and available."
+    },
     "nine_box.calibration": {
       "status": "preview",
       "prodFlag": "NINE_BOX_ENABLED",
       "gaDate": null,
       "marketingLabel": "preview",
       "reviewOwner": "Maya"
+    },
+    "personality.insights": {
+      "status": "roadmap",
+      "prodFlag": "PERSONALITY_INSIGHTS_ENABLED",
+      "gaDate": null,
+      "marketingLabel": "roadmap",
+      "reviewOwner": "Maya",
+      "notes": "Personality comparison/AEO content may be staged only when roadmap-labeled; public promotion waits for real GA and marketingLabel=available."
     },
     "employee_relations.command_center": {
       "status": "ga",
