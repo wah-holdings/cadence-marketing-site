@@ -105,11 +105,12 @@
       "notes": "Pulse response collection is live under surveys.engine. Full engagement survey campaigns and manager-level attribution stay roadmap until this registry entry flips to GA and available."
     },
     "nine_box.calibration": {
-      "status": "preview",
+      "status": "ga",
       "prodFlag": "NINE_BOX_ENABLED",
-      "gaDate": null,
-      "marketingLabel": "preview",
-      "reviewOwner": "Maya"
+      "gaDate": "2026-07-01",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya",
+      "notes": "Maya review on CAD-8677 accepted core 9-box as GA based on app-route and module-registry evidence. Keep KVD, predictive retention, and advanced movement analysis roadmap-labeled."
     },
     "personality.insights": {
       "status": "roadmap",

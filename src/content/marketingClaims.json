@@ -45,8 +45,8 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
-      "sourceContains": "9-Box Talent Calibration — not included in current beta access",
-      "publicPromotion": false
+      "sourceContains": "9-Box Talent Calibration",
+      "publicPromotion": true
     },
     {
       "id": "product.nine_box.registry_flip",
