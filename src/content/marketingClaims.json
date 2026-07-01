@@ -41,20 +41,40 @@
       "publicPromotion": true
     },
     {
+      "id": "pricing.essentials.ai_summaries",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "ai.meeting_summaries",
+      "sourceContains": "AI meeting summaries",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.essentials.manager_coaching",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "ai.manager_coaching",
+      "sourceContains": "Manager-lane AI coaching",
+      "publicPromotion": true
+    },
+    {
       "id": "pricing.professional.nine_box",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
       "sourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "registryFlipPublishing": true,
+      "roadmapSourceContains": "9-Box Talent Calibration — not included in current beta access",
+      "publicPromotion": false
     },
     {
       "id": "product.nine_box.registry_flip",
       "page": "src/pages/product.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "blind L1/L2 rating, divergence review, and structured calibration follow-through",
-      "publicPromotion": true
+      "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
+      "roadmapSourceContains": "These claims remain roadmap until the capability ships in production.",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "pricing.professional.er",
@@ -70,6 +90,14 @@
       "type": "pricing_feature",
       "capability": "culture_scorecard",
       "sourceContains": "Full Culture Scorecard",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.professional.employee_coaching",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "ai.employee_coaching",
+      "sourceContains": "Employee-lane AI coaching",
       "publicPromotion": true
     },
     {
@@ -101,7 +129,7 @@
       "page": "src/pages/resources.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, goal attainment, and 9-box calibration into one management view.",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view.",
       "publicPromotion": true
     },
     {
@@ -109,8 +137,10 @@
       "page": "src/pages/resources.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "stagedSourceContains": "9-box movement and predictive retention risk",
+      "roadmapSourceContains": "9-box movement and predictive retention risk are roadmap inputs, not current competitor-superiority claims.",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "resources.competitor.engagement_campaigns.registry_flip",
@@ -127,7 +157,7 @@
       "page": "src/pages/compare.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, goal attainment, and 9-box calibration into one management view.",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, and goal attainment into one management view.",
       "publicPromotion": true
     },
     {
@@ -135,8 +165,10 @@
       "page": "src/pages/compare.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "stagedSourceContains": "9-box movement and retention risk",
+      "roadmapSourceContains": "9-box movement and retention risk remain roadmap inputs.",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "compare.competitor.engagement_campaigns.registry_flip",
