@@ -45,16 +45,18 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
-      "sourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "sourceContains": "9-Box Talent Calibration — not included in current beta access",
+      "publicPromotion": false
     },
     {
       "id": "product.nine_box.registry_flip",
       "page": "src/pages/product.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "blind L1/L2 rating, divergence review, and structured calibration follow-through",
-      "publicPromotion": true
+      "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
+      "roadmapSourceContains": "These claims remain roadmap until the capability ships in production.",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "pricing.professional.er",
@@ -101,7 +103,7 @@
       "page": "src/pages/resources.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, goal attainment, and 9-box calibration into one management view.",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view.",
       "publicPromotion": true
     },
     {
@@ -110,7 +112,9 @@
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
       "stagedSourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "roadmapSourceContains": "~ roadmap",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "resources.competitor.engagement_campaigns.registry_flip",
@@ -127,7 +131,7 @@
       "page": "src/pages/compare.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, goal attainment, and 9-box calibration into one management view.",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, and goal attainment into one management view.",
       "publicPromotion": true
     },
     {
@@ -136,7 +140,9 @@
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
       "stagedSourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "roadmapSourceContains": "~ roadmap",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
     },
     {
       "id": "compare.competitor.engagement_campaigns.registry_flip",
