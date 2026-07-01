@@ -96,9 +96,9 @@ import { withBase } from '../lib/paths';
           <li><span class="check-y"></span> Goals &amp; OKR Tracking — list, create, update, and progress workflows</li>
           <li><span class="check-y"></span> Recognition feed and posting</li>
           <li><span class="check-y"></span> Pulse survey response collection and aggregate analytics</li>
-          <li><span class="check-y"></span> Job architecture data import for admin setup</li>
-          <li class="roadmap-li">AI meeting summaries — preview, not a current GA deliverable</li>
-          <li class="roadmap-li">Private AI coaching — preview, not a current GA deliverable</li>
+          <li><span class="check-y"></span> Job Architecture — import, versioned role definitions, level context, and role assignment</li>
+          <li><span class="check-y"></span> AI meeting summaries</li>
+          <li><span class="check-y"></span> Manager-lane AI coaching</li>
           <li class="roadmap-li">Standard integrations beyond current product plumbing — preview until tenant proof is attached</li>
         </ul>
       </div>
@@ -113,11 +113,11 @@ import { withBase } from '../lib/paths';
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Essentials, plus</div>
         <ul class="features-list">
-          <li class="roadmap-li">9-Box Talent Calibration — not included in current beta access</li>
+          <li><span class="check-y"></span> 9-Box Talent Calibration</li>
           <li><span class="check-y"></span> ER Command Center — full case lifecycle</li>
           <li><span class="check-y"></span> Full Culture Scorecard — composite org health</li>
           <li class="roadmap-li">Turnover prediction — not included in current beta access</li>
-          <li class="roadmap-li">Private AI coaching — manager and employee lanes remain preview</li>
+          <li><span class="check-y"></span> Employee-lane AI coaching</li>
           <li class="roadmap-li">L2 manager chain dashboard — preview until tenant proof is attached</li>
           <li><span class="check-y"></span> Advanced analytics and reporting</li>
           <li><span class="check-y"></span> Priority support</li>
@@ -133,7 +133,8 @@ import { withBase } from '../lib/paths';
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Professional, plus</div>
         <ul class="features-list">
-          <li class="roadmap-li">SSO / SAML + SCIM provisioning — enterprise roadmap</li>
+          <li><span class="check-y"></span> Enterprise SSO (OIDC)</li>
+          <li class="roadmap-li">SAML and SCIM provisioning — Q4 roadmap / implementation planning</li>
           <li class="roadmap-li">Custom HRIS integrations beyond current admin import — enterprise roadmap</li>
           <li><span class="check-y"></span> Configurable data retention</li>
           <li><span class="check-y"></span> Dedicated Customer Success Manager</li>
@@ -166,16 +167,16 @@ import { withBase } from '../lib/paths';
       </div>
       <div class="compare-row"><div class="compare-group">Core Management</div></div>
       <div class="compare-row"><div class="compare-feature-name">1:1 Management Engine</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">AI meeting summaries (preview)</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — manager (preview)</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — employee (preview)</div><div class="compare-no">—</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
+      <div class="compare-row"><div class="compare-feature-name">AI meeting summaries</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — manager</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — employee</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-group">Goals &amp; OKRs</div></div>
       <div class="compare-row"><div class="compare-feature-name">OKR cascading (Company → Team → IC)</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-feature-name">Live goal context in 1:1 sidebar (preview)</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
       <div class="compare-row"><div class="compare-feature-name">AI goal health recommendations (preview)</div><div class="compare-no">—</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
       <div class="compare-row"><div class="compare-group">Talent Calibration Roadmap</div></div>
-      <div class="compare-row"><div class="compare-feature-name">9-Box Talent Calibration (roadmap preview)</div><div class="compare-no">—</div><div class="compare-partial">Coming</div><div class="compare-partial">Coming</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Blind dual-rating (L1 + L2 roadmap preview)</div><div class="compare-no">—</div><div class="compare-partial">Coming</div><div class="compare-partial">Coming</div></div>
+      <div class="compare-row"><div class="compare-feature-name">9-Box Talent Calibration</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Blind L1/L2 rating workflow</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-group">Employee Relations</div></div>
       <div class="compare-row"><div class="compare-feature-name">ER Command Center</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
       <div class="compare-row"><div class="compare-feature-name">PIP builder with milestones</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
@@ -185,7 +186,8 @@ import { withBase } from '../lib/paths';
       <div class="compare-row"><div class="compare-feature-name">Board-ready reporting (preview)</div><div class="compare-no">—</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
       <div class="compare-row"><div class="compare-group">Security &amp; Compliance</div></div>
       <div class="compare-row"><div class="compare-feature-name">SOC 2 Type II audit report</div><div class="compare-partial">Roadmap</div><div class="compare-partial">Roadmap</div><div class="compare-partial">Roadmap</div></div>
-      <div class="compare-row"><div class="compare-feature-name">SSO / SAML</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-partial">Roadmap</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Enterprise SSO (OIDC)</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">SAML and SCIM provisioning</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-partial">Q4 roadmap</div></div>
       <div class="compare-row"><div class="compare-feature-name">Data Processing Agreement (DPA)</div><div class="compare-no">—</div><div class="compare-partial">Standard</div><div class="compare-yes">Custom</div></div>
     </div>
   </div>
@@ -201,7 +203,7 @@ import { withBase } from '../lib/paths';
       <div class="faq-item"><div class="faq-q">How does pricing work?</div><div class="faq-a">Essentials and Professional start through self-serve signup. Enterprise is sales-led because larger deployments typically require security review, procurement, SSO planning, and custom rollout support.</div></div>
       <div class="faq-item"><div class="faq-q">What's the minimum seat count?</div><div class="faq-a">Essentials starts at 50 seats. Professional starts at 100 seats. Enterprise is custom. If you're below the minimums, reach out anyway.</div></div>
       <div class="faq-item"><div class="faq-q">Is there an annual commitment required?</div><div class="faq-a">The published pricing is for annual billing. Monthly billing is available at a 20% premium. Multi-year agreements receive additional discounts.</div></div>
-      <div class="faq-item"><div class="faq-q">What tools does Cadence replace?</div><div class="faq-a">Cadence Essentials targets 1:1 management, goals, recognition, pulse-survey response collection, and job-architecture import workflows. Professional adds ER case management and Culture Scorecard visibility. AI summaries/coaching, 9-box calibration, turnover prediction, full survey campaign management, and living job descriptions in 1:1s are preview or roadmap items, not current beta deliverables.</div></div>
+      <div class="faq-item"><div class="faq-q">What tools does Cadence replace?</div><div class="faq-a">Cadence Essentials targets 1:1 management, AI meeting summaries, manager-lane AI coaching, goals, recognition, pulse-survey response collection, and Job Architecture workflows. Professional adds ER case management, Culture Scorecard visibility, and employee-lane AI coaching. 9-box calibration, turnover prediction, full survey campaign management, SAML/SCIM provisioning, and role-recasting workflows remain preview, planning, or roadmap items.</div></div>
       <div class="faq-item"><div class="faq-q">Do you offer a free trial?</div><div class="faq-a">Yes. Essentials starts with a free trial through the live signup funnel. Professional checkout starts from the same signup path.</div></div>
     </div>
   </div>

@@ -46,9 +46,7 @@
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
       "sourceContains": "9-Box Talent Calibration",
-      "registryFlipPublishing": true,
-      "roadmapSourceContains": "9-Box Talent Calibration — not included in current beta access",
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "product.nine_box.registry_flip",
@@ -80,8 +78,16 @@
       "id": "pricing.enterprise.sso",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
+      "capability": "security.sso_oidc",
+      "sourceContains": "Enterprise SSO (OIDC)",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.enterprise.saml_scim_deferred",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
       "capability": "security.sso_saml",
-      "sourceContains": "SSO / SAML",
+      "sourceContains": "SAML and SCIM provisioning",
       "publicPromotion": false
     },
     {
@@ -105,8 +111,8 @@
       "page": "src/pages/resources.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-box movement and predictive retention risk",
-      "roadmapSourceContains": "9-box movement and predictive retention risk are roadmap inputs, not current competitor-superiority claims.",
+      "stagedSourceContains": "9-Box Talent Calibration",
+      "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
       "publicPromotion": false
     },
@@ -133,8 +139,8 @@
       "page": "src/pages/compare.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-box movement and retention risk",
-      "roadmapSourceContains": "9-box movement and retention risk remain roadmap inputs.",
+      "stagedSourceContains": "9-Box Talent Calibration",
+      "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
       "publicPromotion": false
     },
