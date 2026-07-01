@@ -140,12 +140,13 @@
       "marketingLabel": "preview",
       "reviewOwner": "Maya"
     },
-    "security.sso_saml": {
-      "status": "roadmap",
+    "security.sso_oidc": {
+      "status": "ga",
       "prodFlag": "SSO_ENTITLEMENT",
-      "gaDate": null,
-      "marketingLabel": "roadmap",
-      "reviewOwner": "Maya"
+      "gaDate": "2026-07-01",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya",
+      "notes": "OIDC SSO is marketable for Enterprise. SAML assertion validation and SCIM provisioning remain implementation-planning/roadmap items and must not be represented as live."
     },
     "security.configurable_retention": {
       "status": "ga",

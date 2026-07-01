@@ -41,6 +41,22 @@
       "publicPromotion": true
     },
     {
+      "id": "pricing.essentials.ai_summaries",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "ai.meeting_summaries",
+      "sourceContains": "AI meeting summaries",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.essentials.manager_coaching",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "ai.manager_coaching",
+      "sourceContains": "Manager-lane AI coaching",
+      "publicPromotion": true
+    },
+    {
       "id": "pricing.professional.nine_box",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
@@ -77,12 +93,20 @@
       "publicPromotion": true
     },
     {
+      "id": "pricing.professional.employee_coaching",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "ai.employee_coaching",
+      "sourceContains": "Employee-lane AI coaching",
+      "publicPromotion": true
+    },
+    {
       "id": "pricing.enterprise.sso",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
-      "capability": "security.sso_saml",
-      "sourceContains": "SSO / SAML",
-      "publicPromotion": false
+      "capability": "security.sso_oidc",
+      "sourceContains": "Enterprise SSO (OIDC)",
+      "publicPromotion": true
     },
     {
       "id": "pricing.enterprise.configurable_retention",
