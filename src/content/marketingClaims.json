@@ -135,6 +135,14 @@
       "publicPromotion": true
     },
     {
+      "id": "compare.enterprise.sso",
+      "page": "src/pages/compare.astro",
+      "type": "pricing_feature",
+      "capability": "security.sso_oidc",
+      "sourceContains": "Enterprise SSO (OIDC)",
+      "publicPromotion": true
+    },
+    {
       "id": "compare.competitor.nine_box.registry_flip",
       "page": "src/pages/compare.astro",
       "type": "comparison_aeo_staged",
