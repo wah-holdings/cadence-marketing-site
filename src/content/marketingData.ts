@@ -38,9 +38,9 @@ export const proofScreenshots = [
     text: "CHRO and L2 views connect live management workflows to org-health signal.",
   },
   {
-    title: "Roadmap previews labeled",
+    title: "Live vs. roadmap labeled",
     image: "/screenshots/cadence-9box-calibration-matrix-view-2026-05-14.png",
-    text: "9-box and calibration visuals remain clearly labeled as Coming Q3 roadmap until GA.",
+    text: "9-box calibration, KVD, predictive retention, and advanced movement analysis stay roadmap-labeled until GA.",
   },
 ];
 

@@ -46,19 +46,15 @@
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
       "sourceContains": "9-Box Talent Calibration",
-      "registryFlipPublishing": true,
-      "roadmapSourceContains": "9-Box Talent Calibration — not included in current beta access",
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "product.nine_box.registry_flip",
       "page": "src/pages/product.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
-      "roadmapSourceContains": "These claims remain roadmap until the capability ships in production.",
-      "registryFlipPublishing": true,
-      "publicPromotion": false
+      "stagedSourceContains": "blind L1/L2 rating, divergence review, and structured calibration follow-through",
+      "publicPromotion": true
     },
     {
       "id": "pricing.professional.er",
@@ -80,8 +76,16 @@
       "id": "pricing.enterprise.sso",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
+      "capability": "security.sso_oidc",
+      "sourceContains": "Enterprise SSO (OIDC)",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.enterprise.saml_scim_deferred",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
       "capability": "security.sso_saml",
-      "sourceContains": "SSO / SAML",
+      "sourceContains": "SAML and SCIM provisioning",
       "publicPromotion": false
     },
     {
@@ -97,7 +101,7 @@
       "page": "src/pages/resources.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view.",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, goal attainment, and 9-box calibration into one management view.",
       "publicPromotion": true
     },
     {
@@ -105,10 +109,8 @@
       "page": "src/pages/resources.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-box movement and predictive retention risk",
-      "roadmapSourceContains": "9-box movement and predictive retention risk are roadmap inputs, not current competitor-superiority claims.",
-      "registryFlipPublishing": true,
-      "publicPromotion": false
+      "stagedSourceContains": "9-Box Talent Calibration",
+      "publicPromotion": true
     },
     {
       "id": "resources.competitor.engagement_campaigns.registry_flip",
@@ -125,7 +127,7 @@
       "page": "src/pages/compare.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, and goal attainment into one management view.",
+      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, goal attainment, and 9-box calibration into one management view.",
       "publicPromotion": true
     },
     {
@@ -133,10 +135,8 @@
       "page": "src/pages/compare.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-box movement and retention risk",
-      "roadmapSourceContains": "9-box movement and retention risk remain roadmap inputs.",
-      "registryFlipPublishing": true,
-      "publicPromotion": false
+      "stagedSourceContains": "9-Box Talent Calibration",
+      "publicPromotion": true
     },
     {
       "id": "compare.competitor.engagement_campaigns.registry_flip",

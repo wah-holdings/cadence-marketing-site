@@ -175,7 +175,7 @@ const retentionFacts = capabilities.facts.retention;
       <div class="security-card">
         <div class="security-icon">🧪</div>
         <h4>AI Data Handling</h4>
-        <p>Cadence does not train AI models on customer data. AI summaries and coaching are preview workflows; when enabled for a tenant, meeting content is processed only for that tenant's outputs and is not used in model training.</p>
+        <p>Cadence does not train AI models on customer data. AI summaries and coaching process meeting content only for that tenant's outputs and are not used in model training.</p>
       </div>
       <div class="security-card">
         <div class="security-icon">🛡️</div>
@@ -202,7 +202,7 @@ const retentionFacts = capabilities.facts.retention;
             <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Recording requires explicit opt-in from each participant</li>
             <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Revocation stops processing immediately — no retroactive capture</li>
             <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Unknown jurisdictions default to recording off</li>
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Preview AI summaries and coaching require the same consent as recording when enabled</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> AI summaries and coaching require the same consent as recording when enabled</li>
           </ul>
         </div>
       </div>
@@ -321,7 +321,7 @@ const retentionFacts = capabilities.facts.retention;
             <td>Delete or promote to approved summary. Employee can request deletion at any time.</td>
           </tr>
           <tr>
-            <td><strong>AI coaching outputs (preview, if enabled)</strong></td>
+            <td><strong>AI coaching outputs</strong></td>
             <td>365 days</td>
             <td>Retention and lane visibility are configured during preview tenant setup. Not used for AI model training.</td>
           </tr>

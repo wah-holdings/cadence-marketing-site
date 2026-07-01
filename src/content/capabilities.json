@@ -78,9 +78,9 @@
       "status": "ga",
       "prodFlag": "JOB_ARCHITECTURE_ENABLED",
       "gaDate": "2026-06-26",
-      "marketingLabel": "available_not_promoted",
+      "marketingLabel": "available",
       "reviewOwner": "Maya",
-      "notes": "GA in code does not authorize public promotion until Maya flips marketingLabel."
+      "notes": "GA in prod; market admin import, role definitions, level context, and role assignment. Keep role recasting and compensation-band workflows roadmap-labeled."
     },
     "recognition.rewards": {
       "status": "ga",
@@ -105,11 +105,12 @@
       "notes": "Pulse response collection is live under surveys.engine. Full engagement survey campaigns and manager-level attribution stay roadmap until this registry entry flips to GA and available."
     },
     "nine_box.calibration": {
-      "status": "preview",
+      "status": "ga",
       "prodFlag": "NINE_BOX_ENABLED",
-      "gaDate": null,
-      "marketingLabel": "preview",
-      "reviewOwner": "Maya"
+      "gaDate": "2026-07-01",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya",
+      "notes": "CAD-8681: app route and module registry expose 9-box as GA for CHRO/CEO users. KVD roster, predictive retention, and advanced movement analysis remain roadmap unless separately flipped."
     },
     "personality.insights": {
       "status": "roadmap",
@@ -140,12 +141,21 @@
       "marketingLabel": "preview",
       "reviewOwner": "Maya"
     },
+    "security.sso_oidc": {
+      "status": "ga",
+      "prodFlag": "SSO_ENTITLEMENT",
+      "gaDate": "2026-06-25",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya",
+      "notes": "CAD-7025/CAD-7367: buyer-usable OIDC SSO is production-live behind the Enterprise entitlement flag."
+    },
     "security.sso_saml": {
       "status": "roadmap",
       "prodFlag": "SSO_ENTITLEMENT",
       "gaDate": null,
       "marketingLabel": "roadmap",
-      "reviewOwner": "Maya"
+      "reviewOwner": "Maya",
+      "notes": "CAD-7395: buyer-usable SAML admin/config/E2E path is Q4 roadmap. SCIM auto-provisioning was explicitly deferred from CAD-7025."
     },
     "security.configurable_retention": {
       "status": "ga",
