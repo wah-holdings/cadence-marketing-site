@@ -13,7 +13,7 @@
 | Claim area | Allowed now | Roadmap-labeled until shipped | Never claim |
 | --- | --- | --- | --- |
 | Naming | Personality Intelligence | n/a | Personality Assessment, Personality Test |
-| GA foundation | Consented instrument, derived working-style profile, team view, coaching read-surface | n/a | Raw OCEAN visibility outside the module |
+| Foundation | Directional narrative only when labeled coming | Consented instrument, derived working-style profile, team view, coaching read-surface | Raw OCEAN visibility outside the module |
 | Connective use | Directional narrative only when labeled | Working-style signal in 1:1s, coaching moments, talent conversations | "Already woven into every workflow" before prod proof |
 | Talent decisions | Conversation support | Calibration-context support only if explicitly shipped and reviewed | Personality feeds ratings, comp, 9-box placement, performance scores |
 
@@ -35,35 +35,35 @@ Avoid:
 
 **Title:** Personality Intelligence
 
-**Subtitle:** Your working-style profile helps Cadence support better 1:1s, coaching, and talent conversations.
+**Subtitle:** Your working-style profile will help Cadence support better 1:1s, coaching, and talent conversations as the module ships.
 
-**Roadmap note:** Today, this profile powers your own working-style view, team context, and coaching read-surface. Deeper 1:1 and talent-conversation prompts are coming as each integration ships.
+**Roadmap note:** The first foundation is coming as a consented instrument, own working-style view, team context, and coaching read-surface. Deeper 1:1 and talent-conversation prompts are coming as each integration ships.
 
 ### Empty State
 
 **Headline:** Build your working-style profile
 
-**Body:** Answer the consented instrument once so Cadence can derive your working-style profile. Your raw responses stay inside the Personality Intelligence module; managers and leaders see only the approved profile and aggregate views.
+**Body:** When the module ships, employees answer the consented instrument once so Cadence can derive a working-style profile. Raw responses stay inside the Personality Intelligence module; managers and leaders see only the approved profile and aggregate views.
 
-**CTA:** Start profile
+**CTA:** Start profile once available
 
 ### Own Profile Summary
 
 **Headline:** How you tend to work
 
-**Body:** Use this profile to prepare for better conversations: what kind of context helps you, how you prefer feedback, and where collaboration can get easier.
+**Body:** Once available, use this profile to prepare for better conversations: what kind of context helps you, how you prefer feedback, and where collaboration can get easier.
 
 ### Team View
 
 **Headline:** Working styles across the team
 
-**Body:** Compare collaboration patterns without turning personality into a score. Use this view to improve communication norms, meeting prep, and coaching conversations.
+**Body:** Once available, compare collaboration patterns without turning personality into a score. Use this view to improve communication norms, meeting prep, and coaching conversations.
 
 ### Consent / Privacy
 
-**Short version:** Personality Intelligence supports conversations, not scoring.
+**Short version:** Personality Intelligence is designed to support conversations, not scoring.
 
-**Long version:** Raw OCEAN responses do not cross the module boundary. Cadence derives working-style signal for profile, team, and coaching views. Personality signal never feeds ratings, compensation, 9-box placement, or performance scores.
+**Long version:** Raw OCEAN responses will not cross the module boundary. Cadence derives working-style signal for profile, team, and coaching views as those surfaces ship. Personality signal never feeds ratings, compensation, 9-box placement, or performance scores.
 
 ### Roadmap Banner
 
