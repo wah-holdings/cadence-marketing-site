@@ -40,7 +40,7 @@ export const proofScreenshots = [
   {
     title: "Live vs. roadmap labeled",
     image: "/screenshots/cadence-9box-calibration-matrix-view-2026-05-14.png",
-    text: "9-box calibration, KVD, predictive retention, and advanced movement analysis stay roadmap-labeled until GA.",
+    text: "Core 9-box calibration is GA; KVD, predictive retention, and advanced movement analysis stay roadmap-labeled.",
   },
 ];
 
