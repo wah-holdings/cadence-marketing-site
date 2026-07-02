@@ -113,12 +113,12 @@
       "notes": "Maya review on CAD-8677 accepted core 9-box as GA based on app-route and module-registry evidence. Keep KVD, predictive retention, and advanced movement analysis roadmap-labeled."
     },
     "personality.insights": {
-      "status": "roadmap",
-      "prodFlag": "PERSONALITY_INSIGHTS_ENABLED",
-      "gaDate": null,
-      "marketingLabel": "roadmap",
+      "status": "ga",
+      "prodFlag": "personality_customer_ga",
+      "gaDate": "2026-07-02",
+      "marketingLabel": "available",
       "reviewOwner": "Maya",
-      "notes": "Personality comparison/AEO content may be staged only when roadmap-labeled; public promotion waits for real GA and marketingLabel=available."
+      "notes": "CAD-9076/CAD-8607: personality_customer_ga flipped on prod (release v2026.07.02-6611b3c) after CAD-7702 soak PASS; render-verified + API smoke green. Foundation only (consented instrument, working-style profile, team view, coaching read-surface), Professional tier entitlement. Connective/woven use in 1:1s and coaching stays roadmap-labeled."
     },
     "employee_relations.command_center": {
       "status": "ga",

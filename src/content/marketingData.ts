@@ -4,7 +4,7 @@ export const heroMessaging = {
   subhead:
     "Cadence is the management operating plane for remote and hybrid companies that have outgrown proximity-based management.",
   body:
-    "It turns 1:1s, goals, recognition, ER context, surveys, and culture signal into a human-owned system where AI develops managers and employees, humans remain accountable, and Personality Intelligence stays clearly labeled as coming.",
+    "It turns 1:1s, goals, recognition, ER context, surveys, and culture signal into a human-owned system where AI develops managers and employees, humans remain accountable, and consented Personality Intelligence profiles support conversations — never scores.",
   primaryCta: {
     label: "Start free trial",
     href: "https://app.cadencehr.ai/signup?intent=self-serve&source=apex-hero",

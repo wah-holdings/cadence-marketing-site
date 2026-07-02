@@ -100,6 +100,14 @@
       "publicPromotion": false
     },
     {
+      "id": "pricing.professional.personality",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "personality.insights",
+      "sourceContains": "Personality Intelligence — consented working-style profiles and team view",
+      "publicPromotion": true
+    },
+    {
       "id": "pricing.professional.connected_agents",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
