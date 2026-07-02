@@ -188,14 +188,14 @@ select {
 }
 </style>
 
-<BaseLayout title="Beta Access — Join the Cadence Early Access Program" description="Request beta access to Cadence. Invitation-only. Tell us about your organization and we'll reach out to schedule your walkthrough." activeNav="beta">
+<BaseLayout title="Self-Serve Access — Join Cadence" description="Request self-serve access to Cadence. Tell us about your organization and we'll reach out to schedule your walkthrough." activeNav="beta">
 
 <section class="section-white">
   <div class="container">
     <div class="beta-layout">
       <!-- LEFT: COPY -->
       <div class="beta-left">
-        <div class="section-badge" style="margin-bottom:20px;">Beta Access Program</div>
+        <div class="section-badge" style="margin-bottom:20px;">Self-Serve Access Program</div>
         <h1>Be part of building <em>management by design.</em></h1>
         <p class="lead">Cadence is currently in invitation-only beta. We're working with a small number of organizations to refine the platform before our general availability launch.</p>
         <p>Beta participants get full platform access, white-glove onboarding, and direct influence on the product roadmap. In exchange, we ask for honest feedback and the willingness to engage with us as we build.</p>
@@ -207,7 +207,7 @@ select {
             <div class="step-num">1</div>
             <div class="step-text">
               <h4>We review your application</h4>
-              <p>We review within 2–3 business days and reach out if you're a good fit for the current beta cohort.</p>
+              <p>We review within 2–3 business days and reach out if you're a good fit for current self-serve access.</p>
             </div>
           </div>
           <div class="what-step">
@@ -221,7 +221,7 @@ select {
             <div class="step-num">3</div>
             <div class="step-text">
               <h4>Beta agreement and onboarding</h4>
-              <p>We finalize terms (beta access is free), do a light HRIS integration to seed your data, and run a manager training session.</p>
+              <p>We finalize terms, do a light HRIS integration to seed your data, and run a manager training session.</p>
             </div>
           </div>
           <div class="what-step">
@@ -243,14 +243,14 @@ select {
       <!-- RIGHT: FORM -->
       <div>
         <div class="beta-form-wrap">
-          <h2>Request beta access</h2>
+          <h2>Request self-serve access</h2>
           <p class="sub">We'll follow up within 2–3 business days. No sales pressure — we're looking for fit, not volume.</p>
 
           <div class="beta-cta-note">
-            <strong>Prefer to just email?</strong> Reach us directly at <a href="mailto:hello@cadencehr.ai?subject=Beta%20access%20interest" style="color:var(--secondary);">hello@cadencehr.ai</a> — same team, same response time.
+            <strong>Prefer to just email?</strong> Reach us directly at <a href="mailto:demo@cadencehr.ai?subject=Self-serve%20access%20interest" style="color:var(--secondary);">demo@cadencehr.ai</a> — same team, same response time.
           </div>
 
-          <div class="form-error" id="form-error">Something went wrong. Please try again or email us directly at hello@cadencehr.ai.</div>
+          <div class="form-error" id="form-error">Something went wrong. Please try again or email us directly at demo@cadencehr.ai.</div>
 
           <form id="beta-form">
             <div class="form-row">
@@ -316,14 +316,14 @@ select {
               <label for="current_tools">Tools you're currently using (if any)</label>
               <input type="text" id="current_tools" name="current_tools" placeholder="e.g. 15Five, Lattice, Culture Amp, spreadsheets...">
             </div>
-            <button type="submit" class="btn-submit" id="submit-btn">Request beta access →</button>
+            <button type="submit" class="btn-submit" id="submit-btn">Request self-serve access →</button>
             <p class="form-disclaimer">We don't sell your data. We'll use this information only to evaluate fit and reach out about Cadence. <a href={withBase('/security#privacy')} style="color:var(--secondary);">Privacy policy</a>.</p>
           </form>
 
           <div class="form-success" id="form-success">
             <div class="success-icon">✅</div>
             <h3>Application received!</h3>
-            <p>We'll review your application and follow up within 2–3 business days. In the meantime, feel free to reach us directly at <a href="mailto:hello@cadencehr.ai" style="color:var(--secondary);">hello@cadencehr.ai</a>.</p>
+            <p>We'll review your application and follow up within 2–3 business days. In the meantime, feel free to reach us directly at <a href="mailto:demo@cadencehr.ai" style="color:var(--secondary);">demo@cadencehr.ai</a>.</p>
           </div>
         </div>
       </div>
@@ -373,7 +373,7 @@ form.addEventListener('submit', async (e) => {
   } catch (err) {
     errorDiv.style.display = 'block';
     submitBtn.disabled = false;
-    submitBtn.textContent = 'Request beta access →';
+    submitBtn.textContent = 'Request self-serve access →';
   }
 });
 </script>
