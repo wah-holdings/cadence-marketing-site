@@ -1,14 +1,14 @@
 {
   "$schema": "./capabilities.schema.json",
   "generatedFrom": {
-    "source": "CAD-7653 Pillar-1 Feature-Reality Sync Gate v1",
+    "source": "CAD-7653 Pillar-1 Feature-Reality Sync Gate v1 + CAD-9074 CEO full-site audit",
     "owner": "Maya marketing-truth gate + engineering feature owners",
-    "updatedAt": "2026-06-27"
+    "updatedAt": "2026-07-02"
   },
   "facts": {
     "marketing": {
       "lastUpdated": {
-        "label": "June 2026",
+        "label": "July 2026",
         "source": "registry.generatedFrom.updatedAt"
       }
     },
@@ -150,12 +150,28 @@
       "notes": "CAD-7025/CAD-7367: buyer-usable OIDC SSO is production-live behind the Enterprise entitlement flag."
     },
     "security.sso_saml": {
-      "status": "roadmap",
+      "status": "ga",
       "prodFlag": "SSO_ENTITLEMENT",
+      "gaDate": "2026-06-27",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya",
+      "notes": "CAD-7395 closed done 6/27: SAML shipped to prod (PR #809 + #818 in prod build 7ee95c7, CAD-7921 read-only prod verification, security sign-offs CAD-7402/7473). Canonical copy ruling 7/2: SAML SSO = live (Enterprise); NEVER bundle with SCIM in one label."
+    },
+    "security.scim_provisioning": {
+      "status": "roadmap",
+      "prodFlag": "SCIM_PROVISIONING_ENABLED",
       "gaDate": null,
       "marketingLabel": "roadmap",
       "reviewOwner": "Maya",
-      "notes": "CAD-7395: buyer-usable SAML admin/config/E2E path is Q4 roadmap. SCIM auto-provisioning was explicitly deferred from CAD-7025."
+      "notes": "SCIM auto-provisioning remains unimplemented (0 matches in cadence-api src; PeopleModule SCIM disabled). Q4 roadmap. Keep unbundled from SAML per canonical 7/2 ruling."
+    },
+    "platform.connected_agents": {
+      "status": "ga",
+      "prodFlag": "CONNECTED_AGENTS_ENABLED",
+      "gaDate": "2026-07-02",
+      "marketingLabel": "available",
+      "reviewOwner": "Maya",
+      "notes": "CAD-9066/CAD-9074: Connected Agents + MCP Audit modules live in prod; authenticated MCP endpoint proven end-to-end (CAD-7915). BYOA over open MCP standard with tenant-scoped permissions and per-request audit log. Included in Professional and Enterprise."
     },
     "security.configurable_retention": {
       "status": "ga",

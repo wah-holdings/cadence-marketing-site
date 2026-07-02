@@ -164,6 +164,7 @@ import { withBase } from '../lib/paths';
     <a href="#goals">🎯 Goals</a>
     <a href="#personality-intelligence">🧩 Personality Intelligence</a>
     <a href="#nine-box">⬛ 9-Box</a>
+    <a href="#connected-agents">🔌 Connected Agents</a>
     <a href="#er">📋 ER</a>
     <a href="#recognition">⭐ Recognition</a>
     <a href="#surveys">📊 Surveys</a>
@@ -441,6 +442,43 @@ import { withBase } from '../lib/paths';
           loading="lazy"
           decoding="async"
         />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="module-section" id="connected-agents">
+  <div class="container">
+    <div class="feature-block">
+      <div>
+        <div class="module-number-tag">Live · 🔌 Connected Agents (BYOA)</div>
+        <h2 class="section-headline">Bring your own AI. Keep your audit trail.</h2>
+        <p>Connect the AI assistants your team already uses to your Cadence workspace over the open Model Context Protocol (MCP). Your people query their own goals, 1:1 history, and recognition context from the tools they work in — under your tenant's permissions.</p>
+        <p>Every connected-agent request is logged in the MCP audit trail, so admins see exactly which agent touched what data, when, on whose behalf. Included in Professional and Enterprise tiers.</p>
+        <ul class="feature-list">
+          <li>Bring-your-own-agent access over the open MCP standard</li>
+          <li>Tenant-scoped permissions — agents see only what the connecting user can see</li>
+          <li>MCP audit log for every connected-agent request</li>
+          <li>Admin controls to enable, review, and revoke connected agents</li>
+        </ul>
+      </div>
+      <div class="mock-panel">
+        <div class="mock-dark">
+          <div class="mock-title">Connected Agents · MCP audit log</div>
+          <div class="mock-row">
+            <div class="mock-row-title">Agent connected</div>
+            <div class="mock-row-sub">Personal assistant authorized via workspace sign-in</div>
+          </div>
+          <div class="mock-row">
+            <div class="mock-row-title">Request logged</div>
+            <div class="mock-row-sub">read:goals — scoped to the connecting user's own records</div>
+          </div>
+          <div class="ai-coaching-box">
+            <div class="ai-coaching-label">Admin visibility</div>
+            <div class="ai-coaching-item">• Full audit trail of agent, user, scope, and timestamp</div>
+            <div class="ai-coaching-item">• Revoke any connected agent at any time</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
