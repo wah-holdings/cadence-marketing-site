@@ -54,9 +54,10 @@
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
       "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
+      "liveSourceContains": "Core 9-box calibration is live in current purchasable access",
       "roadmapSourceContains": "These claims remain roadmap until the capability ships in production.",
       "registryFlipPublishing": true,
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "pricing.professional.er",
@@ -83,12 +84,44 @@
       "publicPromotion": true
     },
     {
-      "id": "pricing.enterprise.saml_scim_deferred",
+      "id": "pricing.enterprise.saml",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "security.sso_saml",
-      "sourceContains": "SAML and SCIM provisioning",
+      "sourceContains": "SAML SSO",
+      "publicPromotion": true
+    },
+    {
+      "id": "pricing.enterprise.scim_deferred",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "security.scim_provisioning",
+      "sourceContains": "SCIM provisioning — Q4 roadmap",
       "publicPromotion": false
+    },
+    {
+      "id": "pricing.professional.connected_agents",
+      "page": "src/pages/pricing.astro",
+      "type": "pricing_feature",
+      "capability": "platform.connected_agents",
+      "sourceContains": "Connected Agents (BYOA)",
+      "publicPromotion": true
+    },
+    {
+      "id": "product.connected_agents",
+      "page": "src/pages/product.astro",
+      "type": "pricing_feature",
+      "capability": "platform.connected_agents",
+      "sourceContains": "Every connected-agent request is logged in the MCP audit trail",
+      "publicPromotion": true
+    },
+    {
+      "id": "compare.competitor.connected_agents_superiority",
+      "page": "src/pages/compare.astro",
+      "type": "competitor_superiority",
+      "capability": "platform.connected_agents",
+      "sourceContains": "Connected Agents — bring your own AI via MCP, with audit log",
+      "publicPromotion": true
     },
     {
       "id": "pricing.enterprise.configurable_retention",
