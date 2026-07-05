@@ -93,6 +93,16 @@ const checks = [
       ) &&
       files.home.includes("Manager scorecard and org-health heatmap views are live"),
   },
+  {
+    name: "public pages do not overstate Culture Scorecard package availability",
+    ok:
+      !["home", "product", "solutions", "pricing", "compare", "resources", "security", "about"].some((key) =>
+        /Culture Scorecard visibility|Full Culture Scorecard/i.test(files[key]),
+      ) &&
+      files.pricing.includes("Manager scorecard and org-health heatmap") &&
+      files.compare.includes("Manager scorecard and org-health heatmap") &&
+      files.resources.includes("manager scorecards, and org-health heatmaps"),
+  },
 ];
 
 const appPagePath = process.env.CADENCE_APP_MARKETING_PAGE
