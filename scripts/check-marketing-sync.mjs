@@ -85,6 +85,14 @@ const checks = [
       files.compare.includes("Cadence is the management operating plane") &&
       !files.compare.includes("heroMessaging.headline"),
   },
+  {
+    name: "public pages do not render stale Culture Scorecard live-direction copy",
+    ok:
+      !["home", "product", "solutions", "pricing", "compare", "resources", "security", "about"].some((key) =>
+        /live direction/i.test(files[key]),
+      ) &&
+      files.home.includes("Manager scorecard and org-health heatmap views are live"),
+  },
 ];
 
 const appPagePath = process.env.CADENCE_APP_MARKETING_PAGE
