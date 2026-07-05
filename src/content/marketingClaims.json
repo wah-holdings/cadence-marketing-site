@@ -72,7 +72,7 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "culture_scorecard",
-      "sourceContains": "Full Culture Scorecard",
+      "sourceContains": "Manager scorecard and org-health heatmap",
       "publicPromotion": true
     },
     {
