@@ -104,8 +104,8 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "personality.insights",
-      "sourceContains": "Personality working-style profile",
-      "publicPromotion": true
+      "sourceContains": "Personality Intelligence — roadmap preview, not current paid-tier access",
+      "publicPromotion": false
     },
     {
       "id": "pricing.professional.connected_agents",
