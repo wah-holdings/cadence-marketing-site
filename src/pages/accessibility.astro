@@ -1,0 +1,105 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+---
+<style>
+.accessibility-card {
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 28px;
+}
+.accessibility-card p,
+.accessibility-card li {
+  color: var(--gray-700);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.accessibility-list {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin-top: 20px;
+}
+.accessibility-list li {
+  border-left: 3px solid var(--secondary);
+  padding-left: 14px;
+}
+.accessibility-note {
+  background: var(--gray-50);
+  border: 1px solid rgba(74,144,217,0.18);
+  border-radius: 14px;
+  padding: 24px;
+}
+.accessibility-note a {
+  color: var(--secondary-dark);
+  font-weight: 700;
+  text-decoration: underline;
+}
+</style>
+
+<BaseLayout
+  title="Cadence Accessibility Statement | Cadence"
+  description="Read the Cadence marketing-site accessibility statement, WCAG target, support contact, and remediation posture."
+  activeNav="accessibility"
+  canonicalPath="/accessibility"
+>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Accessibility</div>
+    <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Accessibility</div>
+    <h1>Accessibility statement for the Cadence marketing site.</h1>
+    <p>Cadence is working to make its public marketing website usable by as many people as possible. Our current target for the marketing site is WCAG 2.1 AA.</p>
+    <p style="font-size:14px;color:rgba(255,255,255,0.72);margin-top:18px;">Last updated: July 6, 2026.</p>
+  </div>
+</div>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="feature-block">
+      <div>
+        <div class="section-badge">Our target</div>
+        <h2 class="section-headline">Public pages should be perceivable, operable, and readable.</h2>
+      </div>
+      <div class="accessibility-card">
+        <ul class="accessibility-list">
+          <li>We target WCAG 2.1 AA for the public marketing pages on cadencehr.ai.</li>
+          <li>We prioritize keyboard access, readable contrast, semantic headings, form labels, and screen-reader-compatible content structure.</li>
+          <li>We review reported barriers and make reasonable remediation efforts as part of normal site maintenance.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="feature-block reverse">
+      <div>
+        <div class="section-badge">Current scope</div>
+        <h2 class="section-headline">This statement does not overclaim product-wide certification.</h2>
+      </div>
+      <div class="accessibility-card">
+        <ul class="accessibility-list">
+          <li>This statement covers the public marketing website, including pages such as home, pricing, product, solutions, security, privacy, and resources.</li>
+          <li>The authenticated Cadence product application, customer tenant data, generated documents, and third-party embedded services require separate accessibility verification.</li>
+          <li>Cadence has not completed a product-wide VPAT or claimed full WCAG AA conformance for every authenticated workflow.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-white">
+  <div class="container">
+    <div class="accessibility-note">
+      <div class="section-badge">Report a barrier</div>
+      <h2 class="section-headline" style="font-size:32px;margin-top:14px;">Tell us what blocked you.</h2>
+      <p>If you have trouble using a public Cadence marketing page, email <a href="mailto:support@cadencehr.ai">support@cadencehr.ai</a> with the page URL, browser or assistive technology used, and a short description of the barrier. We review reports and prioritize fixes based on severity and user impact.</p>
+      <p style="margin-top:16px;">For privacy, security, and data handling information, review the <a href={withBase('/security#privacy')}>Privacy</a> and <a href={withBase('/security')}>Security</a> pages.</p>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
