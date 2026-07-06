@@ -9,22 +9,22 @@
   --primary: #1E3A5F;
   --primary-dark: #152B47;
   --primary-light: #254a78;
-  --secondary: #4A90D9;
-  --secondary-light: #6AAAE5;
-  --secondary-dark: #3278C2;
-  --accent: #F5A623;
-  --accent-light: #F8BB52;
-  --accent-dark: #E0931A;
+  --secondary: #245F99;
+  --secondary-light: #3379C2;
+  --secondary-dark: #1D4F80;
+  --accent: #B45309;
+  --accent-light: #B45309;
+  --accent-dark: #92400E;
   --white: #FFFFFF;
   --off-white: #F8FAFC;
   --gray-50: #F1F5F9;
   --gray-100: #E2E8F0;
   --gray-200: #CBD5E1;
   --gray-300: #94A3B8;
-  --gray-500: #64748B;
+  --gray-500: #526174;
   --gray-700: #334155;
   --gray-900: #0F172A;
-  --success: #10B981;
+  --success: #047857;
   --warning: #F59E0B;
   --danger: #EF4444;
   --max-w: 1160px;
@@ -155,7 +155,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(30,58,95,0.10); }
 .section-badge-dark {
   background: rgba(245,166,35,0.15);
   border: 1px solid rgba(245,166,35,0.25);
-  color: var(--accent-light);
+  color: #F8BB52;
 }
 .section-tag {
   display: inline-block;
@@ -423,7 +423,7 @@ footer {
 .footer-logo { font-size: 20px; font-weight: 800; color: white; margin-bottom: 10px; display: block; }
 .footer-tagline { font-size: 13px; color: rgba(255,255,255,0.4); line-height: 1.5; max-width: 220px; margin-bottom: 16px; }
 .footer-contact { font-size: 13px; }
-.footer-contact a { color: var(--secondary-light); text-decoration: none; }
+.footer-contact a { color: #A9D4FF; text-decoration: none; }
 .footer-contact a:hover { text-decoration: underline; }
 .footer-links { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .footer-col h4 { font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 14px; }
