@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
+import { g1SignupHref } from '../lib/g1CampaignLinks';
 
 const matrixRows = [
   ['Core Management', '1:1 Management Engine', '✓', '~', '✓', '—', '✓', '—', '~'],
@@ -302,7 +303,7 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
     <h2 class="section-headline">Compare the architecture against your current stack.</h2>
     <p class="section-subhead">Start with the live workflows, then review the roadmap-labeled areas with your People, Legal, and IT stakeholders.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-compare" class="btn btn-primary btn-lg">Start free trial</a>
+      <a href={g1SignupHref('compare_primary', 'cta')} class="btn btn-primary btn-lg">Start free trial</a>
       <a href={withBase('/product')} class="btn btn-outline btn-lg">Review product modules</a>
     </div>
   </div>

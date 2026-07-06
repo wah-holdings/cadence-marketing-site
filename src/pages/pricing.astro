@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
+import { g1SignupHref } from '../lib/g1CampaignLinks';
 ---
 <style>
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; align-items: start; }
@@ -115,7 +116,7 @@ import { withBase } from '../lib/paths';
         <div class="price-big"><sup>$</sup>12</div>
         <div class="price-period">per seat / month, billed annually</div>
         <div class="best-for"><strong>Best for:</strong> Organizations of 50–300 people building systematic management practices.</div>
-        <a href="https://app.cadencehr.ai/signup?tier=essentials&intent=self-serve&source=apex-pricing" class="pricing-cta-btn cta-outline-btn">Start free trial</a>
+        <a href={g1SignupHref('essentials', 'pricing_cta', { tier: 'essentials' })} class="pricing-cta-btn cta-outline-btn">Start free trial</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Includes</div>
         <ul class="features-list">
@@ -136,7 +137,7 @@ import { withBase } from '../lib/paths';
         <div class="price-big"><sup>$</sup>24</div>
         <div class="price-period">per seat / month, billed annually</div>
         <div class="best-for"><strong>Best for:</strong> Organizations of 100–1,000 people where the CHRO needs manager scorecard and org-health heatmap views.</div>
-        <a href="https://app.cadencehr.ai/signup?tier=professional&intent=self-serve&source=apex-pricing" class="pricing-cta-btn cta-secondary-btn">Start trial</a>
+        <a href={g1SignupHref('professional', 'pricing_cta', { tier: 'professional' })} class="pricing-cta-btn cta-secondary-btn">Start trial</a>
         <div class="pricing-divider"></div>
         <div class="includes-label">Everything in Essentials, plus</div>
         <ul class="features-list">
@@ -300,7 +301,7 @@ import { withBase } from '../lib/paths';
     <h2>Ready to consolidate your stack?</h2>
     <p>Tell us about your org and we'll build a consolidation model showing exactly what you'd replace and what you'd save.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="https://app.cadencehr.ai/signup?tier=essentials&intent=self-serve&source=apex-pricing-cta" class="btn btn-white btn-lg">Start free trial</a>
+      <a href={g1SignupHref('essentials', 'pricing_cta', { tier: 'essentials' })} class="btn btn-white btn-lg">Start free trial</a>
       <a href="mailto:demo@cadencehr.ai?subject=Pricing%20question" class="btn btn-white-outline btn-lg">Talk to us</a>
     </div>
   </div>

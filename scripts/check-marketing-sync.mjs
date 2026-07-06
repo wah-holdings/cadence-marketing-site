@@ -19,6 +19,9 @@ const files = {
   layout: read("src/layouts/BaseLayout.astro"),
 };
 
+const hasTierParam = (content, tier) =>
+  content.includes(`tier=${tier}`) || content.includes(`tier: '${tier}'`) || content.includes(`tier: "${tier}"`);
+
 const requiredPhrases = [
   "Management Operating Plane for Distributed Teams",
   "Close the remote-contributor management chasm.",
@@ -65,10 +68,10 @@ const checks = [
   {
     name: "public signup CTAs use app tier parameter, not stale plan parameter",
     ok:
-      files.home.includes("tier=essentials") &&
-      files.home.includes("tier=professional") &&
-      files.pricing.includes("tier=essentials") &&
-      files.pricing.includes("tier=professional") &&
+      hasTierParam(files.home, "essentials") &&
+      hasTierParam(files.home, "professional") &&
+      hasTierParam(files.pricing, "essentials") &&
+      hasTierParam(files.pricing, "professional") &&
       !Object.values(files).some((content) => /app\.cadencehr\.ai\/signup\?[^"']*plan=/.test(content)),
   },
   {

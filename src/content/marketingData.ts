@@ -1,3 +1,5 @@
+import { g1SignupHref } from '../lib/g1CampaignLinks';
+
 export const heroMessaging = {
   eyebrow: "Management Operating Plane for Distributed Teams",
   headline: "Close the remote-contributor management chasm.",
@@ -7,7 +9,7 @@ export const heroMessaging = {
     "It turns 1:1s, goals, recognition, ER context, surveys, and culture signal into a human-owned system where AI develops managers and employees, humans remain accountable, and consented Personality Intelligence profiles support conversations — never scores.",
   primaryCta: {
     label: "Start free trial",
-    href: "https://app.cadencehr.ai/signup?intent=self-serve&source=apex-hero",
+    href: g1SignupHref('home_hero', 'cta'),
   },
   secondaryCta: {
     label: "See product proof",
