@@ -7,7 +7,7 @@ import { withBase } from '../lib/paths';
 .pricing-card { background: var(--white); border-radius: 18px; border: 1.5px solid var(--gray-200); padding: 36px 32px; position: relative; transition: all 0.2s; display: flex; flex-direction: column; }
 .pricing-card:hover { box-shadow: 0 12px 40px rgba(30,58,95,0.1); transform: translateY(-2px); }
 .pricing-card.featured { border-color: var(--secondary); box-shadow: 0 0 0 4px rgba(74,144,217,0.1), 0 20px 48px rgba(74,144,217,0.1); }
-.pricing-badge-pill { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); padding: 5px 18px; background: var(--accent); color: var(--primary-dark); border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; letter-spacing: 0.05em; }
+.pricing-badge-pill { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); padding: 5px 18px; background: var(--accent); color: white; border-radius: 20px; font-size: 11px; font-weight: 700; white-space: nowrap; letter-spacing: 0.05em; }
 .pricing-tier-name { font-size: 13px; font-weight: 700; color: var(--secondary); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
 .pricing-tagline { font-size: 14px; color: var(--gray-500); margin-bottom: 24px; line-height: 1.5; }
 .price-big { font-size: 48px; font-weight: 900; color: var(--primary); letter-spacing: -0.04em; line-height: 1; margin-bottom: 6px; }
@@ -35,14 +35,16 @@ import { withBase } from '../lib/paths';
 .savings-link { font-size: 14px; font-weight: 600; color: var(--secondary); text-decoration: none; white-space: nowrap; }
 .compare-wrap { margin-top: 64px; background: white; border-radius: 16px; border: 1.5px solid var(--gray-100); overflow: hidden; }
 .compare-head { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; background: var(--primary); color: white; padding: 18px 24px; font-size: 13px; font-weight: 700; text-align: center; }
-.compare-head .feature-col { text-align: left; color: rgba(255,255,255,0.65); font-weight: 600; font-size: 12px; }
+.compare-head .feature-col { text-align: left; color: white; font-weight: 600; font-size: 12px; }
 .compare-group { grid-column: 1 / -1; padding: 10px 24px; font-size: 11px; font-weight: 700; color: var(--secondary); background: rgba(74,144,217,0.04); text-transform: uppercase; letter-spacing: 0.08em; border-top: 1px solid var(--gray-100); }
-.compare-row { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; padding: 12px 24px; border-top: 1px solid var(--gray-100); align-items: center; font-size: 13px; text-align: center; }
+.compare-row { display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; padding: 12px 24px; border-top: 1px solid var(--gray-100); align-items: center; font-size: 13px; text-align: center; background: white; }
+.compare-row > div { background: white; }
+.compare-row > .compare-group { background: rgba(74,144,217,0.04); }
 .compare-row:hover { background: var(--gray-50); }
 .compare-feature-name { text-align: left; color: var(--gray-700); }
-.compare-yes { color: var(--success); font-size: 16px; font-weight: 700; }
-.compare-no { color: var(--gray-700); font-size: 16px; }
-.compare-partial { color: var(--accent); font-size: 13px; font-weight: 600; }
+.compare-yes { color: var(--gray-900); font-size: 16px; font-weight: 800; }
+.compare-no { color: var(--gray-900); font-size: 16px; font-weight: 700; }
+.compare-partial { color: var(--gray-900); font-size: 13px; font-weight: 800; }
 .roadmap-li { color: var(--gray-500); }
 .roadmap-li::before { content: 'Coming'; flex-shrink: 0; margin-top: 1px; padding: 2px 6px; border-radius: 999px; background: rgba(180,83,9,0.12); color: var(--accent); font-size: 9px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
 .trust-section { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: stretch; margin-top: 40px; }
@@ -68,15 +70,38 @@ import { withBase } from '../lib/paths';
 .checkout-note { background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.18); border-radius: 10px; padding: 14px; color: var(--primary); font-size: 13px; line-height: 1.55; }
 .enterprise-route-panel { margin-top: 32px; display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; background: var(--primary); border-color: var(--primary); }
 .enterprise-route-panel h3 { color: var(--white); margin-bottom: 8px; }
-.enterprise-route-panel p { color: rgba(255,255,255,0.74); font-size: 14px; line-height: 1.65; max-width: 740px; }
+.enterprise-route-panel p { color: rgba(255,255,255,0.92); font-size: 14px; line-height: 1.65; max-width: 740px; }
 .faq-list { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
 .faq-item { background: white; border-radius: 12px; border: 1px solid var(--gray-100); padding: 24px; }
 .faq-q { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 10px; }
 .faq-a { font-size: 15px; color: var(--gray-700); line-height: 1.7; }
 .signup-notice { background: rgba(74,144,217,0.08); border: 1px solid rgba(74,144,217,0.2); border-radius: 12px; padding: 20px 24px; margin-top: 40px; display: flex; gap: 14px; align-items: flex-start; }
-.signup-notice-icon { font-size: 20px; flex-shrink: 0; }
+.signup-notice-icon { font-size: 20px; flex-shrink: 0; color: var(--gray-900); background: white; border-radius: 999px; }
 .signup-notice-text { font-size: 14px; color: var(--gray-700); line-height: 1.65; }
 .signup-notice-text strong { color: var(--primary); }
+.page-hero,
+.page-hero h1,
+.page-hero h1 .accent,
+.page-hero p,
+.page-hero .breadcrumb,
+.page-hero .breadcrumb a {
+  color: white;
+}
+.page-hero .section-badge {
+  background: var(--primary-dark) !important;
+  border-color: rgba(255,255,255,0.85) !important;
+  color: white !important;
+}
+.page-hero::before { display: none; }
+.signup-notice-icon {
+  background: #064E3B;
+  color: white;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 @media (max-width: 768px) {
   .pricing-grid { grid-template-columns: 1fr; }
   .trust-section,
@@ -91,19 +116,19 @@ import { withBase } from '../lib/paths';
 
 <BaseLayout title="Pricing — Cadence: Transparent Pricing" description="Cadence pricing, current access, and roadmap-labeled feature comparison including Personality Intelligence." activeNav="pricing">
 
-<div class="page-hero">
+<div class="page-hero" style="background:#1E3A5F;color:#FFFFFF;">
   <div class="container">
-    <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Pricing</div>
-    <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Transparent Pricing</div>
-    <h1>Transparent pricing. <span class="accent">Roadmap clearly marked.</span></h1>
-    <p>The average fragmented management stack costs $25–30 per seat per month — across tools that share no data. Cadence self-serve access starts through the live signup funnel, with roadmap capabilities clearly labeled below.</p>
+    <div class="breadcrumb" style="color:#FFFFFF;"><a href={withBase('/')} style="color:#FFFFFF;text-decoration:underline;text-underline-offset:3px;">Home</a><span>/</span>Pricing</div>
+    <div class="section-badge" style="background:#152B47;border:1px solid rgba(255,255,255,0.85);color:#FFFFFF;">Transparent Pricing</div>
+    <h1 style="color:#FFFFFF;">Transparent pricing. <span class="accent" style="color:#FFFFFF;">Roadmap clearly marked.</span></h1>
+    <p style="color:#FFFFFF;">The average fragmented management stack costs $25–30 per seat per month — across tools that share no data. Cadence self-serve access starts through the live signup funnel, with roadmap capabilities clearly labeled below.</p>
   </div>
 </div>
 
 <section class="section section-light">
   <div class="container">
     <div class="signup-notice">
-      <div class="signup-notice-icon">✓</div>
+      <div class="signup-notice-icon" aria-hidden="true"></div>
       <div class="signup-notice-text">
         <strong>Self-serve access is live:</strong> Essentials and Professional start through the Cadence signup funnel. Enterprise remains sales-led for security review, procurement, and custom rollout planning.
       </div>
@@ -175,7 +200,7 @@ import { withBase } from '../lib/paths';
         </ul>
       </div>
     </div>
-    <div class="trust-section" aria-label="Self-serve trust and checkout details">
+    <div class="trust-section">
       <div class="trust-panel">
         <h3>Buy without wondering what happens to your people data.</h3>
         <div class="trust-grid">
@@ -192,7 +217,7 @@ import { withBase } from '../lib/paths';
             <p>Essentials and Professional teams can start with standard terms. If you need SSO/SAML, procurement review, a security questionnaire, or enterprise DPA negotiation, route to the Enterprise path.</p>
           </div>
         </div>
-        <div class="trust-compact" aria-label="Trust summary">
+        <div class="trust-compact">
           <span>Human-reviewed AI</span>
           <span>No customer-data model training by default</span>
           <span>DPA available for review</span>
@@ -238,36 +263,36 @@ import { withBase } from '../lib/paths';
         <div>Enterprise</div>
       </div>
       <div class="compare-row"><div class="compare-group">Core Management</div></div>
-      <div class="compare-row"><div class="compare-feature-name">1:1 Management Engine</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">AI meeting summaries</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — manager</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — employee</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">1:1 Management Engine</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">AI meeting summaries</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — manager</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Private AI coaching — employee</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
       <div class="compare-row"><div class="compare-group">Goals &amp; OKRs</div></div>
-      <div class="compare-row"><div class="compare-feature-name">OKR cascading (Company → Team → IC)</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">OKR cascading (Company → Team → IC)</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
       <div class="compare-row"><div class="compare-feature-name">Live goal context in 1:1 sidebar (preview)</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
-      <div class="compare-row"><div class="compare-feature-name">AI goal health recommendations (preview)</div><div class="compare-no">—</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
+      <div class="compare-row"><div class="compare-feature-name">AI goal health recommendations (preview)</div><div class="compare-no">No</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
       <div class="compare-row"><div class="compare-group">Personality Intelligence</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Consented instrument + own working-style profile</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Team working-style view (roadmap)</div><div class="compare-no">—</div><div class="compare-no">Coming</div><div class="compare-no">Coming</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Working-style signal in 1:1s and coaching (roadmap)</div><div class="compare-no">—</div><div class="compare-partial">Coming</div><div class="compare-partial">Coming</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Consented instrument + own working-style profile</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Team working-style view (roadmap)</div><div class="compare-no">No</div><div class="compare-no">Coming</div><div class="compare-no">Coming</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Working-style signal in 1:1s and coaching (roadmap)</div><div class="compare-no">No</div><div class="compare-partial">Coming</div><div class="compare-partial">Coming</div></div>
       <div class="compare-row"><div class="compare-feature-name">Personality signal in scoring, ratings, comp, or 9-box placement</div><div class="compare-no">Never</div><div class="compare-no">Never</div><div class="compare-no">Never</div></div>
       <div class="compare-row"><div class="compare-group">Talent Calibration Roadmap</div></div>
-      <div class="compare-row"><div class="compare-feature-name">9-Box Talent Calibration</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Connected Agents (BYOA) with MCP audit log</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Blind L1/L2 rating workflow</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">9-Box Talent Calibration</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Connected Agents (BYOA) with MCP audit log</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Blind L1/L2 rating workflow</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
       <div class="compare-row"><div class="compare-group">Employee Relations</div></div>
-      <div class="compare-row"><div class="compare-feature-name">ER Command Center</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">PIP builder with milestones</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
+      <div class="compare-row"><div class="compare-feature-name">ER Command Center</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">PIP builder with milestones</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
       <div class="compare-row"><div class="compare-group">Intelligence &amp; Analytics</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Manager scorecard and org-health heatmap</div><div class="compare-no">—</div><div class="compare-yes">✓</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Turnover prediction (roadmap preview)</div><div class="compare-no">—</div><div class="compare-partial">Coming</div><div class="compare-partial">Coming</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Board-ready reporting (preview)</div><div class="compare-no">—</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Manager scorecard and org-health heatmap</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Turnover prediction (roadmap preview)</div><div class="compare-no">No</div><div class="compare-partial">Coming</div><div class="compare-partial">Coming</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Board-ready reporting (preview)</div><div class="compare-no">No</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
       <div class="compare-row"><div class="compare-group">Security &amp; Compliance</div></div>
       <div class="compare-row"><div class="compare-feature-name">SOC 2 Type II audit report</div><div class="compare-partial">Roadmap</div><div class="compare-partial">Roadmap</div><div class="compare-partial">Roadmap</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Enterprise SSO (OIDC)</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">SAML SSO</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-yes">✓</div></div>
-      <div class="compare-row"><div class="compare-feature-name">SCIM provisioning</div><div class="compare-no">—</div><div class="compare-no">—</div><div class="compare-partial">Q4 roadmap</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Data Processing Agreement (DPA)</div><div class="compare-no">—</div><div class="compare-partial">Standard</div><div class="compare-yes">Custom</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Enterprise SSO (OIDC)</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">SAML SSO</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">SCIM provisioning</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-partial">Q4 roadmap</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Data Processing Agreement (DPA)</div><div class="compare-no">No</div><div class="compare-partial">Standard</div><div class="compare-yes">Custom</div></div>
     </div>
   </div>
 </section>
