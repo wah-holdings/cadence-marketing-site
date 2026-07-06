@@ -13,7 +13,7 @@ const {
   activeNav,
   canonicalPath,
 } = Astro.props;
-const siteOrigin = 'https://www.cadencehr.ai';
+const siteOrigin = 'https://cadencehr.ai';
 const rawCanonicalPath = canonicalPath ?? Astro.url.pathname;
 const cleanCanonicalPath = rawCanonicalPath.replace(/\.html$/, '');
 const normalizedCanonicalPath =
