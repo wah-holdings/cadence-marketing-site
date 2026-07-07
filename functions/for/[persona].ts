@@ -1,0 +1,13 @@
+import { proxyAppPath } from "../_seoProxy";
+
+const ALLOWED_PERSONAS = new Set(["chro", "ceo", "managers", "leaders", "employees"]);
+
+// /for/:persona -> app.cadencehr.ai/for/:persona for the approved role SEO pages.
+export const onRequestGet: PagesFunction<{ persona: string }> = async (context) => {
+  const persona = context.params.persona;
+  if (!ALLOWED_PERSONAS.has(persona)) {
+    return context.next();
+  }
+
+  return proxyAppPath(`/for/${persona}`)(context);
+};
