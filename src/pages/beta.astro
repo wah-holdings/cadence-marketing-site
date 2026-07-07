@@ -122,11 +122,28 @@ input:focus, select:focus, textarea:focus {
 input::placeholder, textarea::placeholder { color: var(--gray-300); }
 textarea { resize: vertical; min-height: 96px; line-height: 1.6; }
 select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  color: var(--gray-900) !important;
+  background-color: var(--white) !important;
+  border-color: var(--gray-900);
+  text-shadow: 0 0 0 var(--gray-900);
+  opacity: 1;
+  appearance: auto;
+  -webkit-appearance: auto;
+}
+select.custom-select {
+  background-color: var(--white);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230F172A' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   padding-right: 36px;
   cursor: pointer;
+}
+select:invalid {
+  color: var(--gray-900);
+}
+select option {
+  color: var(--gray-900);
+  background: var(--white);
 }
 .btn-submit {
   width: 100%;
@@ -274,7 +291,7 @@ select {
             <div class="form-group">
               <label for="role">Your role <span class="req">*</span></label>
               <select id="role" name="role" required>
-                <option value="" disabled selected>Select your role</option>
+                <option value="" selected>Select your role</option>
                 <option>CHRO / Chief People Officer</option>
                 <option>VP People / VP HR</option>
                 <option>HR Director</option>
@@ -289,7 +306,7 @@ select {
             <div class="form-group">
               <label for="team_size">Company size <span class="req">*</span></label>
               <select id="team_size" name="team_size" required>
-                <option value="" disabled selected>Number of employees</option>
+                <option value="" selected>Number of employees</option>
                 <option>50–100</option>
                 <option>101–250</option>
                 <option>251–500</option>
@@ -301,7 +318,7 @@ select {
             <div class="form-group">
               <label for="work_model">Work model</label>
               <select id="work_model" name="work_model">
-                <option value="" disabled selected>How your team works</option>
+                <option value="" selected>How your team works</option>
                 <option>Fully remote</option>
                 <option>Hybrid (most in office 2–3 days)</option>
                 <option>Hybrid (mostly remote)</option>
