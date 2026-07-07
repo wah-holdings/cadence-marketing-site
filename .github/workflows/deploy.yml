@@ -35,6 +35,9 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Accessibility regression scan
+        run: npm run a11y:ci
+
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
         with:
