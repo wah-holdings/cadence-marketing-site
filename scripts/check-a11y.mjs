@@ -58,6 +58,7 @@ async function waitForServer() {
 function startServer() {
   const child = spawn(startCommand, {
     shell: true,
+    detached: process.platform !== "win32",
     stdio: ["ignore", "pipe", "pipe"],
     env: { ...process.env, PORT: String(port), HOST: host },
   });
@@ -66,6 +67,23 @@ function startServer() {
   child.stderr.on("data", (chunk) => process.stderr.write(`[a11y server] ${chunk}`));
 
   return child;
+}
+
+function stopServer(signal = "SIGTERM") {
+  if (!server || server.killed) {
+    return;
+  }
+
+  if (process.platform !== "win32") {
+    try {
+      process.kill(-server.pid, signal);
+      return;
+    } catch {
+      // Fall back to killing only the shell process.
+    }
+  }
+
+  server.kill(signal);
 }
 
 function formatIssue(issue) {
@@ -102,9 +120,7 @@ const baseline = await readBaseline();
 const nextBaseline = {};
 const watchdog = setTimeout(() => {
   console.error(`Timed out after ${totalTimeoutMs}ms while running accessibility regression scan`);
-  if (server && !server.killed) {
-    server.kill("SIGKILL");
-  }
+  stopServer("SIGKILL");
   process.exit(1);
 }, totalTimeoutMs);
 watchdog.unref();
@@ -152,9 +168,7 @@ try {
   }
 } finally {
   clearTimeout(watchdog);
-  if (server && !server.killed) {
-    server.kill("SIGTERM");
-  }
+  stopServer();
 }
 
 if (updateBaseline) {
