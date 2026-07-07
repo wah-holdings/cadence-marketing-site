@@ -14,6 +14,11 @@ const routes = (process.env.A11Y_ROUTES || "/,/product,/solutions,/pricing,/secu
 const startCommand = process.env.A11Y_START_COMMAND || `npm run preview -- --host ${host} --port ${port}`;
 const maxAttempts = Number(process.env.A11Y_READY_ATTEMPTS || 60);
 const retryDelayMs = Number(process.env.A11Y_READY_DELAY_MS || 1000);
+const routeTimeoutMs = Number(process.env.A11Y_ROUTE_TIMEOUT_MS || 15000);
+const totalTimeoutMs = Number(
+  process.env.A11Y_TOTAL_TIMEOUT_MS
+    || Math.max(60000, maxAttempts * retryDelayMs + routes.length * (routeTimeoutMs + 2000) + 10000),
+);
 const baselinePath = new URL("./a11y-baseline.json", import.meta.url);
 const updateBaseline = process.env.A11Y_UPDATE_BASELINE === "1";
 
@@ -91,21 +96,32 @@ async function readBaseline() {
   }
 }
 
-const server = startServer();
+let server;
 let failed = false;
 const baseline = await readBaseline();
 const nextBaseline = {};
+const watchdog = setTimeout(() => {
+  console.error(`Timed out after ${totalTimeoutMs}ms while running accessibility regression scan`);
+  if (server && !server.killed) {
+    server.kill("SIGKILL");
+  }
+  process.exit(1);
+}, totalTimeoutMs);
+watchdog.unref();
 
 try {
+  server = startServer();
   await waitForServer();
 
   for (const route of routes) {
     const url = new URL(route, baseUrl).toString();
+    console.log(`SCAN a11y ${route}`);
     const result = await pa11y(url, {
       standard: "WCAG2AA",
       runners: ["axe"],
       includeWarnings: false,
       includeNotices: false,
+      timeout: routeTimeoutMs,
       wait: 500,
       chromeLaunchConfig: {
         args: ["--no-sandbox", "--disable-dev-shm-usage"],
@@ -135,7 +151,10 @@ try {
     }
   }
 } finally {
-  server.kill("SIGTERM");
+  clearTimeout(watchdog);
+  if (server && !server.killed) {
+    server.kill("SIGTERM");
+  }
 }
 
 if (updateBaseline) {
