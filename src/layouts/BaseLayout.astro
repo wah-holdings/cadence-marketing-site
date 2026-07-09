@@ -1,5 +1,6 @@
 ---
 import { withBase } from '../lib/paths';
+import { g1SignupHref } from '../lib/g1CampaignLinks';
 
 export interface Props {
   title: string;
@@ -98,7 +99,7 @@ const pageSchemaJson = JSON.stringify(pageSchema).replace(/</g, '\\u003c');
     <div class="nav-actions">
       <span class="beta-pill"><span class="beta-dot"></span>Live access</span>
       <a href="https://app.cadencehr.ai/" class="btn-signin">Sign in</a>
-      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-nav" class="btn-demo">Start free trial</a>
+      <a href={g1SignupHref('home_nav', 'cta')} class="btn-demo">Start free trial</a>
     </div>
   </div>
 </nav>
