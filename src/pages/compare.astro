@@ -61,6 +61,38 @@ const competitors = [
   },
 ];
 
+const compareFaqItems = [
+  {
+    question: 'How is Cadence different from Lattice, 15Five, Culture Amp, Fellow, HR Acuity, and Betterworks?',
+    answer: 'Cadence is built around the connected manager-employee operating record. It brings 1:1s, goals, recognition, employee relations context, surveys, and culture signal into one management workspace instead of splitting those workflows across point tools.',
+  },
+  {
+    question: 'Which Cadence capabilities are current versus roadmap?',
+    answer: 'Current Cadence claims are limited to live or explicitly enabled workflows. The comparison matrix marks staged capabilities as preview or roadmap, including cross-signal turnover prediction and full cross-signal movement analysis.',
+  },
+  {
+    question: 'When should a company choose Cadence over a point solution?',
+    answer: 'Choose Cadence when your operating model needs management conversations, goals, recognition, ER context, survey signal, and manager effectiveness views to connect. A point solution can still be a better fit when the need is only a narrow workflow such as meeting notes, surveys, or enterprise OKR administration.',
+  },
+  {
+    question: 'Does Cadence replace human people decisions with AI?',
+    answer: 'No. Cadence positions AI summaries, coaching, and pattern detection as decision-support. Humans remain accountable for discipline, promotion, termination, compensation, performance ratings, and formal employee relations actions.',
+  },
+];
+
+const compareFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: compareFaqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
+
 let previousGroup = '';
 const matrixRowsWithGroup = matrixRows.map((row) => {
   const showGroup = row[0] !== previousGroup;
@@ -190,6 +222,7 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
   title="Compare Cadence — People Platform Competitive Matrix"
   description="Compare Cadence with Lattice, 15Five, Culture Amp, Fellow, HR Acuity, and Betterworks across live people-management workflows and roadmap-labeled previews."
   activeNav="compare"
+  structuredData={compareFaqSchema}
 >
 
 <div class="page-hero">
@@ -291,6 +324,23 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
           <div class="competitor-niche">{competitor.niche}</div>
           <p>{competitor.note}</p>
           <p class="cadence-note">{competitor.cadence}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="container">
+    <div class="center">
+      <div class="section-badge">Comparison FAQ</div>
+      <h2 class="section-headline">Answers to common comparison questions.</h2>
+    </div>
+    <div class="competitor-grid">
+      {compareFaqItems.map((item) => (
+        <article class="competitor-card">
+          <div class="competitor-name">{item.question}</div>
+          <p>{item.answer}</p>
         </article>
       ))}
     </div>
