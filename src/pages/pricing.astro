@@ -2,6 +2,70 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
 import { g1SignupHref } from '../lib/g1CampaignLinks';
+
+const pricingFaqItems = [
+  {
+    question: 'How does pricing work?',
+    answer: 'Essentials and Professional start through self-serve signup. Enterprise is sales-led because larger deployments typically require security review, procurement, SSO planning, and custom rollout support.',
+  },
+  {
+    question: "What's the minimum seat count?",
+    answer: "Essentials starts at 50 seats. Professional starts at 100 seats. Enterprise is custom. If you're below the minimums, reach out anyway.",
+  },
+  {
+    question: 'Is there an annual commitment required?',
+    answer: 'The published pricing is for annual billing. Monthly billing is available at a 20% premium. Multi-year agreements receive additional discounts.',
+  },
+  {
+    question: 'What tools does Cadence replace?',
+    answer: 'Cadence Essentials targets 1:1 management, AI meeting summaries, manager-lane AI coaching, goals, recognition, pulse-survey response collection, and Job Architecture workflows. Professional adds ER case management, manager scorecard and org-health heatmap views, employee-lane AI coaching, 9-box calibration, Connected Agents (bring-your-own-AI over MCP with audit logging), and Personality working-style profiles. Enterprise adds OIDC and SAML SSO plus configurable retention. Turnover prediction, full survey campaign management, personality signal woven into 1:1s, SCIM provisioning, and role-recasting workflows remain preview, planning, or roadmap items.',
+  },
+  {
+    question: 'Do you offer a free trial?',
+    answer: 'Yes. Essentials starts with a free trial through the live signup funnel. Professional checkout starts from the same signup path.',
+  },
+  {
+    question: 'Is Cadence making people decisions with AI?',
+    answer: 'No. Cadence uses AI to surface patterns, summarize work, suggest coaching prompts, and route issues for human review. It does not make employment decisions. Discipline, promotion, termination, compensation, performance ratings, and formal ER actions require accountable human judgment and normal company process.',
+  },
+  {
+    question: 'What happens to 1:1 notes and meeting data?',
+    answer: '1:1 notes, transcripts, summaries, coaching outputs, goals, recognition, survey signals, ER records, and scorecard telemetry are used to deliver Cadence to your company. They are not used to train, fine-tune, or improve Cadence AI models by default, unless your company explicitly agrees in writing.',
+  },
+  {
+    question: 'Does audio recording start automatically?',
+    answer: 'No. Audio capture is optional and consent-gated. Cadence is useful with or without audio: the operating plane still supports agendas, action items, goals, recognition, surveys, ER workflows, and scorecard signals.',
+  },
+  {
+    question: 'Can we buy self-serve before a full security review?',
+    answer: 'Essentials and Professional are built for teams that can start from standard terms and standard controls. If your purchase requires security review, procurement, SSO/SAML, custom legal terms, regulated privacy review, custom privacy deployment, or more than 300 seats, Cadence routes you to Enterprise before checkout.',
+  },
+  {
+    question: 'Is a DPA available?',
+    answer: 'Yes, a DPA review path is part of the buying motion. If your deployment requires a DPA before employee personal data is processed, use the Enterprise/legal review path before activating covered features.',
+  },
+  {
+    question: 'How does Cadence use manager taxonomy?',
+    answer: 'Cadence looks for management behavior patterns across operational signals such as 1:1 cadence, follow-through, recognition, goals, ER outcomes, and eligible aggregate survey signals. Taxonomy outputs are decision-support for trained human review. They are not automated employment decisions.',
+  },
+  {
+    question: 'Are survey comments attached to managers?',
+    answer: "No. Open-text survey themes are used only after Cadence's anonymity and de-identification thresholds are met. Raw open text is not surfaced in manager taxonomy review packets.",
+  },
+];
+
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: pricingFaqItems.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
 ---
 <style>
 .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; align-items: start; }
@@ -115,7 +179,7 @@ import { g1SignupHref } from '../lib/g1CampaignLinks';
 }
 </style>
 
-<BaseLayout title="Pricing — Cadence: Transparent Pricing" description="Cadence pricing, current access, and roadmap-labeled feature comparison including Personality Intelligence." activeNav="pricing">
+<BaseLayout title="Pricing — Cadence: Transparent Pricing" description="Cadence pricing, current access, and roadmap-labeled feature comparison including Personality Intelligence." activeNav="pricing" structuredData={pricingFaqSchema}>
 
 <div class="page-hero" style="background:#1E3A5F;color:#FFFFFF;">
   <div class="container">
@@ -305,18 +369,9 @@ import { g1SignupHref } from '../lib/g1CampaignLinks';
       <h2 class="section-headline">Answers to common questions.</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item"><div class="faq-q">How does pricing work?</div><div class="faq-a">Essentials and Professional start through self-serve signup. Enterprise is sales-led because larger deployments typically require security review, procurement, SSO planning, and custom rollout support.</div></div>
-      <div class="faq-item"><div class="faq-q">What's the minimum seat count?</div><div class="faq-a">Essentials starts at 50 seats. Professional starts at 100 seats. Enterprise is custom. If you're below the minimums, reach out anyway.</div></div>
-      <div class="faq-item"><div class="faq-q">Is there an annual commitment required?</div><div class="faq-a">The published pricing is for annual billing. Monthly billing is available at a 20% premium. Multi-year agreements receive additional discounts.</div></div>
-      <div class="faq-item"><div class="faq-q">What tools does Cadence replace?</div><div class="faq-a">Cadence Essentials targets 1:1 management, AI meeting summaries, manager-lane AI coaching, goals, recognition, pulse-survey response collection, and Job Architecture workflows. Professional adds ER case management, manager scorecard and org-health heatmap views, employee-lane AI coaching, 9-box calibration, Connected Agents (bring-your-own-AI over MCP with audit logging), and Personality working-style profiles. Enterprise adds OIDC and SAML SSO plus configurable retention. Turnover prediction, full survey campaign management, personality signal woven into 1:1s, SCIM provisioning, and role-recasting workflows remain preview, planning, or roadmap items.</div></div>
-      <div class="faq-item"><div class="faq-q">Do you offer a free trial?</div><div class="faq-a">Yes. Essentials starts with a free trial through the live signup funnel. Professional checkout starts from the same signup path.</div></div>
-      <div class="faq-item"><div class="faq-q">Is Cadence making people decisions with AI?</div><div class="faq-a">No. Cadence uses AI to surface patterns, summarize work, suggest coaching prompts, and route issues for human review. It does not make employment decisions. Discipline, promotion, termination, compensation, performance ratings, and formal ER actions require accountable human judgment and normal company process.</div></div>
-      <div class="faq-item"><div class="faq-q">What happens to 1:1 notes and meeting data?</div><div class="faq-a">1:1 notes, transcripts, summaries, coaching outputs, goals, recognition, survey signals, ER records, and scorecard telemetry are used to deliver Cadence to your company. They are not used to train, fine-tune, or improve Cadence AI models by default, unless your company explicitly agrees in writing.</div></div>
-      <div class="faq-item"><div class="faq-q">Does audio recording start automatically?</div><div class="faq-a">No. Audio capture is optional and consent-gated. Cadence is useful with or without audio: the operating plane still supports agendas, action items, goals, recognition, surveys, ER workflows, and scorecard signals.</div></div>
-      <div class="faq-item"><div class="faq-q">Can we buy self-serve before a full security review?</div><div class="faq-a">Essentials and Professional are built for teams that can start from standard terms and standard controls. If your purchase requires security review, procurement, SSO/SAML, custom legal terms, regulated privacy review, custom privacy deployment, or more than 300 seats, Cadence routes you to Enterprise before checkout.</div></div>
-      <div class="faq-item"><div class="faq-q">Is a DPA available?</div><div class="faq-a">Yes, a DPA review path is part of the buying motion. If your deployment requires a DPA before employee personal data is processed, use the Enterprise/legal review path before activating covered features.</div></div>
-      <div class="faq-item"><div class="faq-q">How does Cadence use manager taxonomy?</div><div class="faq-a">Cadence looks for management behavior patterns across operational signals such as 1:1 cadence, follow-through, recognition, goals, ER outcomes, and eligible aggregate survey signals. Taxonomy outputs are decision-support for trained human review. They are not automated employment decisions.</div></div>
-      <div class="faq-item"><div class="faq-q">Are survey comments attached to managers?</div><div class="faq-a">No. Open-text survey themes are used only after Cadence's anonymity and de-identification thresholds are met. Raw open text is not surfaced in manager taxonomy review packets.</div></div>
+      {pricingFaqItems.map((item) => (
+        <div class="faq-item"><div class="faq-q">{item.question}</div><div class="faq-a">{item.answer}</div></div>
+      ))}
     </div>
   </div>
 </section>

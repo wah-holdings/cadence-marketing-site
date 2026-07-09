@@ -7,12 +7,14 @@ export interface Props {
   description?: string;
   activeNav?: string;
   canonicalPath?: string;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 const {
   title,
   description = 'The AI-powered operating plane that makes every manager your best manager.',
   activeNav,
   canonicalPath,
+  structuredData = [],
 } = Astro.props;
 const siteOrigin = 'https://cadencehr.ai';
 const rawCanonicalPath = canonicalPath ?? Astro.url.pathname;
@@ -45,6 +47,8 @@ const pageSchema = {
   },
 };
 const pageSchemaJson = JSON.stringify(pageSchema).replace(/</g, '\\u003c');
+const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [structuredData])
+  .map((schema) => JSON.stringify(schema).replace(/</g, '\\u003c'));
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -75,6 +79,7 @@ const pageSchemaJson = JSON.stringify(pageSchema).replace(/</g, '\\u003c');
 <link rel="manifest" href={withBase('/site.webmanifest')}>
 <meta name="theme-color" content="#1E3A5F">
 <script type="application/ld+json" set:html={pageSchemaJson}></script>
+{structuredDataJson.map((schemaJson) => <script type="application/ld+json" set:html={schemaJson}></script>)}
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-y43F0IpV5uMSLp_dayM-v.js"></script>
 <script>
