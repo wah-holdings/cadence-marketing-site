@@ -99,16 +99,16 @@ Cadence helps distributed organizations close the remote-contributor management 
 - Job architecture import, versioned role definitions, level context, and role assignment
 - Culture Scorecard manager scorecard and org-health heatmap views
 - 9-box talent calibration
-- Connected Agents (BYOA) over MCP with audit logging
-- Enterprise SSO through OIDC and SAML
+- Enterprise SSO through OIDC
 
 ## Preview- and Roadmap-Labeled Capabilities
 
 - Personality Intelligence working-style profile and team view
+- Connected Agents (BYOA) over MCP - preview; external customer connections open after scoped consent, scoped tokens, and audit controls are fully cleared
+- SAML SSO and SCIM provisioning - Q4 roadmap
 - Personality prompts woven into 1:1s and coaching
 - Recognition ratio analysis and enforcement
 - KVD, 9-box movement analytics, and intervention workflows
-- SCIM provisioning
 - Manager-level survey attribution and AI open-text themes
 - Predictive retention inputs
 - Board-ready Culture Scorecard reporting
