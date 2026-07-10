@@ -27,7 +27,7 @@ const requiredPhrases = [
   "Close the remote-contributor management chasm.",
   "See product proof",
   "Live workspace access",
-  "Coming Q3 previews labeled",
+  "Roadmap previews labeled",
   "Humans own decisions",
 ];
 
@@ -36,7 +36,7 @@ const appRequiredPhrases = [
   "Close the remote-contributor management chasm.",
   "See product proof",
   "Live workspace access",
-  "Coming Q3 previews labeled",
+  "Roadmap previews labeled",
   "Humans own decisions",
 ];
 
