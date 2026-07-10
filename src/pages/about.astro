@@ -201,8 +201,12 @@ const productValues = [
   <div class="container">
     <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>About</div>
     <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">Our Story</div>
-    <h1>We saw the problem up close. <span class="accent">We built the fix.</span></h1>
-    <p>Cadence was founded on a pattern that appeared in every organization we worked with: management quality varied wildly, nobody could measure it, and the best employees left for companies where they happened to get lucky with their manager. We decided to change that.</p>
+    <h1>Management quality should not depend on proximity or luck.</h1>
+    <p>Cadence was founded on a pattern that appears in every distributed organization: good managers create clarity, weak systems create silence, and employees pay the price when nobody can see the difference soon enough.</p>
+    <div class="btn-group" style="justify-content:center;">
+      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about-hero" class="btn btn-accent btn-lg">Start a trial workspace</a>
+      <a href={withBase('/product')} class="btn btn-white-outline btn-lg">See the product</a>
+    </div>
   </div>
 </div>
 
@@ -216,9 +220,9 @@ const productValues = [
         <div class="founder-title">Founder &amp; CEO, Cadence</div>
         <p class="founder-bio-short">Former Head of People Operations at ACI Learning. Built and managed people systems for distributed technical teams before founding Cadence in 2025.</p>
         <div class="founder-links">
-          <a href="mailto:demo@cadencehr.ai" class="founder-link">📧 Contact Cadence</a>
+          <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about-founder" class="founder-link">Start a trial workspace</a>
           <a href={withBase('/resources#manifesto')} class="founder-link">📄 Read the Manifesto</a>
-          <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about-founder" class="founder-link">Start free trial</a>
+          <a href="mailto:demo@cadencehr.ai" class="founder-link">📧 Contact Cadence</a>
         </div>
       </div>
       <div class="story-text">
@@ -369,7 +373,7 @@ const productValues = [
         <h2 class="section-headline" style="font-size:clamp(24px,3vw,32px);">Live access, roadmap clearly marked.</h2>
         <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:24px;">Cadence now routes self-serve evaluation through the live signup funnel, while roadmap and preview capabilities stay labeled before buyers treat them as current deliverables.</p>
         <p style="font-size:16px;color:var(--gray-500);line-height:1.75;margin-bottom:28px;">If you're evaluating tools for your organization right now, start a workspace and use the product and pricing pages to separate what is live from what is still roadmap.</p>
-        <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about" class="btn btn-primary btn-lg">Start free trial →</a>
+        <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about" class="btn btn-primary btn-lg">Start a trial workspace →</a>
       </div>
     </div>
   </div>
@@ -378,11 +382,11 @@ const productValues = [
 <!-- CTA -->
 <section class="section-cta">
   <div class="container">
-    <h2>We'd love to show you what we're building.</h2>
-    <p>Start a trial workspace or contact us directly if your rollout needs a people, security, or procurement conversation first.</p>
+    <h2>Put the thesis to work with a real team.</h2>
+    <p>Start a trial workspace, run actual 1:1s through Cadence, and see whether the operating record gives managers and leaders better ways to act.</p>
     <div class="btn-group" style="justify-content:center;">
-      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about-cta" class="btn btn-white btn-lg">Start free trial</a>
-      <a href="mailto:demo@cadencehr.ai" class="btn btn-white-outline btn-lg">Email us directly</a>
+      <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about-cta" class="btn btn-white btn-lg">Start a trial workspace</a>
+      <a href={withBase('/resources#manifesto')} class="btn btn-white-outline btn-lg">Read the thesis</a>
     </div>
   </div>
 </section>
