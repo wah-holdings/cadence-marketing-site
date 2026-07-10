@@ -105,12 +105,12 @@
       "notes": "Pulse response collection is live under surveys.engine. Full engagement survey campaigns and manager-level attribution stay roadmap until this registry entry flips to GA and available."
     },
     "nine_box.calibration": {
-      "status": "roadmap",
+      "status": "ga",
       "prodFlag": "NINE_BOX_ENABLED",
-      "gaDate": null,
-      "marketingLabel": "roadmap",
+      "gaDate": "2026-07-10",
+      "marketingLabel": "available",
       "reviewOwner": "Maya",
-      "notes": "Fallback posture for CAD-10551: keep core 9-box calibration roadmap-labeled until CAD-10518 verifies the 2-user Professional production reveal."
+      "notes": "Core human-reviewed 9-box calibration is live for Professional and Enterprise after CAD-10518 verified the 2-user Professional production reveal. KVD nomination, advanced movement analytics, predictive retention, and intervention workflows remain roadmap-labeled."
     },
     "personality.insights": {
       "status": "ga",

@@ -46,18 +46,18 @@
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
       "sourceContains": "9-Box Talent Calibration",
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "product.nine_box.registry_flip",
       "page": "src/pages/product.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
-      "liveSourceContains": "Core 9-box calibration is live in current purchasable access",
+      "stagedSourceContains": "L1/L2 calibration cycle setup and rating collection",
+      "liveSourceContains": "Core 9-box calibration is live for Professional and Enterprise workspaces",
       "roadmapSourceContains": "Core 9-box calibration is a roadmap preview until the 2-user Professional reveal is verified in production.",
       "registryFlipPublishing": true,
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "pricing.professional.er",
@@ -155,7 +155,7 @@
       "stagedSourceContains": "9-Box Talent Calibration",
       "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "resources.competitor.engagement_campaigns.registry_flip",
@@ -191,7 +191,7 @@
       "stagedSourceContains": "9-Box Talent Calibration",
       "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
-      "publicPromotion": false
+      "publicPromotion": true
     },
     {
       "id": "compare.competitor.engagement_campaigns.registry_flip",
