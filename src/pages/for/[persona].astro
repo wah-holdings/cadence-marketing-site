@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/paths';
+import { personaPages } from '../../content/personaPages';
+
+export function getStaticPaths() {
+  return personaPages.flatMap((persona) =>
+    [persona.slug, ...persona.aliases].map((pathPersona) => ({
+      params: { persona: pathPersona },
+      props: { persona, pathPersona },
+    })),
+  );
+}
+
+const { persona } = Astro.props;
+const canonicalPath = `/for/${persona.slug}`;
+const relatedPersonas = personaPages.filter((item) => item.slug !== persona.slug);
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: persona.title,
+  description: persona.description,
+  url: `https://cadencehr.ai${canonicalPath}`,
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'Cadence',
+    url: 'https://cadencehr.ai',
+  },
+};
+---
+<style>
+.persona-landing { background: var(--primary); color: white; padding: 76px 0 64px; }
+.persona-landing h1 { max-width: 760px; font-size: clamp(34px, 5vw, 58px); line-height: 1.04; letter-spacing: -0.03em; margin: 16px 0; }
+.persona-landing p { max-width: 700px; color: rgba(255,255,255,0.82); font-size: 18px; line-height: 1.65; }
+.persona-trust { display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.08); border-radius: 999px; padding: 9px 14px; color: rgba(255,255,255,0.9); font-size: 13px; font-weight: 700; margin-top: 22px; }
+.persona-trust::before { content: ''; width: 8px; height: 8px; border-radius: 999px; background: var(--success); }
+.persona-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.persona-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 42px; align-items: start; }
+.persona-quote { border-left: 4px solid var(--secondary); background: var(--gray-50); border-radius: 0 12px 12px 0; padding: 24px; }
+.persona-quote p { color: var(--gray-700); font-size: 18px; font-style: italic; line-height: 1.65; }
+.persona-quote footer { margin-top: 14px; color: var(--primary); font-size: 13px; font-weight: 800; }
+.status-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.status-card { background: white; border: 1px solid var(--gray-100); border-radius: 12px; padding: 22px; }
+.status-tag { display: inline-flex; align-items: center; border-radius: 999px; padding: 4px 9px; font-size: 10px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.06em; background: rgba(74,144,217,0.1); color: var(--secondary); margin-bottom: 14px; }
+.status-tag[data-status="Preview"] { background: rgba(245,166,35,0.14); color: var(--accent); }
+.status-tag[data-status="Coming"] { background: rgba(107,114,128,0.14); color: var(--gray-700); }
+.status-card h3 { color: var(--primary); font-size: 18px; line-height: 1.25; margin-bottom: 9px; }
+.status-card p { color: var(--gray-600); font-size: 14px; line-height: 1.65; }
+.related-grid { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.related-grid a { border: 1px solid var(--gray-200); border-radius: 999px; padding: 9px 14px; color: var(--primary); text-decoration: none; font-size: 13px; font-weight: 700; }
+.related-grid a:hover { border-color: var(--secondary); color: var(--secondary); }
+@media (max-width: 860px) {
+  .persona-grid,
+  .status-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<BaseLayout title={persona.title} description={persona.description} activeNav="solutions" canonicalPath={canonicalPath} structuredData={structuredData}>
+  <section class="persona-landing">
+    <div class="container">
+      <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span><a href={withBase('/solutions')}>Solutions</a><span>/</span>{persona.shortTitle}</div>
+      <div class="section-badge" style="background:rgba(245,166,35,0.15);border:1px solid rgba(245,166,35,0.25);color:var(--accent-light);">{persona.eyebrow}</div>
+      <h1>{persona.headline}</h1>
+      <p>{persona.description}</p>
+      <div class="persona-trust">{persona.trustLine}</div>
+      <div class="persona-ctas">
+        <a href={persona.primaryCta.href} class="btn btn-accent btn-lg">{persona.primaryCta.label}</a>
+        <a href={persona.secondaryCta.href} class="btn btn-white-outline btn-lg">{persona.secondaryCta.label}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container persona-grid">
+      <div>
+        <div class="section-badge">The current state</div>
+        <h2 class="section-headline" style="font-size:32px;">Management quality should be systemic.</h2>
+        <p class="section-subhead" style="margin-bottom:24px;">{persona.currentState}</p>
+        <blockquote class="persona-quote">
+          <p>"{persona.quote}"</p>
+          <footer>{persona.quoteBy}</footer>
+        </blockquote>
+      </div>
+      <div class="status-grid">
+        {persona.cards.map((card) => (
+          <article class="status-card">
+            {card.status && <span class="status-tag" data-status={card.status}>{card.status}</span>}
+            <div class="section-tag" style="margin-bottom:8px;">{card.label}</div>
+            <h3>{card.headline}</h3>
+            <p>{card.detail}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-light">
+    <div class="container">
+      <div class="center">
+        <div class="section-badge">Explore by role</div>
+        <h2 class="section-headline" style="max-width:620px;">Cadence changes shape by altitude.</h2>
+        <p class="section-subhead">ICs, managers, senior leaders, CHROs, and CEOs see the same operating record through the lens of the decisions they own.</p>
+        <div class="related-grid" style="justify-content:center;">
+          {relatedPersonas.map((item) => <a href={withBase(`/for/${item.slug}`)}>{item.shortTitle}</a>)}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
