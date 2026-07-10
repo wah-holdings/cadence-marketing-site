@@ -28,11 +28,11 @@ export const personaPages: PersonaPage[] = [
     description:
       'Cadence turns every 1:1 into a growth moment. Your manager shows up with an agenda, your progress stays on record, and your development actually moves.',
     trustLine: "You are not being managed by AI. AI gives your manager better tools to develop you.",
-    primaryCta: { label: 'Bring Cadence to my team', href: '/bring-to-team?persona=employee' },
+    primaryCta: { label: 'Bring Cadence to my team', href: g1SignupHref('employee_team', 'persona_cta') },
     secondaryCta: { label: 'Start a trial workspace', href: g1SignupHref('employee', 'persona_cta') },
     quote:
       'I spent 18 months at my last company not knowing if I was on track for a promotion or heading toward a PIP. Cadence makes the record visible.',
-    quoteBy: 'Software Engineer, L3',
+    quoteBy: 'Illustrative employee scenario',
     currentState:
       'Management quality should not be luck of the draw. Cadence creates a system where 1:1s, goals, recognition, and coaching become visible operating records instead of private memory.',
     cards: [
@@ -77,10 +77,10 @@ export const personaPages: PersonaPage[] = [
       'Cadence prompts managers with the agenda, goals, recognition, and follow-through context they need before a conversation becomes a crisis.',
     trustLine: 'AI does the prep. You do the managing.',
     primaryCta: { label: 'Start a team trial', href: g1SignupHref('manager', 'persona_cta') },
-    secondaryCta: { label: 'Bring Cadence to my team', href: '/bring-to-team?persona=manager' },
+    secondaryCta: { label: 'Bring Cadence to my team', href: g1SignupHref('manager_team', 'persona_cta') },
     quote:
       'The first month with Cadence showed me three relationships I was managing on autopilot that needed real attention.',
-    quoteBy: 'VP Engineering',
+    quoteBy: 'Illustrative manager scenario',
     currentState:
       'Good management is hard because managers are expected to coach, recognize, document, and intervene consistently without a system. Cadence makes those behaviors the default workflow.',
     cards: [
@@ -128,7 +128,7 @@ export const personaPages: PersonaPage[] = [
     secondaryCta: { label: 'Explore Culture Scorecard', href: '/product#culture-scorecard' },
     quote:
       'I used to find out about management problems through resignations. Now I see the pattern earlier.',
-    quoteBy: 'Chief Product Officer',
+    quoteBy: 'Illustrative senior leader scenario',
     currentState:
       'Senior leaders are accountable for outcomes produced by people they do not directly manage. They need signal early enough to coach the managers who own the relationships.',
     cards: [
@@ -175,7 +175,7 @@ export const personaPages: PersonaPage[] = [
     secondaryCta: { label: 'Review pricing', href: '/pricing?persona=chro' },
     quote:
       'The ROI conversation starts with replacing fragmented management workflows. Roadmap previews show where Cadence is going next.',
-    quoteBy: 'CHRO, mid-market technology company',
+    quoteBy: 'Illustrative CHRO scenario',
     currentState:
       'The traditional CHRO view is backwards-looking: turnover reports, ER case counts, and survey summaries published weeks after the moment to intervene has passed.',
     cards: [
