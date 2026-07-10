@@ -24,9 +24,9 @@ const normalizedCanonicalPath =
     ? '/'
     : `/${cleanCanonicalPath.replace(/^\/+/, '').replace(/\/+$/, '')}`;
 const canonicalUrl = new URL(normalizedCanonicalPath, siteOrigin).toString();
-const socialImagePath = withBase('/screenshots/cadence-homepage-hero-2026-05-16.png');
+const socialImagePath = withBase('/screenshots/cadence-calendar-meetings-rendered-2026-07-10.webp');
 const socialImageUrl = new URL(socialImagePath, siteOrigin).toString();
-const socialImageAlt = 'Cadence dashboard showing manager health, goals, recognition, and culture intelligence.';
+const socialImageAlt = 'Cadence 1:1 Meetings workspace showing scheduled manager-report conversations.';
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',

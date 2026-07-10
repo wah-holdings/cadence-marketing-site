@@ -57,7 +57,7 @@ const checks = [
     ok:
       files.home.includes("proofScreenshots.map") &&
       files.home.includes("target=\"_blank\"") &&
-      files.data.includes("cadence-homepage-hero-2026-05-16.png"),
+      files.data.includes("cadence-calendar-meetings-rendered-2026-07-10.webp"),
   },
   {
     name: "deeper public pages no longer use stale sales-led request-access CTAs",
