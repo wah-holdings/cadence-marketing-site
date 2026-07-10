@@ -19,7 +19,7 @@ export const heroMessaging = {
 
 export const trustChips = [
   "Live workspace access",
-  "Roadmap previews labeled",
+  "Shipped scope labeled",
   "Humans own decisions",
 ];
 
