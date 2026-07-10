@@ -46,7 +46,7 @@
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
       "sourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "publicPromotion": false
     },
     {
       "id": "product.nine_box.registry_flip",
@@ -55,9 +55,9 @@
       "capability": "nine_box.calibration",
       "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
       "liveSourceContains": "Core 9-box calibration is live in current purchasable access",
-      "roadmapSourceContains": "These claims remain roadmap until the capability ships in production.",
+      "roadmapSourceContains": "Core 9-box calibration is a roadmap preview until the 2-user Professional reveal is verified in production.",
       "registryFlipPublishing": true,
-      "publicPromotion": true
+      "publicPromotion": false
     },
     {
       "id": "pricing.professional.er",
