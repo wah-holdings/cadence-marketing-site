@@ -17,7 +17,7 @@ export const heroMessaging = {
 
 export const trustChips = [
   "Live workspace access",
-  "Coming Q3 previews labeled",
+  "Shipped scope labeled",
   "Humans own decisions",
 ];
 
