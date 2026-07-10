@@ -150,12 +150,12 @@
       "notes": "CAD-7025/CAD-7367: buyer-usable OIDC SSO is production-live behind the Enterprise entitlement flag."
     },
     "security.sso_saml": {
-      "status": "ga",
+      "status": "roadmap",
       "prodFlag": "SSO_ENTITLEMENT",
-      "gaDate": "2026-06-27",
-      "marketingLabel": "available",
+      "gaDate": null,
+      "marketingLabel": "roadmap",
       "reviewOwner": "Maya",
-      "notes": "CAD-7395 closed done 6/27: SAML shipped to prod (PR #809 + #818 in prod build 7ee95c7, CAD-7921 read-only prod verification, security sign-offs CAD-7402/7473). Canonical copy ruling 7/2: SAML SSO = live (Enterprise); NEVER bundle with SCIM in one label."
+      "notes": "July 10 sellable-state correction: SAML code is in prod, but CAD-7395 closure excluded production real-IdP enable/E2E evidence. Treat as Q4 roadmap and not purchasable until controlled prod real-IdP E2E evidence is attached."
     },
     "security.scim_provisioning": {
       "status": "roadmap",
@@ -166,12 +166,12 @@
       "notes": "SCIM auto-provisioning remains unimplemented (0 matches in cadence-api src; PeopleModule SCIM disabled). Q4 roadmap. Keep unbundled from SAML per canonical 7/2 ruling."
     },
     "platform.connected_agents": {
-      "status": "ga",
+      "status": "preview",
       "prodFlag": "CONNECTED_AGENTS_ENABLED",
-      "gaDate": "2026-07-02",
-      "marketingLabel": "available",
+      "gaDate": null,
+      "marketingLabel": "preview",
       "reviewOwner": "Maya",
-      "notes": "CAD-9066/CAD-9074: Connected Agents + MCP Audit modules live in prod; authenticated MCP endpoint proven end-to-end (CAD-7915). BYOA over open MCP standard with tenant-scoped permissions and per-request audit log. Included in Professional and Enterprise."
+      "notes": "BYOA over MCP remains preview until CAD-10556 scope-consent, scoped audit logging, and external customer smoke evidence are complete. Do not present as included or purchasable in Professional/Enterprise."
     },
     "security.configurable_retention": {
       "status": "ga",
