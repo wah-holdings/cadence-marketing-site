@@ -126,13 +126,39 @@ import { g1PricingHref } from '../lib/g1CampaignLinks';
 .competitor-name { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
 .competitor-niche { font-size: 12px; color: var(--secondary); font-weight: 600; margin-bottom: 10px; }
 .competitor-card p { font-size: 13px; color: var(--gray-500); line-height: 1.6; }
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 36px;
+}
+.doc-link-card {
+  display: block;
+  background: white;
+  border: 1px solid var(--gray-100);
+  border-radius: 14px;
+  padding: 24px;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.doc-link-card:hover { transform: translateY(-3px); box-shadow: 0 10px 32px rgba(30,58,95,0.08); border-color: var(--secondary); }
+.doc-link-card h3 { font-size: 16px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+.doc-link-card p { font-size: 13px; line-height: 1.65; color: var(--gray-500); margin-bottom: 14px; }
+.doc-link-card span { font-size: 12px; font-weight: 700; color: var(--secondary); }
 
 @media (max-width: 768px) {
   .resource-grid { grid-template-columns: 1fr; }
+  .docs-grid { grid-template-columns: 1fr; }
 }
 </style>
 
-<BaseLayout title="Resources — Cadence Manifesto, Competitive Research, and Insights" description="The Cadence management manifesto, competitive teardown vs. 15Five/Lattice/Culture Amp, and the case for why management by design beats management by luck." activeNav="resources">
+<BaseLayout
+  title="Cadence Resources | Manifesto, Comparisons, and Docs"
+  description="Read the Cadence management manifesto, competitive teardown, buyer guide, trust references, sitemap, and AI-readable llms.txt index."
+  activeNav="resources"
+  ogTitle="Cadence Resources | Management by Design Research"
+  ogDescription="The manifesto, competitor comparisons, buyer guidance, trust references, and machine-readable docs behind Cadence."
+>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -168,6 +194,12 @@ import { g1PricingHref } from '../lib/g1CampaignLinks';
         <h3>Why Cadence vs. the Alternatives</h3>
         <p>The honest comparison: where each tool wins, where they fall short, and the specific capability gaps that make a unified plane structurally different.</p>
         <div class="resource-cta">Read the guide →</div>
+      </a>
+      <a href="#docs" class="resource-card">
+        <div class="resource-type">Docs Index</div>
+        <h3>Trust, Sitemap, and AI-Readable References</h3>
+        <p>Fast paths for human evaluators and answer engines: product proof, security posture, pricing, sitemap, robots.txt, and llms.txt.</p>
+        <div class="resource-cta">Open the docs index →</div>
       </a>
     </div>
   </div>
@@ -418,6 +450,49 @@ import { g1PricingHref } from '../lib/g1CampaignLinks';
           <p>Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, goal attainment, and core 9-box calibration into one management view. 9-box movement analytics and predictive retention risk are roadmap inputs, not current competitor-superiority claims.</p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DOCS INDEX -->
+<section class="section section-light" id="docs">
+  <div class="container">
+    <div class="center" style="margin-bottom:32px;">
+      <div class="section-badge">Docs Discoverability</div>
+      <h2 class="section-headline">Human-readable and AI-readable references.</h2>
+      <p class="section-subhead">Use these references to verify what Cadence ships today, what is roadmap-labeled, and how the canonical site exposes itself to crawlers and answer engines.</p>
+    </div>
+    <div class="docs-grid">
+      <a href={withBase('/product')} class="doc-link-card">
+        <h3>Product proof</h3>
+        <p>Live modules, screenshots, and roadmap-labeled previews for the management operating plane.</p>
+        <span>Open product →</span>
+      </a>
+      <a href={withBase('/security')} class="doc-link-card">
+        <h3>Trust and security</h3>
+        <p>Privacy, data handling, consent posture, DPA process, and compliance roadmap labels.</p>
+        <span>Open security →</span>
+      </a>
+      <a href={withBase('/pricing')} class="doc-link-card">
+        <h3>Pricing and packaging</h3>
+        <p>Essentials, Professional, and Enterprise scope with current capabilities separated from roadmap items.</p>
+        <span>Open pricing →</span>
+      </a>
+      <a href={withBase('/llms.txt')} class="doc-link-card">
+        <h3>llms.txt</h3>
+        <p>AI-readable site summary, primary pages, live capabilities, and roadmap-labeled capabilities.</p>
+        <span>Open llms.txt →</span>
+      </a>
+      <a href={withBase('/sitemap.xml')} class="doc-link-card">
+        <h3>Sitemap</h3>
+        <p>The canonical route map for cadencehr.ai after consolidation onto the Astro marketing site.</p>
+        <span>Open sitemap →</span>
+      </a>
+      <a href={withBase('/robots.txt')} class="doc-link-card">
+        <h3>Robots.txt</h3>
+        <p>Crawler policy pointing crawlers to the canonical sitemap and keeping app-private paths out of search.</p>
+        <span>Open robots.txt →</span>
+      </a>
     </div>
   </div>
 </section>

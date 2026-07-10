@@ -55,7 +55,13 @@ import { withBase } from '../lib/paths';
 @media (max-width: 768px) { .use-case-grid { grid-template-columns: 1fr; } }
 </style>
 
-<BaseLayout title="Solutions — Cadence for Every Layer of the Org" description="Cadence works for ICs who want visibility, managers who want to be better, senior leaders who need signal across their chain, CHROs who need operational command, and CEOs who need strategic altitude." activeNav="solutions">
+<BaseLayout
+  title="Cadence Solutions | Close the Remote Management Chasm"
+  description="See how Cadence helps ICs, managers, senior leaders, CHROs, and CEOs close the remote-contributor management chasm with human-owned workflows."
+  activeNav="solutions"
+  ogTitle="Cadence Solutions | One People Operating Plane by Role"
+  ogDescription="Role-by-role paths for distributed teams: IC clarity, manager coaching, leader signal, CHRO command, and CEO altitude."
+>
 
 <div class="page-hero">
   <div class="container">
@@ -231,6 +237,7 @@ import { withBase } from '../lib/paths';
     <div class="btn-group" style="justify-content:center;">
       <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-solutions-cta" class="btn btn-white btn-lg">Start free trial</a>
       <a href={withBase('/product')} class="btn btn-white-outline btn-lg">Explore the platform</a>
+      <a href={withBase('/resources#competitive')} class="btn btn-white-outline btn-lg">Read comparisons</a>
     </div>
   </div>
 </section>

@@ -1,4 +1,4 @@
-import { proxySeoAsset } from "./_seoProxy";
+import { sitemapXml } from "./_canonicalSeoAssets";
 
-// /sitemap.xml -> app.cadencehr.ai/sitemap.xml (CAD-8204)
-export const onRequestGet = proxySeoAsset("/sitemap.xml");
+// /sitemap.xml describes the canonical Astro marketing-site route map.
+export const onRequestGet = sitemapXml;

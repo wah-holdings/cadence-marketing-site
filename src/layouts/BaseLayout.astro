@@ -8,6 +8,10 @@ export interface Props {
   activeNav?: string;
   canonicalPath?: string;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+  ogTitle?: string;
+  ogDescription?: string;
+  ogImage?: string;
+  ogImageAlt?: string;
 }
 const {
   title,
@@ -15,6 +19,10 @@ const {
   activeNav,
   canonicalPath,
   structuredData = [],
+  ogTitle = title,
+  ogDescription = description,
+  ogImage = '/screenshots/cadence-homepage-hero-2026-05-16.png',
+  ogImageAlt = 'Cadence dashboard showing manager health, goals, recognition, and culture intelligence.',
 } = Astro.props;
 const siteOrigin = 'https://cadencehr.ai';
 const rawCanonicalPath = canonicalPath ?? Astro.url.pathname;
@@ -24,9 +32,8 @@ const normalizedCanonicalPath =
     ? '/'
     : `/${cleanCanonicalPath.replace(/^\/+/, '').replace(/\/+$/, '')}`;
 const canonicalUrl = new URL(normalizedCanonicalPath, siteOrigin).toString();
-const socialImagePath = withBase('/screenshots/cadence-homepage-hero-2026-05-16.png');
+const socialImagePath = withBase(ogImage);
 const socialImageUrl = new URL(socialImagePath, siteOrigin).toString();
-const socialImageAlt = 'Cadence dashboard showing manager health, goals, recognition, and culture intelligence.';
 const pageSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
@@ -57,19 +64,20 @@ const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [st
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title}</title>
 <meta name="description" content={description}>
+<meta name="robots" content="index, follow">
 <link rel="canonical" href={canonicalUrl}>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Cadence">
 <meta property="og:url" content={canonicalUrl}>
-<meta property="og:title" content={title}>
-<meta property="og:description" content={description}>
+<meta property="og:title" content={ogTitle}>
+<meta property="og:description" content={ogDescription}>
 <meta property="og:image" content={socialImageUrl}>
 <meta property="og:image:width" content="1600">
 <meta property="og:image:height" content="1000">
-<meta property="og:image:alt" content={socialImageAlt}>
+<meta property="og:image:alt" content={ogImageAlt}>
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content={title}>
-<meta name="twitter:description" content={description}>
+<meta name="twitter:title" content={ogTitle}>
+<meta name="twitter:description" content={ogDescription}>
 <meta name="twitter:image" content={socialImageUrl}>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href={withBase('/css/cadence.css')}>
@@ -149,6 +157,7 @@ const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [st
           <a href={withBase('/resources')}>All Resources</a>
           <a href={withBase('/compare')}>vs. Competitors</a>
           <a href={withBase('/resources#manifesto')}>Management Manifesto</a>
+          <a href={withBase('/resources#docs')}>Docs &amp; AI index</a>
         </div>
         <div class="footer-col">
           <h4>Trust</h4>

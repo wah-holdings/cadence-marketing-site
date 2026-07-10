@@ -1,4 +1,4 @@
-import { proxySeoAsset } from "./_seoProxy";
+import { llmsTxt } from "./_canonicalSeoAssets";
 
-// /llms.txt -> app.cadencehr.ai/llms.txt (CAD-8204)
-export const onRequestGet = proxySeoAsset("/llms.txt");
+// /llms.txt describes the canonical Astro marketing-site route map.
+export const onRequestGet = llmsTxt;

@@ -194,7 +194,13 @@ const productValues = [
 }
 </style>
 
-<BaseLayout title="About Cadence — The Story, The Team, and Why We're Building This" description="Cadence was founded on a simple observation: good management shouldn't be luck. Meet the founder and learn why we're building the management operating plane for distributed work." activeNav="about">
+<BaseLayout
+  title="About Cadence | Management by Design, Not by Luck"
+  description="Cadence was founded to make consistent management structural for distributed teams. Learn the story behind the management operating plane."
+  activeNav="about"
+  ogTitle="About Cadence | The Management Operating Plane Story"
+  ogDescription="Why Cadence exists: to close the remote-contributor management chasm with systems that help humans develop humans."
+>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
@@ -383,6 +389,7 @@ const productValues = [
     <div class="btn-group" style="justify-content:center;">
       <a href="https://app.cadencehr.ai/signup?intent=self-serve&source=apex-about-cta" class="btn btn-white btn-lg">Start free trial</a>
       <a href="mailto:demo@cadencehr.ai" class="btn btn-white-outline btn-lg">Email us directly</a>
+      <a href={withBase('/resources#manifesto')} class="btn btn-white-outline btn-lg">Read the manifesto</a>
     </div>
   </div>
 </section>

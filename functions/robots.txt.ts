@@ -1,4 +1,4 @@
-import { proxySeoAsset } from "./_seoProxy";
+import { robotsTxt } from "./_canonicalSeoAssets";
 
-// /robots.txt -> app.cadencehr.ai/robots.txt (CAD-8204)
-export const onRequestGet = proxySeoAsset("/robots.txt");
+// /robots.txt points crawlers at the canonical Astro marketing-site sitemap.
+export const onRequestGet = robotsTxt;

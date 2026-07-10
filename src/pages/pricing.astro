@@ -179,7 +179,14 @@ const pricingFaqSchema = {
 }
 </style>
 
-<BaseLayout title="Pricing — Cadence: Transparent Pricing" description="Cadence pricing, current access, and roadmap-labeled feature comparison including Personality Intelligence." activeNav="pricing" structuredData={pricingFaqSchema}>
+<BaseLayout
+  title="Cadence Pricing | Transparent Tiers and Roadmap Labels"
+  description="Cadence pricing starts at $12 per seat per month for live management workflows, with Professional and Enterprise tiers and roadmap capabilities clearly labeled."
+  activeNav="pricing"
+  structuredData={pricingFaqSchema}
+  ogTitle="Cadence Pricing | Transparent People-Ops Platform Tiers"
+  ogDescription="Compare Essentials, Professional, and Enterprise access with current capabilities separated from roadmap previews."
+>
 
 <div class="page-hero" style="background:#1E3A5F;color:#FFFFFF;">
   <div class="container">
@@ -384,6 +391,7 @@ const pricingFaqSchema = {
     <div class="btn-group" style="justify-content:center;">
       <a href={g1SignupHref('essentials', 'pricing_cta', { tier: 'essentials' })} class="btn btn-white btn-lg">Start free trial</a>
       <a href="mailto:demo@cadencehr.ai?subject=Pricing%20question" class="btn btn-white-outline btn-lg">Talk to us</a>
+      <a href={withBase('/security')} class="btn btn-white-outline btn-lg">Review security</a>
     </div>
   </div>
 </section>
