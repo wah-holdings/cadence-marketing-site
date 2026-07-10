@@ -88,8 +88,8 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "security.sso_saml",
-      "sourceContains": "SAML SSO",
-      "publicPromotion": true
+      "sourceContains": "SAML SSO — Q4 roadmap",
+      "publicPromotion": false
     },
     {
       "id": "pricing.enterprise.scim_deferred",
@@ -112,16 +112,16 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "platform.connected_agents",
-      "sourceContains": "Connected Agents (BYOA)",
-      "publicPromotion": true
+      "sourceContains": "Connected Agents (BYOA over MCP) — preview",
+      "publicPromotion": false
     },
     {
       "id": "product.connected_agents",
       "page": "src/pages/product.astro",
       "type": "pricing_feature",
       "capability": "platform.connected_agents",
-      "sourceContains": "Every connected-agent request is logged in the MCP audit trail",
-      "publicPromotion": true
+      "sourceContains": "Connected Agents is in preview",
+      "publicPromotion": false
     },
     {
       "id": "compare.competitor.connected_agents_superiority",
@@ -129,7 +129,7 @@
       "type": "competitor_superiority",
       "capability": "platform.connected_agents",
       "sourceContains": "Connected Agents — bring your own AI via MCP, with audit log",
-      "publicPromotion": true
+      "publicPromotion": false
     },
     {
       "id": "pricing.enterprise.configurable_retention",

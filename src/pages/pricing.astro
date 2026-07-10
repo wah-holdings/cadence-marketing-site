@@ -18,7 +18,7 @@ const pricingFaqItems = [
   },
   {
     question: 'What tools does Cadence replace?',
-    answer: 'Cadence Essentials targets 1:1 management, AI meeting summaries, manager-lane AI coaching, goals, recognition, pulse-survey response collection, and Job Architecture workflows. Professional adds ER case management, manager scorecard and org-health heatmap views, employee-lane AI coaching, 9-box calibration, Connected Agents (bring-your-own-AI over MCP with audit logging), and Personality working-style profiles with team view and coaching read-surface. Enterprise adds OIDC and SAML SSO plus configurable retention. Turnover prediction, full survey campaign management, personality signal woven into 1:1 prompts, SCIM provisioning, KVD, advanced 9-box movement analysis, intervention workflows, and role-recasting workflows remain preview, planning, or roadmap items.',
+    answer: 'Cadence Essentials targets 1:1 management, AI meeting summaries, manager-lane AI coaching, goals, recognition, pulse-survey response collection, and Job Architecture workflows. Professional adds ER case management, manager scorecard and org-health heatmap views, employee-lane AI coaching, 9-box calibration, Personality working-style profiles with team view and coaching read-surface, and Connected Agents preview access. Enterprise adds OIDC SSO plus configurable retention. BYOA over MCP opens after scope-consent and scoped audit logging ship; SAML SSO, SCIM provisioning, turnover prediction, full survey campaign management, personality signal woven into 1:1 prompts, KVD, advanced 9-box movement analysis, intervention workflows, and role-recasting workflows remain preview, planning, or roadmap items.',
   },
   {
     question: 'Do you offer a free trial?',
@@ -231,7 +231,7 @@ const pricingFaqSchema = {
         <div class="includes-label">Everything in Essentials, plus</div>
         <ul class="features-list">
           <li><span class="check-y"></span> 9-Box Talent Calibration</li>
-          <li><span class="check-y"></span> Connected Agents (BYOA) — bring your own AI over MCP, with audit log</li>
+          <li class="roadmap-li">Connected Agents (BYOA over MCP) — preview; external customer connections open after scope-consent and scoped audit logging ship.</li>
           <li><span class="check-y"></span> ER Command Center — full case lifecycle</li>
           <li><span class="check-y"></span> Manager scorecard and org-health heatmap</li>
           <li><span class="check-y"></span> Personality working-style profile, team view, and coaching read-surface</li>
@@ -254,7 +254,7 @@ const pricingFaqSchema = {
         <div class="includes-label">Everything in Professional, plus</div>
         <ul class="features-list">
           <li><span class="check-y"></span> Enterprise SSO (OIDC)</li>
-          <li><span class="check-y"></span> SAML SSO</li>
+          <li class="roadmap-li">SAML SSO — Q4 roadmap; not purchasable until production real-IdP E2E evidence is attached.</li>
           <li class="roadmap-li">SCIM provisioning — Q4 roadmap</li>
           <li class="roadmap-li">Custom HRIS integrations beyond current admin import — enterprise roadmap</li>
           <li><span class="check-y"></span> Configurable data retention</li>
@@ -344,7 +344,7 @@ const pricingFaqSchema = {
       <div class="compare-row"><div class="compare-feature-name">Personality signal in scoring, ratings, comp, or 9-box placement</div><div class="compare-no">Never</div><div class="compare-no">Never</div><div class="compare-no">Never</div></div>
       <div class="compare-row"><div class="compare-group">Talent Calibration</div></div>
       <div class="compare-row"><div class="compare-feature-name">9-Box Talent Calibration</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
-      <div class="compare-row"><div class="compare-feature-name">Connected Agents (BYOA) with MCP audit log</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">Connected Agents (BYOA over MCP)</div><div class="compare-no">No</div><div class="compare-partial">Preview</div><div class="compare-partial">Preview</div></div>
       <div class="compare-row"><div class="compare-feature-name">Blind L1/L2 rating workflow</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
       <div class="compare-row"><div class="compare-group">Employee Relations</div></div>
       <div class="compare-row"><div class="compare-feature-name">ER Command Center</div><div class="compare-no">No</div><div class="compare-yes">Included</div><div class="compare-yes">Included</div></div>
@@ -356,7 +356,7 @@ const pricingFaqSchema = {
       <div class="compare-row"><div class="compare-group">Security &amp; Compliance</div></div>
       <div class="compare-row"><div class="compare-feature-name">SOC 2 Type II audit report</div><div class="compare-partial">Roadmap</div><div class="compare-partial">Roadmap</div><div class="compare-partial">Roadmap</div></div>
       <div class="compare-row"><div class="compare-feature-name">Enterprise SSO (OIDC)</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-yes">Included</div></div>
-      <div class="compare-row"><div class="compare-feature-name">SAML SSO</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-yes">Included</div></div>
+      <div class="compare-row"><div class="compare-feature-name">SAML SSO</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-partial">Q4 roadmap</div></div>
       <div class="compare-row"><div class="compare-feature-name">SCIM provisioning</div><div class="compare-no">No</div><div class="compare-no">No</div><div class="compare-partial">Q4 roadmap</div></div>
       <div class="compare-row"><div class="compare-feature-name">Data Processing Agreement (DPA)</div><div class="compare-no">No</div><div class="compare-partial">Standard</div><div class="compare-yes">Custom</div></div>
     </div>
