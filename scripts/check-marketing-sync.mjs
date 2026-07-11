@@ -21,6 +21,8 @@ const files = {
   personaRoute: read("src/pages/for/[persona].astro"),
 };
 
+const legacyPersonaProxyPath = join(root, "functions/for/[persona].ts");
+
 const hasTierParam = (content, tier) =>
   content.includes(`tier=${tier}`) || content.includes(`tier: '${tier}'`) || content.includes(`tier: "${tier}"`);
 
@@ -101,7 +103,8 @@ const checks = [
       files.personas.includes("slug: 'chro'") &&
       files.personas.includes("slug: 'ceo'") &&
       files.layout.includes("withBase('/for/employees')") &&
-      files.layout.includes("withBase('/for/senior-leaders')"),
+      files.layout.includes("withBase('/for/senior-leaders')") &&
+      !existsSync(legacyPersonaProxyPath),
   },
   {
     name: "public pages do not render stale Culture Scorecard live-direction copy",
