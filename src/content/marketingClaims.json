@@ -33,6 +33,16 @@
       "publicPromotion": true
     },
     {
+      "id": "product.role_expectations.one_on_one.coming",
+      "page": "src/pages/product.astro",
+      "type": "comparison_aeo_staged",
+      "capability": "job_architecture.role_expectations_in_one_on_one",
+      "stagedSourceContains": "Role expectations that guide shared 1:1 agendas for both manager and employee",
+      "roadmapSourceContains": "Coming: Role expectations that guide shared 1:1 agendas for both manager and employee",
+      "registryFlipPublishing": true,
+      "publicPromotion": false
+    },
+    {
       "id": "pricing.essentials.surveys",
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",

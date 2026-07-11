@@ -82,6 +82,14 @@
       "reviewOwner": "Maya",
       "notes": "GA in prod; market admin import, role definitions, level context, and role assignment. Keep role recasting and compensation-band workflows roadmap-labeled."
     },
+    "job_architecture.role_expectations_in_one_on_one": {
+      "status": "roadmap",
+      "prodFlag": "ROLE_EXPECTATIONS_ONE_ON_ONE_ENABLED",
+      "gaDate": null,
+      "marketingLabel": "roadmap",
+      "reviewOwner": "Maya",
+      "notes": "The two-sided, visibility-filtered role-expectations experience in the manager and employee 1:1 workflow is not production-verified. Market only as Coming; AI may suggest labeled drafts for human approval and must not auto-insert or score people."
+    },
     "recognition.rewards": {
       "status": "ga",
       "prodFlag": "RECOGNITION_ENABLED",

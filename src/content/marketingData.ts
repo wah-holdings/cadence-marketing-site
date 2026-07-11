@@ -52,3 +52,20 @@ export const marketingSyncPhrases = [
   heroMessaging.secondaryCta.label,
   ...trustChips,
 ];
+
+// Job Architecture is an admin-side foundation today. The two-sided
+// role-expectations experience belongs in the 1:1 workflow only when it is
+// production-verified; keep that future state explicitly labeled as Coming.
+export const roleExpectationsMessaging = {
+  currentLabel: 'Live today',
+  current: [
+    'Job architecture data import for admin setup',
+    'Versioned role definitions',
+    'Level context and role assignment',
+  ],
+  comingLabel: 'Coming',
+  coming: [
+    'Role expectations that guide shared 1:1 agendas for both manager and employee',
+    'Human-approved expectation prompts — never auto-inserted or used to score people',
+  ],
+};
