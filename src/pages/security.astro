@@ -70,7 +70,7 @@ const retentionFacts = capabilities.facts.retention;
   margin-bottom: 6px;
 }
 .tag-green { background: rgba(16,185,129,0.1); color: var(--success); }
-.tag-orange { background: rgba(245,158,11,0.1); color: var(--warning); }
+.tag-orange { background: rgba(245,158,11,0.14); color: var(--accent-dark); }
 .tag-blue { background: rgba(74,144,217,0.1); color: var(--secondary-dark); }
 
 .retention-table {
@@ -121,7 +121,7 @@ const retentionFacts = capabilities.facts.retention;
 }
 .status-done { background: rgba(16,185,129,0.1); color: var(--success); }
 .status-active { background: rgba(74,144,217,0.1); color: var(--secondary-dark); }
-.status-planned { background: rgba(245,158,11,0.1); color: var(--warning); }
+.status-planned { background: rgba(245,158,11,0.14); color: var(--accent-dark); }
 .roadmap-item h4 { font-size: 14px; font-weight: 700; color: var(--primary); margin-bottom: 4px; }
 .roadmap-item p { font-size: 13px; color: var(--gray-500); line-height: 1.55; }
 
@@ -137,7 +137,7 @@ const retentionFacts = capabilities.facts.retention;
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href={withBase('/')}>Home</a><span>/</span>Security &amp; Trust</div>
-    <div class="section-badge" style="background:rgba(16,185,129,0.15);border:1px solid rgba(16,185,129,0.25);color:#6EE7B7;">Security &amp; Trust</div>
+    <div class="section-badge" style="background:rgba(16,185,129,0.18);border:1px solid rgba(110,231,183,0.5);color:#FFFFFF;">Security &amp; Trust</div>
     <h1>Built with privacy at the center, <span class="accent">not bolted on later.</span></h1>
     <p>Cadence operates on sensitive workforce data — 1:1 conversations, performance records, HR cases, compensation context. We hold this data with the care it demands. Here's exactly how we think about security, consent, and compliance.</p>
   </div>
@@ -198,11 +198,11 @@ const retentionFacts = capabilities.facts.retention;
         <div style="background:var(--gray-50);border-radius:12px;border:1px solid rgba(74,144,217,0.2);padding:20px 24px;margin-top:8px;">
           <strong style="font-size:14px;color:var(--primary);">Recording defaults:</strong>
           <ul style="list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px;">
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Every 1:1 starts in non-recorded mode by default</li>
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Recording requires explicit opt-in from each participant</li>
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Revocation stops processing immediately — no retroactive capture</li>
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> Unknown jurisdictions default to recording off</li>
-            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span style="color:var(--success);font-weight:700;">✓</span> AI summaries and coaching require the same consent as recording when enabled</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span aria-hidden="true" style="color:#047857;font-weight:700;">✓</span> Every 1:1 starts in non-recorded mode by default</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span aria-hidden="true" style="color:#047857;font-weight:700;">✓</span> Recording requires explicit opt-in from each participant</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span aria-hidden="true" style="color:#047857;font-weight:700;">✓</span> Revocation stops processing immediately — no retroactive capture</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span aria-hidden="true" style="color:#047857;font-weight:700;">✓</span> Unknown jurisdictions default to recording off</li>
+            <li style="font-size:13px;color:var(--gray-700);display:flex;gap:10px;"><span aria-hidden="true" style="color:#047857;font-weight:700;">✓</span> AI summaries and coaching require the same consent as recording when enabled</li>
           </ul>
         </div>
       </div>
