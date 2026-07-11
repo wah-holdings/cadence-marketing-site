@@ -25,24 +25,24 @@ export const trustChips = [
 
 export const proofScreenshots = [
   {
-    title: "Manager workspace",
-    image: "/screenshots/cadence-homepage-hero-2026-05-16.png",
-    text: "Live workspace view connecting manager health, goals, recognition, and culture signal.",
+    title: "1:1 calendar rhythm",
+    image: "/screenshots/cadence-calendar-meetings-rendered-2026-07-10.webp",
+    text: "Rendered workspace view showing scheduled manager-report 1:1s with recurrence and status context.",
   },
   {
-    title: "1:1 operating record",
-    image: "/screenshots/cadence-1on1-mid-meeting-workspace-2026-05-14.png",
-    text: "The management relationship record stays attached to agendas, decisions, and follow-through.",
+    title: "Goals in the operating plane",
+    image: "/screenshots/cadence-goals-rendered-2026-07-10.webp",
+    text: "Rendered goals surface showing company, team, and individual goals with progress and risk status.",
   },
   {
-    title: "Culture Scorecard",
-    image: "/screenshots/cadence-chro-culture-scorecard-full-view-2026-05-14.png",
-    text: "CHRO and L2 views connect live management workflows to org-health signal.",
+    title: "Personality with consent boundaries",
+    image: "/screenshots/cadence-personality-rendered-2026-07-10.webp",
+    text: "Rendered Personality surface showing working-style context as coaching support, not scoring.",
   },
   {
-    title: "Live vs. roadmap labeled",
+    title: "9-Box calibration matrix",
     image: "/screenshots/cadence-9box-calibration-matrix-view-2026-05-14.png",
-    text: "Core 9-box calibration is live for Professional and Enterprise; KVD, predictive retention, and advanced movement analysis stay roadmap-labeled.",
+    text: "Rendered 9-box calibration matrix with dual-rating context and roadmap-adjacent claims kept separate.",
   },
 ];
 
