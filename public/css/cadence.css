@@ -12,7 +12,7 @@
   --secondary: #245F99;
   --secondary-light: #3379C2;
   --secondary-dark: #1D4F80;
-  --accent: #B45309;
+  --accent: #FCD34D;
   --accent-light: #B45309;
   --accent-dark: #92400E;
   --white: #FFFFFF;
@@ -208,7 +208,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(30,58,95,0.10); }
 .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--gray-200); }
 .btn-secondary:hover { border-color: var(--primary); background: rgba(30,58,95,0.03); }
 .btn-accent { background: var(--accent); color: var(--primary-dark); font-weight: 700; }
-.btn-accent:hover { background: var(--accent-light); box-shadow: 0 4px 12px rgba(245,166,35,0.35); }
+.btn-accent:hover { background: #FDE68A; box-shadow: 0 4px 12px rgba(245,166,35,0.35); }
 .btn-white { background: white; color: var(--primary); box-shadow: 0 4px 16px rgba(0,0,0,0.12); }
 .btn-white:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(0,0,0,0.18); }
 .btn-white-outline { background: var(--primary-dark); color: white; border: 2px solid rgba(255,255,255,0.85); }
