@@ -1,6 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
+import { roleExpectationsMessaging } from '../content/marketingData';
+
+// Kept literal so the marketing-reality registry can verify that this
+// non-GA workflow remains explicitly roadmap-labeled on the public surface.
+const roleExpectationsOneOnOneRoadmapClaim =
+  'Coming: Role expectations that guide shared 1:1 agendas for both manager and employee';
 ---
 <style>
 .module-nav {
@@ -384,22 +390,19 @@ import { withBase } from '../lib/paths';
   <div class="container">
     <div class="feature-block">
       <div>
-        <div class="module-number-tag">Module 07 · 🏗️ Job Architecture</div>
-        <h2 class="section-headline">Role context, honestly scoped.</h2>
-        <p>Nothing breaks trust faster than an employee who doesn't know what's expected at their level — or what they'd need to do to grow. Cadence supports Job Architecture import, versioned role definitions, level context, and role assignments today.</p>
+        <div class="module-number-tag">Module 07 · 🏗️ Role expectations</div>
+        <h2 class="section-headline">Make the next 1:1 clearer, not another HRIS project.</h2>
+        <p>When role expectations live apart from the conversation, managers guess and employees are left to decode what good looks like. Cadence gives People teams an administrative role-definition foundation today. The shared role-expectations experience that steers 1:1s is coming.</p>
         <ul class="feature-list">
-          <li>Job architecture data import for admin setup</li>
-          <li>Versioned role definitions</li>
-          <li>Level context and role assignment</li>
-          <li>Roadmap: career path mapping</li>
-          <li>Roadmap preview: calibration-informed role-fit workflows</li>
-          <li>Roadmap: compensation banding integration</li>
+          {roleExpectationsMessaging.current.map((item) => <li>{roleExpectationsMessaging.currentLabel}: {item}</li>)}
+          <li>{roleExpectationsOneOnOneRoadmapClaim}</li>
+          {roleExpectationsMessaging.coming.slice(1).map((item) => <li>{roleExpectationsMessaging.comingLabel}: {item}</li>)}
         </ul>
       </div>
       <div class="mock-panel" style="padding:0;min-height:unset;">
         <img
           src={withBase('/screenshots/cadence-jobarch-tile-2026-05-15-v2.png')}
-          alt="Cadence Job Architecture — L1-L4 ladder with current level highlighted and L4 ready badge"
+          alt="Cadence role-definition view with level context"
           class="product-shot-frame product-shot"
           loading="lazy"
           decoding="async"
