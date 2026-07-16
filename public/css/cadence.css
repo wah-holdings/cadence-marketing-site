@@ -239,7 +239,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(30,58,95,0.10); }
 }
 
 /* ── FADE ANIMATION ── */
-.fade-up { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
