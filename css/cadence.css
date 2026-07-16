@@ -186,6 +186,7 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(30,58,95,0.10); }
 }
 .section-subhead.white { color: rgba(255,255,255,0.75); }
 .center { text-align: center; }
+.center .section-headline { margin-left: auto; margin-right: auto; }
 .center .section-subhead { margin-left: auto; margin-right: auto; }
 
 /* ── BUTTONS ── */
