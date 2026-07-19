@@ -1,18 +1,20 @@
 import { proxySeoAsset } from "./_seoProxy";
 
 const articlePaths = [
+  "/resources/managing-remote-hybrid-visibility",
   "/resources/why-1-1s-fail",
   "/resources/what-is-a-management-operating-plane",
   "/resources/connect-goals-feedback-recognition",
   "/resources/management-chasm-signs",
-  "/resources/how-to-run-effective-1-1s",
+  "/resources/9-box-talent-calibration-guide",
   "/resources/job-architecture-from-scratch",
   "/resources/measure-culture-without-survey-fatigue",
   "/resources/ai-in-performance-management",
-  "/resources/byoa-bring-your-own-agent-hr",
   "/resources/manager-coaching-at-scale",
+  "/resources/choose-people-management-platform",
   "/resources/ai-native-hr-software-2026",
   "/resources/build-vs-buy-people-stack",
+  "/resources/ai-people-ops-privacy",
   "/resources/ai-that-develops-humans",
   "/resources/management-record-system-of-record",
 ];
