@@ -11,6 +11,7 @@ const articlePaths = [
   "/resources/job-architecture-from-scratch",
   "/resources/measure-culture-without-survey-fatigue",
   "/resources/ai-in-performance-management",
+  "/resources/byoa-bring-your-own-agent-hr",
   "/resources/manager-coaching-at-scale",
   "/resources/choose-people-management-platform",
   "/resources/ai-native-hr-software-2026",
