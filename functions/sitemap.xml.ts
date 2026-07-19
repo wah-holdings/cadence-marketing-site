@@ -6,6 +6,7 @@ const articlePaths = [
   "/resources/what-is-a-management-operating-plane",
   "/resources/connect-goals-feedback-recognition",
   "/resources/management-chasm-signs",
+  "/resources/how-to-run-effective-1-1s",
   "/resources/9-box-talent-calibration-guide",
   "/resources/job-architecture-from-scratch",
   "/resources/measure-culture-without-survey-fatigue",

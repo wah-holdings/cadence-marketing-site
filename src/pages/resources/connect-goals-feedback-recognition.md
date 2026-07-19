@@ -36,7 +36,7 @@ Recognition data says one thing. Goal data says another. Survey sentiment says a
 
 From the employee's side, fragmentation reads as inconsistency. The goals conversation happens in one ritual, feedback in another, recognition in a third — and none of them reference each other. Praise that never connects to growth conversations starts to feel like confetti. Feedback that never connects to goals feels arbitrary. People are quick to sense when the company's story about their development doesn't hold together.
 
-There's a direct budget line too. Companies commonly stack a goal tool, a survey tool, a recognition tool, and a review tool. The average fragmented management stack costs $25–30 per seat per month — across tools that share no data. You're paying a premium for the privilege of disconnection.
+There's a direct budget line too. Companies commonly stack a goal tool, a survey tool, a recognition tool, and a review tool. Those tools often carry separate per-seat prices while sharing no data. You're paying for the privilege of disconnection.
 
 ## Why Connection Matters More Than Any Single Tool's Quality
 

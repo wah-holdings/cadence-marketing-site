@@ -71,7 +71,7 @@ To be direct about where Cadence sits, since this is our category: **Cadence is 
 
 ### And vs. point tools?
 
-The other common confusion: "We already have a 1:1 tool / an OKR tool / a survey tool / a recognition app." Point tools do their one verb, often well. The cost is fragmentation — and fragmentation isn't just a budget line, though it's that too (a typical fragmented management stack runs $25–30 per seat per month across tools that share no data). The deeper cost is that **the signals can't see each other**:
+The other common confusion: "We already have a 1:1 tool / an OKR tool / a survey tool / a recognition app." Point tools do their one verb, often well. The cost is fragmentation — and fragmentation isn't just a budget line. The deeper cost is that **the signals can't see each other**:
 
 - The survey tool knows a team's sentiment dropped two quarters running; the 1:1 tool has no idea.
 - The OKR tool knows a goal has been red for six weeks; the calibration discussion happens on reputation anyway.
@@ -141,7 +141,7 @@ It's the connected system where managing actually happens: 1:1s, goals, recognit
 No. An HRIS is a system of record for employment facts — pay, title, benefits, reporting lines — touched a few times a year. A management operating plane is a system of action for the manager–employee relationship, used weekly. Mature organizations run both; they complement rather than replace each other.
 
 **Why can't distributed teams just use separate tools for 1:1s, OKRs, and surveys?**
-Point tools fragment the signal: the survey tool can't inform the 1:1, the goal tool can't inform calibration, and no one can see whether the management rhythm is happening at all. Fragmented stacks also commonly cost $25–30 per seat per month across tools that share no data.
+Point tools fragment the signal: the survey tool can't inform the 1:1, the goal tool can't inform calibration, and no one can see whether the management rhythm is happening at all. Fragmented stacks also spread cost across tools that share no data.
 
 **Does AI in a management platform mean AI makes personnel decisions?**
 It shouldn't, and on a well-designed plane it structurally can't. AI's proper role is decision support — summarizing meetings, tracking follow-through, aggregating survey signal, private coaching. Decisions about ratings, promotion, discipline, and compensation stay with humans, on the record.

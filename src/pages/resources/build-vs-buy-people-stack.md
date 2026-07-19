@@ -46,7 +46,7 @@ The consequences are concrete: new managers inherit teams with no history. Skip-
 
 ### 3. Per-seat stacking
 
-Each point tool is individually cheap and collectively not. A meeting tool here, a goals tool there, recognition, surveys — each at its own per-seat price, each renewing on its own cycle, each priced as if it were the only line item. The average fragmented management stack costs $25–30 per seat per month — across tools that share no data.
+Each point tool is individually cheap and collectively not. A meeting tool here, a goals tool there, recognition, surveys — each at its own per-seat price, each renewing on its own cycle, each priced as if it were the only line item. The costs accumulate across tools that share no data.
 
 A worked comparison at 100 seats: Cadence Professional at $24 per seat/month billed annually is $28,800/year, versus a comparable fragmented stack at $36,000+/year. One caveat, stated plainly because it cuts both ways: savings estimates exclude roadmap capabilities that are not current deliverables — compare live capability to live capability, ours and anyone's.
 
@@ -112,7 +112,7 @@ That's the honest case for an operating plane: not that each module beats each s
 The usual triggers: a second layer of management appears, goals stop rolling up reliably, your first serious ER situation exposes scattered documentation, or managers visibly stop hopping between tools. Most companies hit at least one of these between 50 and 150 people.
 
 **Is it cheaper to consolidate onto one platform?**
-Often, at typical stack sizes: fragmented management stacks average $25–30 per seat per month across tools that share no data, while Cadence Professional at 100 seats runs $28,800/year versus $36,000+ for a comparable fragmented stack. But do the math on your actual stack, compare live capability to live capability, and remember savings estimates exclude roadmap items that aren't current deliverables.
+Compare your actual stack, live capability to live capability, and renewal terms before making a cost decision. Cadence Professional at 100 seats runs $28,800/year; any savings estimate should exclude roadmap items that aren't current deliverables.
 
 **Can we consolidate gradually instead of all at once?**
 Yes — you should. Move the 1:1 rhythm first, add goals at a cycle boundary, then recognition, then surveys and sensitive workflows. Habit migration beats data migration, and old tools should retire on renewal dates, not day one.
