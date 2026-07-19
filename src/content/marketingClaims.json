@@ -138,7 +138,7 @@
       "page": "src/pages/compare.astro",
       "type": "competitor_superiority",
       "capability": "platform.connected_agents",
-      "sourceContains": "Connected Agents — bring your own AI via MCP, with audit log",
+      "sourceContains": "Connected Agents (BYOA via MCP) — preview; external connections open after scope-consent and scoped audit logging ship",
       "publicPromotion": false
     },
     {
