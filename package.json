@@ -10,10 +10,15 @@
     "check:marketing-reality": "node scripts/check-marketing-reality.mjs",
     "check:marketing-reality:demo-stale": "MARKETING_REALITY_FIXTURE=scripts/fixtures/stale-retention-30-days.json node scripts/check-marketing-reality.mjs",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "a11y:ci": "node scripts/check-a11y.mjs",
+    "a11y:baseline": "A11Y_UPDATE_BASELINE=1 node scripts/check-a11y.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.0.0",
     "astro": "^5.7.0"
+  },
+  "devDependencies": {
+    "pa11y": "^8.0.0"
   }
 }
