@@ -5,20 +5,20 @@ import { g1SignupHref } from '../lib/g1CampaignLinks';
 
 const matrixRows = [
   ['Core Management', '1:1 Management Engine', '✓', '~', '✓', '—', '✓', '—', '~'],
-  ['Core Management', 'AI meeting summaries and coaching', '✓', '—', '~ Kona only', '—', '~ transcript only', '—', '—'],
+  ['Core Management', 'AI summaries and coaching (where enabled)', '~ preview', '—', '~ Kona only', '—', '~ transcript only', '—', '—'],
   ['Goals & OKRs', 'Goals & OKR Tracking', '✓', '✓', '✓', '~', '—', '—', '✓'],
   ['Goals & OKRs', 'Live goal context in 1:1 (Cadence preview)', '~ preview', '—', '✓', '—', '~', '—', '—'],
-  ['Talent Calibration', '9-Box Talent Calibration', '✓', '✓', '~', '~', '—', '—', '~'],
-  ['Talent Calibration', 'Blind dual-rating with coaching', '✓', '—', '—', '—', '—', '—', '~'],
+  ['Talent Calibration', '9-box talent calibration (Coming Q3)', '~ roadmap', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed'],
+  ['Talent Calibration', 'Blind dual-rating workflow (roadmap)', '~ roadmap', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed'],
   ['Employee Relations', 'ER Command Center', '✓', '—', '—', '—', '—', '✓', '—'],
   ['Recognition', 'Recognition & Rewards', '✓', '✓', '✓', '~', '—', '—', '—'],
   ['Recognition', '5:1 ratio tracking (Cadence preview)', '~ preview', '—', '—', '—', '—', '—', '—'],
-  ['Surveys', 'Survey Engine (pulse live; broader templates roadmap)', '~ pulse live', '✓', '✓', '✓', '—', '—', '~'],
+  ['Surveys', 'Pulse surveys and aggregate analytics (preview); broader templates roadmap', '~ preview', '✓', '✓', '✓', '—', '—', '~'],
   ['Surveys', 'Manager-level signal attribution (Cadence preview)', '~ preview', '~', '~', '~', '—', '—', '—'],
   ['Security & Compliance', 'Enterprise SSO (OIDC)', '✓', '✓', '✓', '✓', '—', '—', '✓'],
   ['Security & Compliance', 'SAML SSO', '~ Q4 roadmap', '✓', '✓', '✓', '—', '—', '✓'],
-  ['Platform Openness', 'Connected Agents — bring your own AI via MCP, with audit log', '✓', '—', '—', '—', '—', '—', '—'],
-  ['Intelligence Layer', 'Manager scorecard and org-health heatmap', '✓', '—', '—', '—', '—', '—', '—'],
+  ['Platform Openness', 'Connected agents / external AI access (MCP)', '✓', '~', '~', '~', '~', '~', '~'],
+  ['Intelligence Layer', 'Manager scorecard and org-health heatmap', '✓', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed'],
   ['Intelligence Layer', 'Cross-signal turnover prediction (Cadence roadmap preview)', '~ roadmap', '~', '—', '~', '—', '—', '—'],
 ];
 
@@ -233,8 +233,8 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
     <p>Lattice, 15Five, Culture Amp, Fellow, HR Acuity, and Betterworks each solve important people problems. Cadence is built around the connected manager-employee operating record.</p>
     <ul class="compare-intro-list">
       <li>Cadence current claims are limited to live or explicitly enabled workflows; staged capabilities are marked preview or roadmap.</li>
-      <li>✓ = substantive current coverage · ~ = partial, shallow, preview, or roadmap · — = absent.</li>
-      <li>Core 9-box calibration is live in Professional and Enterprise; predictive retention and full cross-signal movement analysis remain roadmap or preview until the registry marks them GA and marketable.</li>
+      <li>✓ = scoped current coverage · ~ = partial, preview, roadmap, or source-limited comparison · — = not assessed in this matrix.</li>
+      <li>9-box calibration and blind dual-rating are roadmap items. Predictive retention and full cross-signal movement analysis also remain roadmap or preview until the registry marks them GA and marketable.</li>
     </ul>
   </div>
 </div>
@@ -304,7 +304,7 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
       </div>
       <div class="win-card">
         <h3>Culture Scorecard spans signals</h3>
-        <p>Cadence connects 1:1 quality, ER patterns, recognition, surveys, goal attainment, and live 9-box calibration into one management view. Predictive retention and full cross-signal movement analysis remain roadmap inputs.</p>
+        <p>Cadence brings available 1:1, goals, recognition, and ER signals into one management view. 9-box inputs, predictive retention, and full cross-signal movement analysis are roadmap inputs.</p>
       </div>
     </div>
   </div>
