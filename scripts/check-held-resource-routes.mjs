@@ -10,7 +10,7 @@ const heldRoutes = [
 const server = spawn(
   "npx",
   ["--yes", "wrangler@4.112.0", "pages", "dev", "dist", "--port", String(port), "--ip", "127.0.0.1", "--compatibility-date", "2026-01-14"],
-  { stdio: ["ignore", "pipe", "pipe"] },
+  { detached: true, stdio: ["ignore", "pipe", "pipe"] },
 );
 
 let output = "";
@@ -41,5 +41,9 @@ try {
     console.log(`PASS ${route}: 404`);
   }
 } finally {
-  server.kill("SIGTERM");
+  // `npx` starts Wrangler as a child process. Kill the process group so this
+  // check cannot leave the Pages runtime running and stall CI after the probes.
+  if (server.pid) {
+    process.kill(-server.pid, "SIGTERM");
+  }
 }
