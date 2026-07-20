@@ -35,6 +35,9 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Verify unknown paths render as 404s
+        run: npm run check:not-found-fallback
+
       - name: Accessibility regression scan
         run: npm run a11y:ci
 
