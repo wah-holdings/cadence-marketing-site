@@ -138,7 +138,7 @@
       "page": "src/pages/compare.astro",
       "type": "competitor_superiority",
       "capability": "platform.connected_agents",
-      "sourceContains": "Connected Agents — bring your own AI via MCP, with audit log",
+      "sourceContains": "Connected agents / external AI access (MCP)",
       "publicPromotion": false
     },
     {
@@ -182,7 +182,7 @@
       "page": "src/pages/compare.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition, surveys, goal attainment, and live 9-box calibration into one management view.",
+      "sourceContains": "Cadence brings available 1:1, goals, recognition, and ER signals into one management view.",
       "publicPromotion": true
     },
     {
@@ -198,7 +198,7 @@
       "page": "src/pages/compare.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "9-Box Talent Calibration",
+      "stagedSourceContains": "9-box talent calibration (Coming Q3)",
       "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
       "publicPromotion": true
@@ -208,7 +208,7 @@
       "page": "src/pages/compare.astro",
       "type": "comparison_aeo_staged",
       "capability": "surveys.engagement_campaigns",
-      "stagedSourceContains": "Survey Engine (pulse live; broader templates roadmap)",
+      "stagedSourceContains": "Pulse surveys and aggregate analytics (preview); broader templates roadmap",
       "roadmapSourceContains": "broader templates roadmap",
       "registryFlipPublishing": true,
       "publicPromotion": false
