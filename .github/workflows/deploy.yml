@@ -35,6 +35,9 @@ jobs:
       - name: Build Astro site
         run: npm run build
 
+      - name: Verify held resource routes remain unavailable
+        run: npm run check:held-resource-routes
+
       - name: Accessibility regression scan
         run: npm run a11y:ci
 
