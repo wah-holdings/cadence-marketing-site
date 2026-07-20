@@ -78,6 +78,11 @@ const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [st
 <link rel="apple-touch-icon" sizes="180x180" href={withBase('/apple-touch-icon.png')}>
 <link rel="manifest" href={withBase('/site.webmanifest')}>
 <meta name="theme-color" content="#1E3A5F">
+<script>
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('fade-up-enabled');
+  }
+</script>
 <script type="application/ld+json" set:html={pageSchemaJson}></script>
 {structuredDataJson.map((schemaJson) => <script type="application/ld+json" set:html={schemaJson}></script>)}
 <!-- Privacy-friendly analytics by Plausible -->
@@ -173,18 +178,36 @@ window.addEventListener('scroll', () => {
   nav!.classList.toggle('scrolled', window.scrollY > 10);
 }, { passive: true });
 
-const fadeEls = document.querySelectorAll('.fade-up');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) { (entry.target as HTMLElement).classList.add('visible'); observer.unobserve(entry.target); }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-fadeEls.forEach(el => observer.observe(el));
-setTimeout(() => {
-  fadeEls.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('visible');
-  });
-}, 50);
+const fadeEls = document.querySelectorAll<HTMLElement>('.fade-up');
+const revealAll = () => fadeEls.forEach((element) => element.classList.add('visible'));
+
+if (document.documentElement.classList.contains('fade-up-enabled')) {
+  try {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          (entry.target as HTMLElement).classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach((element) => observer.observe(element));
+
+    window.setTimeout(() => {
+      fadeEls.forEach((element) => {
+        if (element.getBoundingClientRect().top < window.innerHeight) element.classList.add('visible');
+      });
+    }, 50);
+
+    // A final failsafe keeps meaningful content visible if an observer callback
+    // is dropped during page restore, hydration, or an embedded-browser edge case.
+    window.setTimeout(revealAll, 1600);
+  } catch {
+    revealAll();
+  }
+} else {
+  revealAll();
+}
 </script>
 
 </body>

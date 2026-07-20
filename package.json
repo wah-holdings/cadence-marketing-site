@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "check:fade-up-reliability": "node scripts/check-fade-up-reliability.mjs",
     "check:route-aliases": "node scripts/check-route-aliases.mjs",
     "check:marketing-sync": "node scripts/check-marketing-sync.mjs",
     "check:marketing-reality": "node scripts/check-marketing-reality.mjs",
