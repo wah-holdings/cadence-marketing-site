@@ -23,7 +23,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          # Wrangler 4, used by the held-route regression check below, requires Node 22+.
+          node-version: '22'
           cache: 'npm'
 
       - name: Install dependencies
@@ -34,6 +35,9 @@ jobs:
 
       - name: Build Astro site
         run: npm run build
+
+      - name: Verify held resource routes remain unavailable
+        run: npm run check:held-resource-routes
 
       - name: Accessibility regression scan
         run: npm run a11y:ci
