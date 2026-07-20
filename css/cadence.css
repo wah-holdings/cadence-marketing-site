@@ -238,9 +238,17 @@ nav.scrolled { box-shadow: 0 2px 20px rgba(30,58,95,0.10); }
   margin-bottom: 18px;
 }
 
-/* ── FADE ANIMATION ── */
-.fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
+/* ── FADE ANIMATION ──
+   Content is visible by default. The enhancement class is added only when the
+   browser supports IntersectionObserver, so a failed/late script can never
+   leave marketing copy at opacity:0. */
+.fade-up { opacity: 1; transform: none; }
+.fade-up-enabled .fade-up { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.fade-up-enabled .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up-enabled .fade-up { opacity: 1; transform: none; transition: none; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .fade-up,
