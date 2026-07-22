@@ -48,7 +48,7 @@ The consequences are concrete: new managers inherit teams with no history. Skip-
 
 Each point tool is individually cheap and collectively not. A meeting tool here, a goals tool there, recognition, surveys — each at its own per-seat price, each renewing on its own cycle, each priced as if it were the only line item. The costs accumulate across tools that share no data.
 
-A worked comparison at 100 seats: Cadence Professional at $24 per seat/month billed annually is $28,800/year, versus a comparable fragmented stack at $36,000+/year. One caveat, stated plainly because it cuts both ways: savings estimates exclude roadmap capabilities that are not current deliverables — compare live capability to live capability, ours and anyone's.
+A worked figure at 100 seats: Cadence Professional at $24 per seat/month billed annually is $28,800/year. Whether consolidating saves money depends entirely on the tools and contracts you'd be replacing, so do the math on your own stack. One caveat, stated plainly because it cuts both ways: any savings estimate should exclude roadmap capabilities that are not current deliverables — compare live capability to live capability, ours and anyone's.
 
 And the license line understates the real total: four vendors means four renewals, four security reviews, four admin surfaces, and four "is this tool even being used?" conversations a year.
 
