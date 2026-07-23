@@ -54,6 +54,10 @@ All brand tokens live in `css/cadence.css`. Pages link to this shared stylesheet
 
 Each page is standalone HTML. Find the section you want to edit by looking for the HTML comment (e.g. `<!-- MODULE 01: 1:1 ENGINE -->`). All copy is in the HTML, not in a CMS.
 
+### Marketing-truth CI guard
+
+`npm run check:prohibited-marketing-claims` scans customer-facing `src/pages/**` and `src/content/**` before the site builds. Add a narrow rule to `src/content/prohibitedMarketingClaims.json` for a newly prohibited claim; use `requiredQualifier` when a non-GA capability is acceptable only when clearly marked Coming, Roadmap, or Preview. Add a path-and-rule-specific allowlist entry only for an intentional exception, then add a negative fixture under `scripts/fixtures/` and run it locally to prove the guard fails.
+
 To change pricing: edit `pricing.html` — update the three `.pricing-card` sections and the feature comparison table.
 
 To update the beta form: edit `beta.html` — the `handleSubmit()` function currently uses a mailto fallback. Wire to a real endpoint (Google Forms or Paperclip API) by replacing the `window.location.href = mailto:...` line with a `fetch()` POST.
