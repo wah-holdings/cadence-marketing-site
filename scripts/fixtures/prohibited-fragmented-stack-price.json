@@ -1,0 +1,10 @@
+{
+  "description": "Negative control: a fabricated fragmented-stack annual comparison returns",
+  "sourcePatches": [
+    {
+      "path": "src/pages/pricing.astro",
+      "find": "Cadence Professional at 100 seats: <strong>$28,800/year</strong>",
+      "replace": "Cadence Professional at 100 seats: <strong>$28,800/year</strong> · Comparable fragmented stack: $36,000+/year"
+    }
+  ]
+}

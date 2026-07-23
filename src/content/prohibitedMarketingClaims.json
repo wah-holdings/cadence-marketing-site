@@ -1,0 +1,33 @@
+{
+  "$schema": "./prohibitedMarketingClaims.schema.json",
+  "allowlist": [],
+  "rules": [
+    {
+      "id": "fabricated-fragmented-stack-annual-price",
+      "description": "Do not publish unsupported $30,000+/year fragmented-stack comparisons.",
+      "pattern": "\\$\\s*3\\d,\\d{3}\\+?\\s*/\\s*(?:year|yr)",
+      "flags": "gi"
+    },
+    {
+      "id": "personality-v15-roadmap-label",
+      "description": "Personality v1.5 coaching or woven-use depth must be roadmap-labeled.",
+      "pattern": "Personality\\s+v1\\.5|personality\\s+(?:coaching\\s+read[- ]surface|woven(?:[- ]use|\\s+working-style)?)",
+      "flags": "gi",
+      "requiredQualifier": "\\b(?:coming|roadmap|preview|not included in current purchase access)\\b"
+    },
+    {
+      "id": "advanced-nine-box-roadmap-label",
+      "description": "Advanced 9-box movement claims must be roadmap-labeled.",
+      "pattern": "(?:advanced\\s+)?(?:9[- ]box|nine[- ]box)\\s+(?:talent\\s+)?(?:movement|movement analysis)|calibration\\s+movement",
+      "flags": "gi",
+      "requiredQualifier": "\\b(?:coming|roadmap|preview|not included in current purchase access)\\b"
+    },
+    {
+      "id": "persona-rbac-roadmap-label",
+      "description": "Persona-specific RBAC claims must be roadmap-labeled.",
+      "pattern": "persona[- ]?(?:specific[- ]?)?RBAC|persona[- ]?role[- ]?based\\s+access",
+      "flags": "gi",
+      "requiredQualifier": "\\b(?:coming|roadmap|preview|not included in current purchase access)\\b"
+    }
+  ]
+}
