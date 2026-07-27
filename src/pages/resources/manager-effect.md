@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "The Manager Effect: What the Science Actually Says About Why Managers Make or Break Teams"
 slug: /resources/manager-effect
+pdf: /pdf/manager-effect.pdf
 target-query: "do managers really matter research evidence 70 percent engagement"
 funnel-stage: pillar-spoke
 meta-description: "What research actually shows about manager impact: Gallup's 70% variance finding, boss productivity economics, turnover evidence, and what manager development means."

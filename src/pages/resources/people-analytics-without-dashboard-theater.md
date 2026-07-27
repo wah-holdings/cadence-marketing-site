@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "People Analytics Without the Dashboard Theater: Turning People Data Into Decisions"
 slug: /resources/people-analytics-without-dashboard-theater
+pdf: /pdf/people-analytics-without-dashboard-theater.pdf
 target-query: "why isn't our people analytics tool driving decisions"
 funnel-stage: pillar-spoke
 meta-description: "Most people-analytics investments produce charts, not decisions. What the research says separates decision-grade analytics from dashboard theater — and how to fix it."

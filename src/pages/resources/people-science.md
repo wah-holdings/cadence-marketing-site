@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "The Science of Management Cadence"
 slug: /resources/people-science
+pdf: /pdf/people-science.pdf
 target-query: "is there research behind evidence-based people management software"
 funnel-stage: pillar-credibility
 meta-description: "Cadence operationalizes evidence-based management practices across 1:1s, goals, recognition, surveys, ER, calibration, job architecture, and people analytics."

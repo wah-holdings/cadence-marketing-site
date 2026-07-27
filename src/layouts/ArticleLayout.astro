@@ -17,6 +17,7 @@ const articleSchema = {
   publisher: { '@type': 'Organization', name: 'Cadence', url: 'https://cadencehr.ai' },
 };
 const faq = frontmatter.faq as Array<{ q: string; a: string }> | undefined;
+const pdfPath = frontmatter.pdf as string | undefined;
 const structuredData =
   faq && faq.length
     ? [
@@ -40,7 +41,18 @@ const structuredData =
       <nav class="article-breadcrumb" aria-label="Breadcrumb">
         <a href={withBase('/resources')}>Resources</a><span aria-hidden="true">/</span><span>{title}</span>
       </nav>
+      {pdfPath && (
+        <p class="article-actions">
+          <a class="article-pdf-link" href={withBase(pdfPath)} download>Download PDF</a>
+          <span class="article-pdf-note">Full research paper with citations — for sharing offline.</span>
+        </p>
+      )}
       <article class="article-content">
+        <div class="print-cover" aria-hidden="true">
+          <span class="print-wordmark">Cadence</span>
+          <span class="print-tagline">Management by design, not by luck.</span>
+          <span class="print-source">{canonicalUrl}</span>
+        </div>
         <slot />
       </article>
     </div>
@@ -63,5 +75,39 @@ const structuredData =
   .article-content :global(table) { width: 100%; border-collapse: collapse; font-size: 15px; }
   .article-content :global(th), .article-content :global(td) { border: 1px solid var(--gray-100); padding: 12px; text-align: left; vertical-align: top; }
   .article-content :global(th) { background: var(--gray-50); color: var(--primary); }
+  .article-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: -12px 0 24px; }
+  .article-pdf-link { display: inline-flex; align-items: center; gap: 8px; background: var(--secondary); color: white; font-weight: 600; font-size: 15px; padding: 10px 18px; border-radius: 8px; text-decoration: none; }
+  .article-pdf-link:hover, .article-pdf-link:focus-visible { background: var(--secondary-dark); }
+  .article-pdf-note { color: var(--gray-500); font-size: 14px; }
+  .print-cover { display: none; }
   @media (max-width: 640px) { .article-shell { padding: 32px 0 48px; } .article-content { padding: 28px 22px; } }
+
+  /* Leave-behind PDF rendering (see scripts/generate-people-science-pdfs.mjs) */
+  @media print {
+    .article-shell { background: white; padding: 0; }
+    .article-container { max-width: none; padding: 0; }
+    .article-breadcrumb, .article-actions { display: none !important; }
+    .article-content { border: none; box-shadow: none; border-radius: 0; padding: 0; background: white; }
+    .print-cover { display: block; border-bottom: 2px solid var(--primary); padding-bottom: 14px; margin-bottom: 26px; }
+    .print-wordmark { display: block; color: var(--primary); font-size: 22px; font-weight: 800; letter-spacing: -.02em; }
+    .print-tagline { display: block; color: var(--gray-500); font-size: 11px; font-weight: 600; margin-top: 2px; }
+    .print-source { display: block; color: var(--gray-500); font-size: 10px; margin-top: 6px; }
+    .article-content :global(h1) { font-size: 26pt; margin: 0 0 16px; break-after: avoid; }
+    .article-content :global(h2) { font-size: 15pt; margin: 22px 0 8px; break-after: avoid; }
+    .article-content :global(h3) { font-size: 12pt; margin: 16px 0 6px; break-after: avoid; }
+    .article-content :global(p), .article-content :global(li) { font-size: 10pt; line-height: 1.55; }
+    .article-content :global(p), .article-content :global(ul), .article-content :global(ol), .article-content :global(blockquote) { margin: 0 0 11px; }
+    .article-content :global(li) { margin-bottom: 4px; }
+    /* The global `* { padding: 0 }` reset drops list markers, which would leave
+       the numbered reference entries unnumbered — unresolvable on paper, where
+       the [n] anchor links can't be clicked. */
+    /* Wide enough that two-digit reference markers ("10." … "26.") don't clip. */
+    .article-content :global(ol), .article-content :global(ul) { padding-left: 30px; }
+    .article-content :global(ol) { list-style: decimal outside; }
+    .article-content :global(ul) { list-style: disc outside; }
+    .article-content :global(table) { font-size: 9pt; break-inside: avoid; }
+    .article-content :global(th), .article-content :global(td) { padding: 6px 8px; }
+    .article-content :global(blockquote) { break-inside: avoid; padding: 9px 14px; }
+    .article-content :global(a) { color: var(--secondary-dark); }
+  }
 </style>

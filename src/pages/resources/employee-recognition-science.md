@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "The Real Science of Employee Recognition (and the Truth About the 5:1 Ratio)"
 slug: /resources/employee-recognition-science
+pdf: /pdf/employee-recognition-science.pdf
 target-query: "is the 5:1 positive feedback ratio scientifically proven"
 funnel-stage: pillar-spoke
 meta-description: "The 5:1 ratio came from marriage research and a debunked equation. What recognition science actually supports — and how Cadence uses the ratio honestly."

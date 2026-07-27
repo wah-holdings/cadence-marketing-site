@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "The Compounding Organization: Why People Practices Work as Systems, Not Point Tools"
 slug: /resources/compounding-organization
+pdf: /pdf/compounding-organization.pdf
 target-query: "is there evidence that hr practices improve firm performance as a system"
 funnel-stage: pillar-spoke
 meta-description: "Three decades of strategic HRM research — Huselid, Combs, Jiang — find people practices work as systems. What that evidence proves, and what it doesn't."

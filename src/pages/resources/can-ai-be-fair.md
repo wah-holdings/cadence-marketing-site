@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Can AI Be Fair? The People Science of Algorithmic Talent Decisions"
 slug: /resources/can-ai-be-fair
+pdf: /pdf/can-ai-be-fair.pdf
 target-query: "can ai be fair in hiring and talent decisions"
 funnel-stage: pillar-spoke
 meta-description: "What research, math, and employment law actually say about fairness in algorithmic talent decisions — and why Cadence's answer is architectural, not aspirational."

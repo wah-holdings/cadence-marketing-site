@@ -475,3 +475,20 @@ footer {
   .btn-group { flex-direction: column; }
   .btn-group .btn { justify-content: center; }
 }
+
+/* ===================================================================
+   Print / PDF leave-behind (CAD-11976)
+   Strips site chrome so an article page prints as a standalone paper.
+   =================================================================== */
+@media print {
+  html { scroll-behavior: auto; }
+  body { background: white; color: var(--gray-900); font-size: 10pt; }
+  #main-nav,
+  footer,
+  .skip-link { display: none !important; }
+  .container { max-width: none; padding: 0; }
+  a { text-decoration: underline; }
+  h1, h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
+  img, figure, table, blockquote { break-inside: avoid; page-break-inside: avoid; }
+  p, li { orphans: 3; widows: 3; }
+}

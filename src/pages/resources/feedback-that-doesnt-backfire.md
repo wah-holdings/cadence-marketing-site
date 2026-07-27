@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Feedback That Doesn't Backfire: Why a Third of Feedback Interventions Make Performance Worse"
 slug: /resources/feedback-that-doesnt-backfire
+pdf: /pdf/feedback-that-doesnt-backfire.pdf
 target-query: "does feedback improve performance"
 funnel-stage: pillar-spoke
 meta-description: "Over a third of feedback interventions reduce performance. What the research says about feedback that works — and how structured 1:1s implement it."

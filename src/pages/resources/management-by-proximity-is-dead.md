@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Management by Proximity Is Dead: The People Science of Leading Hybrid and Distributed Teams"
 slug: /resources/management-by-proximity-is-dead
+pdf: /pdf/management-by-proximity-is-dead.pdf
 target-query: "does hybrid remote work hurt productivity how to manage distributed teams research"
 funnel-stage: pillar-spoke
 meta-description: "RCT evidence says hybrid work doesn't damage performance. What died was managing by watching. The research case for deliberate structure over proximity."
