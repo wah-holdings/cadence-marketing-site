@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Continuous Performance Management vs. the Annual Review: The Evidence"
 slug: /resources/continuous-performance-management
+pdf: /resources/pdf/continuous-performance-management.pdf
 target-query: "should we replace annual performance reviews with continuous performance management"
 funnel-stage: pillar-spoke
 meta-description: "What really happened at Adobe, GE, and Deloitte, why ratings fail, what dropping them cost, and what the evidence says continuous performance management requires."

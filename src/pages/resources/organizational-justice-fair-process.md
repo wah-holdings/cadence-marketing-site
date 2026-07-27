@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Organizational Justice: The People Science of Fair Process"
 slug: /resources/organizational-justice-fair-process
+pdf: /resources/pdf/organizational-justice-fair-process.pdf
 target-query: "what is organizational justice and why does fair process matter in employee relations"
 funnel-stage: pillar-spoke
 meta-description: "The four justice dimensions — distributive, procedural, interpersonal, informational — what each predicts, and why fair process makes ER a trust system."

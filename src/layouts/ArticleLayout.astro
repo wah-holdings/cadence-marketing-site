@@ -17,6 +17,8 @@ const articleSchema = {
   publisher: { '@type': 'Organization', name: 'Cadence', url: 'https://cadencehr.ai' },
 };
 const faq = frontmatter.faq as Array<{ q: string; a: string }> | undefined;
+// Leave-behind PDF for research-pillar pages (CAD-11976); absent on ordinary articles.
+const pdfPath = frontmatter.pdf as string | undefined;
 const structuredData =
   faq && faq.length
     ? [
@@ -40,9 +42,25 @@ const structuredData =
       <nav class="article-breadcrumb" aria-label="Breadcrumb">
         <a href={withBase('/resources')}>Resources</a><span aria-hidden="true">/</span><span>{title}</span>
       </nav>
+      {pdfPath && (
+        <div class="article-download">
+          <div>
+            <p class="article-download-title">Read it your way</p>
+            <p class="article-download-note">Full document with numbered citations — share it with your team.</p>
+          </div>
+          <a class="article-download-link" href={withBase(pdfPath)} download>
+            Download PDF
+          </a>
+        </div>
+      )}
       <article class="article-content">
         <slot />
       </article>
+      {pdfPath && (
+        <p class="article-download-footer">
+          Prefer a copy to keep? <a href={withBase(pdfPath)} download>Download this document as a PDF</a>.
+        </p>
+      )}
     </div>
   </main>
 </BaseLayout>
@@ -52,6 +70,13 @@ const structuredData =
   .article-container { max-width: 860px; }
   .article-breadcrumb { display: flex; gap: 8px; color: var(--gray-500); font-size: 14px; margin-bottom: 28px; }
   .article-breadcrumb a { color: var(--secondary); font-weight: 600; }
+  .article-download { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 20px; padding: 18px 24px; background: white; border: 1px solid var(--gray-100); border-radius: 14px; box-shadow: 0 6px 20px rgba(30,58,95,.05); }
+  .article-download-title { margin: 0; color: var(--primary); font-size: 16px; font-weight: 700; }
+  .article-download-note { margin: 4px 0 0; color: var(--gray-500); font-size: 14px; }
+  .article-download-link { display: inline-flex; align-items: center; gap: 8px; padding: 11px 20px; background: var(--secondary); color: white; border-radius: 999px; font-size: 15px; font-weight: 600; text-decoration: none; }
+  .article-download-link:hover, .article-download-link:focus-visible { background: var(--secondary-dark); }
+  .article-download-footer { margin: 22px 0 0; color: var(--gray-500); font-size: 15px; }
+  .article-download-footer a { color: var(--secondary); font-weight: 600; }
   .article-content { background: white; border: 1px solid var(--gray-100); border-radius: 16px; box-shadow: 0 8px 30px rgba(30,58,95,.06); padding: 48px; }
   .article-content :global(h1) { color: var(--primary); font-size: clamp(32px, 4vw, 48px); letter-spacing: -.035em; line-height: 1.08; margin: 0 0 28px; }
   .article-content :global(h2) { color: var(--primary); font-size: 28px; line-height: 1.2; margin: 42px 0 16px; }

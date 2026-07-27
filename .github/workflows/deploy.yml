@@ -35,6 +35,9 @@ jobs:
       - name: Check app marketing sync
         run: npm run check:marketing-sync
 
+      - name: Check People Science PDF leave-behinds
+        run: npm run check:pdf-assets
+
       - name: Build Astro site
         run: npm run build
 
