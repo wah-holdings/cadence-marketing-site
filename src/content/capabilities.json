@@ -121,12 +121,12 @@
       "notes": "CAD-10518 verified the 2-user Professional production reveal and Professional-tier gating. Core 9-box calibration is marketable as live for Professional/Enterprise; KVD, predictive retention, advanced movement analysis, and intervention workflows stay roadmap-labeled."
     },
     "personality.insights": {
-      "status": "ga",
+      "status": "roadmap",
       "prodFlag": "personality_customer_ga",
-      "gaDate": "2026-07-02",
-      "marketingLabel": "available",
+      "gaDate": null,
+      "marketingLabel": "roadmap",
       "reviewOwner": "Maya",
-      "notes": "CAD-9076/CAD-8607: personality_customer_ga flipped on prod (release v2026.07.02-6611b3c) after CAD-7702 soak PASS; render-verified + API smoke green. Foundation only (consented instrument, working-style profile, team view, coaching read-surface), Professional tier entitlement. Connective/woven use in 1:1s and coaching stays roadmap-labeled."
+      "notes": "CAD-11983: marketing claims remain roadmap-labeled until CAD-11707 holds fresh authenticated production proof for a paying customer. Thin v1 (consented instrument, working-style profile, and team view) and coaching read-surface are not current purchasable entitlements."
     },
     "employee_relations.command_center": {
       "status": "ga",

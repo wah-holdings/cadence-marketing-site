@@ -6,7 +6,7 @@ export const heroMessaging = {
   subhead:
     "Cadence is the management operating plane for remote and hybrid companies that have outgrown proximity-based management.",
   body:
-    "It turns 1:1s, goals, recognition, ER context, surveys, and culture signal into a human-owned system where AI develops managers and employees, humans remain accountable, and consented Personality Intelligence profiles support conversations — never scores.",
+    "It turns 1:1s, goals, recognition, ER context, surveys, and culture signal into a human-owned system where AI develops managers and employees and humans remain accountable. Personality Intelligence is Coming Q3 and will support conversations — never scores.",
   primaryCta: {
     label: "Start free trial",
     href: g1SignupHref('home_hero', 'cta'),
@@ -35,9 +35,9 @@ export const proofScreenshots = [
     text: "Rendered goals surface showing company, team, and individual goals with progress and risk status.",
   },
   {
-    title: "Personality with consent boundaries",
+    title: "Personality preview — Coming Q3",
     image: "/screenshots/cadence-personality-rendered-2026-07-10.webp",
-    text: "Rendered Personality surface showing working-style context as coaching support, not scoring.",
+    text: "Preview of the in-development Personality surface, planned as working-style context for coaching support — never scoring.",
   },
   {
     title: "9-Box calibration matrix",
