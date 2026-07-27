@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Job Architecture and Role Clarity: The Underrated Foundation of Everything Else"
 slug: /resources/role-clarity-job-architecture
+pdf: /resources/pdf/role-clarity-job-architecture.pdf
 target-query: "does role clarity improve job performance and why does job architecture matter"
 funnel-stage: pillar-spoke
 meta-description: "Fifty years of role-ambiguity research, the job-analysis foundation of defensible HR decisions, and why every people practice depends on a visible job."

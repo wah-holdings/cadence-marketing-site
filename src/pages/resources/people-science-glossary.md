@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "The People Science Glossary: An Evidence Index for Modern Management"
 slug: /resources/people-science-glossary
+pdf: /resources/pdf/people-science-glossary.pdf
 target-query: "what is organizational justice / the 9-box / Q12 / feedback intervention theory — people science definitions with sources"
 funnel-stage: pillar-spoke
 meta-description: "A maintained glossary of people-science terms — organizational justice, Q12, 9-box, feedback intervention theory, and more — each pinned to its canonical source."

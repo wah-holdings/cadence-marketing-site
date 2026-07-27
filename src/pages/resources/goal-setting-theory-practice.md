@@ -2,6 +2,7 @@
 layout: ../../layouts/ArticleLayout.astro
 title: "Goal-Setting Theory in Practice: When Specific, Challenging Goals Help — and When They Backfire"
 slug: /resources/goal-setting-theory-practice
+pdf: /resources/pdf/goal-setting-theory-practice.pdf
 target-query: "does goal setting theory work and when do stretch goals backfire"
 funnel-stage: pillar-spoke
 meta-description: "What 35+ years of goal-setting research supports, the moderators that make goals work, and the documented pathologies — including Wells Fargo — when they don't."
