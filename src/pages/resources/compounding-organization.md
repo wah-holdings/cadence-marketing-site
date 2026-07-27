@@ -6,7 +6,6 @@ pdf: /resources/pdf/compounding-organization.pdf
 target-query: "is there evidence that hr practices improve firm performance as a system"
 funnel-stage: pillar-spoke
 meta-description: "Three decades of strategic HRM research — Huselid, Combs, Jiang — find people practices work as systems. What that evidence proves, and what it doesn't."
-status: DRAFT — CAD-11976 spoke (Tier 3), not published, pending Cortana QA
 faq:
   - q: "Do high-performance work practices actually improve firm performance?"
     a: "The evidence is substantial but correlational. Huselid's foundational 1995 study of nearly 1,000 firms found a one-standard-deviation increase in high-performance work practices was associated with 7.05% lower turnover and $27,044 more in sales per employee (1995 dollars). A 2006 meta-analysis of 92 studies covering 19,319 organizations estimated the overall corrected correlation with organizational performance at .20. These are strong, replicated associations — not experimental proof of causation."

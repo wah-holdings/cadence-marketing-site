@@ -6,7 +6,6 @@ pdf: /resources/pdf/manager-effect.pdf
 target-query: "do managers really matter research evidence 70 percent engagement"
 funnel-stage: pillar-spoke
 meta-description: "What research actually shows about manager impact: Gallup's 70% variance finding, boss productivity economics, turnover evidence, and what manager development means."
-status: DRAFT — CAD-11976 spoke (Tier 1), not published, pending Cortana QA
 faq:
   - q: "Do managers really account for 70% of the variance in team engagement?"
     a: "The figure comes from Gallup's State of the American Manager report (2015), which found managers account for at least 70% of the variance in employee engagement scores across business units, based on decades of Gallup engagement data. It describes variance between teams, not a causal guarantee for any single team — but independent economic studies using different methods also find large, measurable manager effects."

@@ -6,7 +6,6 @@ pdf: /resources/pdf/role-clarity-job-architecture.pdf
 target-query: "does role clarity improve job performance and why does job architecture matter"
 funnel-stage: pillar-spoke
 meta-description: "Fifty years of role-ambiguity research, the job-analysis foundation of defensible HR decisions, and why every people practice depends on a visible job."
-status: DRAFT — CAD-11976 spoke (Tier 2), not published, pending Cortana QA
 faq:
   - q: "What is job architecture?"
     a: "Job architecture is the structured description of the jobs in an organization: job families, levels, role definitions, and the skills, knowledge, and behaviors each role requires. It is the shared reference layer that goal setting, coaching, evaluation, calibration, and career mobility all point back to. Without it, those practices run against each manager's private, unwritten version of the job."

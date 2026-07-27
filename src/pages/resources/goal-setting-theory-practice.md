@@ -6,7 +6,6 @@ pdf: /resources/pdf/goal-setting-theory-practice.pdf
 target-query: "does goal setting theory work and when do stretch goals backfire"
 funnel-stage: pillar-spoke
 meta-description: "What 35+ years of goal-setting research supports, the moderators that make goals work, and the documented pathologies — including Wells Fargo — when they don't."
-status: DRAFT — CAD-11976 spoke (Tier 2), not published, pending Cortana QA
 faq:
   - q: "Do specific, challenging goals really outperform 'do your best'?"
     a: "Yes, reliably — this is one of the most replicated findings in organizational psychology. Locke and Latham's 35-year research program found that specific, difficult goals lead to higher performance than vague or easy goals, provided the person is committed to the goal, has the ability and resources to achieve it, and receives feedback on progress. Remove those conditions and the effect weakens or reverses."
