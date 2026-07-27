@@ -260,6 +260,23 @@ Safer alternatives:
 
 Management effectiveness is not one behavior. It is a system of repeated behaviors: setting expectations, checking progress, recognizing contribution, coaching gaps, handling conflict fairly, listening to employees, and making talent decisions with evidence. The research behind those practices is not new. What is new is making them operate together in a hybrid-first management operating plane — replacing management by archaeology with a weekly rhythm where AI develops managers instead of replacing them.
 
+## Go deeper: the People Science pillar
+
+This document is the hub of Cadence's People Science pillar. Each spoke below takes one body of evidence to research depth — same citation discipline, same honesty rules:
+
+- [The Manager Effect](https://cadencehr.ai/resources/manager-effect) — what the science actually says about why managers make or break teams.
+- [Continuous Performance Management vs. the Annual Review](https://cadencehr.ai/resources/continuous-performance-management) — the evidence on both sides of the ratings debate.
+- [Organizational Justice: The People Science of Fair Process](https://cadencehr.ai/resources/organizational-justice-fair-process) — why ER is a trust system, not a compliance chore.
+- [Feedback That Doesn't Backfire](https://cadencehr.ai/resources/feedback-that-doesnt-backfire) — why a third of feedback interventions make performance worse.
+- [The Real Science of Employee Recognition](https://cadencehr.ai/resources/employee-recognition-science) — including the truth about the 5:1 ratio.
+- [Goal-Setting Theory in Practice](https://cadencehr.ai/resources/goal-setting-theory-practice) — when specific, challenging goals help, and when they backfire.
+- [People Analytics Without the Dashboard Theater](https://cadencehr.ai/resources/people-analytics-without-dashboard-theater) — turning people data into decisions.
+- [Job Architecture and Role Clarity](https://cadencehr.ai/resources/role-clarity-job-architecture) — the underrated foundation of everything else.
+- [Management by Proximity Is Dead](https://cadencehr.ai/resources/management-by-proximity-is-dead) — the people science of leading hybrid and distributed teams.
+- [Can AI Be Fair?](https://cadencehr.ai/resources/can-ai-be-fair) — the people science of algorithmic talent decisions.
+- [The Compounding Organization](https://cadencehr.ai/resources/compounding-organization) — why people practices work as systems, not point tools.
+- [The People Science Glossary](https://cadencehr.ai/resources/people-science-glossary) — an evidence index of every core concept, each pinned to its canonical source.
+
 ## How to cite this document
 
 **Suggested citation:** Cadence, "The Science of Management Cadence" (2026). https://cadencehr.ai/resources/people-science
