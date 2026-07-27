@@ -17,7 +17,7 @@ const matrixRows = [
   ['Surveys', 'Manager-level signal attribution (Cadence preview)', '~ preview', '~', '~', '~', '—', '—', '—'],
   ['Security & Compliance', 'Enterprise SSO (OIDC)', '✓', '✓', '✓', '✓', '—', '—', '✓'],
   ['Security & Compliance', 'SAML SSO', '~ Q4 roadmap', '✓', '✓', '✓', '—', '—', '✓'],
-  ['Platform Openness', 'Connected agents / external AI access (MCP)', '✓', '~', '~', '~', '~', '~', '~'],
+  ['Platform Openness', 'Connected agents / external AI access (MCP)', '~ preview', '~', '~', '~', '~', '~', '~'],
   ['Intelligence Layer', 'Manager scorecard and org-health heatmap', '✓', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed'],
   ['Intelligence Layer', 'Cross-signal turnover prediction (Cadence roadmap preview)', '~ roadmap', '~', '—', '~', '—', '—', '—'],
 ];
@@ -166,6 +166,14 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
 .yes { color: var(--success); font-size: 16px; font-weight: 800; }
 .no { color: var(--gray-300); font-size: 16px; }
 .partial { color: var(--warning); font-size: 13px; font-weight: 700; }
+.availability-note {
+  display: inline-block;
+  margin-top: 5px;
+  color: var(--gray-500);
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.4;
+}
 .wins-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -269,8 +277,13 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
                 {showGroup && <tr class="matrix-group"><td colspan="8">{group}</td></tr>}
                 <tr>
                   <td>{module}</td>
-                  {cells.map((cell) => (
-                    <td class={cell === '✓' ? 'yes' : cell === '—' ? 'no' : 'partial'}>{cell}</td>
+                  {cells.map((cell, index) => (
+                    <td class={cell === '✓' ? 'yes' : cell === '—' ? 'no' : 'partial'}>
+                      {cell}
+                      {module === 'Connected agents / external AI access (MCP)' && index === 0 && (
+                        <span class="availability-note"><strong>Preview-demo-only — not included in current purchase access.</strong><br />External connections remain gated on scope-consent + scoped audit logging.</span>
+                      )}
+                    </td>
                   ))}
                 </tr>
               </>
