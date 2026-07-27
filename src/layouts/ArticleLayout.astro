@@ -16,9 +16,25 @@ const articleSchema = {
   author: { '@type': 'Organization', name: 'Cadence' },
   publisher: { '@type': 'Organization', name: 'Cadence', url: 'https://cadencehr.ai' },
 };
+const faq = frontmatter.faq as Array<{ q: string; a: string }> | undefined;
+const structuredData =
+  faq && faq.length
+    ? [
+        articleSchema,
+        {
+          '@context': 'https://schema.org',
+          '@type': 'FAQPage',
+          mainEntity: faq.map((item) => ({
+            '@type': 'Question',
+            name: item.q,
+            acceptedAnswer: { '@type': 'Answer', text: item.a },
+          })),
+        },
+      ]
+    : articleSchema;
 ---
 
-<BaseLayout title={title} description={description} canonicalPath={canonicalPath} activeNav="resources" structuredData={articleSchema}>
+<BaseLayout title={title} description={description} canonicalPath={canonicalPath} activeNav="resources" structuredData={structuredData}>
   <main class="article-shell">
     <div class="container article-container">
       <nav class="article-breadcrumb" aria-label="Breadcrumb">
