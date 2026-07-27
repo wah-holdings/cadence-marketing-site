@@ -5,7 +5,6 @@ slug: /resources/ai-in-performance-management
 target-query: "how should AI be used in performance management"
 funnel-stage: solution-aware
 meta-description: Where AI helps performance management — evidence summaries, patterns, bias reduction — and where it must never decide. Plus vendor governance questions to ask.
-status: DRAFT — CAD-11173, not published
 ---
 
 # How Should AI Be Used in Performance Management — Without Replacing Manager Judgment?

@@ -5,7 +5,6 @@ slug: /resources/9-box-talent-calibration-guide
 target-query: "what is 9-box talent calibration"
 funnel-stage: solution-aware
 meta-description: What the 9-box grid actually measures, where calibration sessions go political, and how to run evidence-based talent calibration your managers can trust.
-status: DRAFT — CAD-11173, not published
 ---
 
 # 9-Box Talent Calibration: How to Run Sessions That Aren't Political

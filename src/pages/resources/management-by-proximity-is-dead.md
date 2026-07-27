@@ -6,7 +6,6 @@ pdf: /resources/pdf/management-by-proximity-is-dead.pdf
 target-query: "does hybrid remote work hurt productivity how to manage distributed teams research"
 funnel-stage: pillar-spoke
 meta-description: "RCT evidence says hybrid work doesn't damage performance. What died was managing by watching. The research case for deliberate structure over proximity."
-status: DRAFT — CAD-11976 spoke (Tier 3), not published, pending Cortana QA
 faq:
   - q: "Does hybrid or remote work actually hurt productivity?"
     a: "The best causal evidence says no — when it is managed deliberately. A randomized experiment published in Nature (2024) with 1,612 employees found hybrid work (two days at home per week) had no significant effect on performance reviews or promotions over two years, while reducing quit rates by a third. An earlier nine-month randomized experiment (Quarterly Journal of Economics, 2015) found home-based call-center workers performed 13% better than their office counterparts."

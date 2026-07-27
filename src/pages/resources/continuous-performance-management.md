@@ -6,7 +6,6 @@ pdf: /resources/pdf/continuous-performance-management.pdf
 target-query: "should we replace annual performance reviews with continuous performance management"
 funnel-stage: pillar-spoke
 meta-description: "What really happened at Adobe, GE, and Deloitte, why ratings fail, what dropping them cost, and what the evidence says continuous performance management requires."
-status: DRAFT — CAD-11976 spoke (Tier 1), not published, pending Cortana QA
 faq:
   - q: "Should we get rid of annual performance reviews?"
     a: "The evidence supports replacing the once-a-year event with frequent feedback and goal check-ins — but not abolishing performance evaluation itself. CEB research found that organizations that simply removed ratings saw the quality of manager conversations score 14% lower and managers spend fewer hours on informal performance conversations. The safer conclusion: change the rhythm, keep the discipline of documented evaluation."

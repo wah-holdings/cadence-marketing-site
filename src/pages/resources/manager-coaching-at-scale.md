@@ -5,7 +5,6 @@ slug: /resources/manager-coaching-at-scale
 target-query: "manager coaching at scale"
 funnel-stage: solution-aware
 meta-description: "Why manager training decays and what changes behavior — in-context nudges, reflection in the flow of 1:1s, private practice, and AI coaching as reinforcement."
-status: DRAFT — CAD-11173, not published
 ---
 
 # How to Give Managers Real Coaching Support at Scale (Instead of One-Off Training)

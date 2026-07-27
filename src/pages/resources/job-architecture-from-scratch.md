@@ -5,7 +5,6 @@ slug: /resources/job-architecture-from-scratch
 target-query: "how to build a job architecture from scratch"
 funnel-stage: solution-aware
 meta-description: A pragmatic sequence for building job families, levels, and role expectations from scratch — without the 18-month consulting project or the shelf-ware.
-status: DRAFT — CAD-11173, not published
 ---
 
 # How to Build a Job Architecture From Scratch — Without the 18-Month Project

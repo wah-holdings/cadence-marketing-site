@@ -6,7 +6,6 @@ pdf: /resources/pdf/employee-recognition-science.pdf
 target-query: "is the 5:1 positive feedback ratio scientifically proven"
 funnel-stage: pillar-spoke
 meta-description: "The 5:1 ratio came from marriage research and a debunked equation. What recognition science actually supports — and how Cadence uses the ratio honestly."
-status: DRAFT — CAD-11976 spoke (Tier 2), not published, pending Cortana QA
 faq:
   - q: "Is the 5:1 positive-to-negative feedback ratio scientifically proven?"
     a: "No. The famous ratios trace to two sources: Gottman's observational research on married couples during conflict — a specific context, not a workplace law — and the Fredrickson-Losada 'critical positivity ratio' of 2.9013, whose mathematics was formally debunked by Brown, Sokal, and Friedman in 2013. No peer-reviewed study establishes a universal workplace ratio of positive to negative interactions."

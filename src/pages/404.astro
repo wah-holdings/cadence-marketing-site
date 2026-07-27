@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout
+  title="Page not found | Cadence"
+  description="The requested Cadence page could not be found."
+  canonicalPath="/404"
+>
+  <div class="page-hero">
+    <div class="container">
+      <div class="section-badge">404</div>
+      <h1>This page isn't here.</h1>
+      <p>The address may be outdated or the page may have moved. Start from the Cadence homepage or browse our resources.</p>
+      <div class="hero-actions">
+        <a href={withBase('/')} class="btn-primary">Go to homepage</a>
+        <a href={withBase('/resources')} class="btn-secondary">Browse resources</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

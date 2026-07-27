@@ -5,7 +5,6 @@ slug: /resources/ai-native-hr-software-2026
 target-query: "what to look for in AI-native HR software 2026"
 funnel-stage: comparison
 meta-description: Bolt-on chatbot or AI-native platform? The 2026 buyer's checklist for AI HR software — decision rights, training data, audit trails, and roadmap honesty.
-status: DRAFT — CAD-11173, not published
 ---
 
 # What Should You Look for in AI-Native HR Software in 2026?

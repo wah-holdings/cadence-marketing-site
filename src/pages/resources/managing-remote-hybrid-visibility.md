@@ -5,7 +5,6 @@ slug: /resources/managing-remote-hybrid-visibility
 target-query: "how to manage remote employees you can't see"
 funnel-stage: problem-aware
 meta-description: You can't see remote work happening — and that's fine. How to manage hybrid teams by commitments and outcomes, not presence, with a rhythm that holds.
-status: DRAFT — CAD-11173, not published
 ---
 
 # How Do You Manage Remote and Hybrid Contributors When You Can't See the Work Happening?

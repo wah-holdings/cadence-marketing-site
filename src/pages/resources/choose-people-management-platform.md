@@ -5,7 +5,6 @@ slug: /resources/choose-people-management-platform
 target-query: "lattice vs 15five vs culture amp vs leapsome"
 funnel-stage: comparison
 meta-description: A fair, criteria-driven guide to choosing between Lattice, 15Five, Culture Amp, Leapsome, and Cadence — including when each one is the better fit for you.
-status: DRAFT — CAD-11173, not published
 ---
 
 # Lattice vs 15Five vs Culture Amp vs Leapsome: How to Choose a People-Management Platform

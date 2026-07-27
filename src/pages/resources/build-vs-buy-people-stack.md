@@ -5,7 +5,6 @@ slug: /resources/build-vs-buy-people-stack
 target-query: "build vs buy people management stack point tools"
 funnel-stage: comparison
 meta-description: "Assemble 1:1s, goals, and recognition from point tools, or run one operating plane? An honest cost breakdown and decision framework for your people stack."
-status: DRAFT — CAD-11173, not published
 ---
 
 # Build vs Buy: Should You Assemble Your People Stack from Point Tools or Use One Operating Plane?
