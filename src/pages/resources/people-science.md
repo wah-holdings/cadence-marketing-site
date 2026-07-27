@@ -6,7 +6,6 @@ pdf: /resources/pdf/people-science.pdf
 target-query: "is there research behind evidence-based people management software"
 funnel-stage: pillar-credibility
 meta-description: "Cadence operationalizes evidence-based management practices across 1:1s, goals, recognition, surveys, ER, calibration, job architecture, and people analytics."
-status: DRAFT — CAD-11976 hub revision, not published, pending Cortana QA
 faq:
   - q: "Is there independent research behind Cadence?"
     a: "Yes — behind the practices Cadence operationalizes. Feedback intervention theory, goal-setting theory, engagement meta-analyses, organizational justice research, and HR-systems research are all independent, peer-reviewed bodies of evidence. Cadence does not yet claim customer-proven outcome metrics; its integration thesis is a reasoned synthesis, clearly labeled as such."

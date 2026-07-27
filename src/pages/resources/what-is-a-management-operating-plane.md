@@ -5,7 +5,6 @@ slug: /resources/what-is-a-management-operating-plane
 target-query: "what is a management operating system"
 funnel-stage: problem-aware
 meta-description: "A management operating plane is the connected system where managing happens — 1:1s, goals, recognition, people signals — and why distributed teams need it."
-status: DRAFT — CAD-11173, not published
 ---
 
 # What Is a Management Operating Plane — and Why Do Distributed Teams Need One?

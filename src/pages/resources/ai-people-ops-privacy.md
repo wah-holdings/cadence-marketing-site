@@ -5,7 +5,6 @@ slug: /resources/ai-people-ops-privacy
 target-query: "AI HR platform privacy who can see AI coaching data"
 funnel-stage: comparison
 meta-description: What an AI people-ops platform actually keeps private — who sees AI summaries, whether coaching is confidential, and the questions to ask any vendor.
-status: DRAFT — CAD-11173, not published
 ---
 
 # What Does an AI People-Ops Platform Actually Keep Private?

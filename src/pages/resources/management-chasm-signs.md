@@ -5,7 +5,6 @@ slug: /resources/management-chasm-signs
 target-query: "signs of gap between leadership intent and manager execution"
 funnel-stage: problem-aware
 meta-description: Leadership publishes values and strategy, but manager behavior goes unmeasured. Learn the warning signs of a management chasm and how to close it.
-status: DRAFT — CAD-11173, not published
 ---
 
 # What Are the Signs Your Company Has a Management Chasm Between Leadership Intent and Manager Execution?

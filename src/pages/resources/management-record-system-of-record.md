@@ -5,7 +5,6 @@ slug: /resources/management-record-system-of-record
 target-query: "system of record for management distributed teams"
 funnel-stage: thought-leadership
 meta-description: HRIS systems record employment facts. The management relationship — commitments, feedback, goals — lives nowhere. Why distributed teams need a record.
-status: DRAFT — CAD-11173, not published
 ---
 
 # Why the Management Record, Not the Org Chart, Is the Real System of Record

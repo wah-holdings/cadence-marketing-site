@@ -5,7 +5,6 @@ slug: /resources/why-1-1s-fail
 target-query: "why do 1:1 meetings fail"
 funnel-stage: problem-aware
 meta-description: "Most 1:1s decay into status theater. The five failure modes that kill them, what a good 1:1 actually looks like, and a sample weekly agenda you can steal."
-status: DRAFT — CAD-11173, not published
 ---
 
 # Why Do 1:1 Meetings Fail — and What Does a Good 1:1 Actually Look Like?

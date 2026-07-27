@@ -6,7 +6,6 @@ pdf: /resources/pdf/organizational-justice-fair-process.pdf
 target-query: "what is organizational justice and why does fair process matter in employee relations"
 funnel-stage: pillar-spoke
 meta-description: "The four justice dimensions — distributive, procedural, interpersonal, informational — what each predicts, and why fair process makes ER a trust system."
-status: DRAFT — CAD-11976 spoke (Tier 1), not published, pending Cortana QA
 faq:
   - q: "What is organizational justice?"
     a: "Organizational justice is the field of research on whether employees perceive workplace outcomes, processes, and treatment as fair. Meta-analytic work identifies four related but distinct dimensions — distributive (outcomes), procedural (process), interpersonal (treatment), and informational (explanation) — and each independently predicts outcomes such as satisfaction, commitment, citizenship behavior, and withdrawal."

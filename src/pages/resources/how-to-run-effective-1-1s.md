@@ -5,7 +5,6 @@ slug: /resources/how-to-run-effective-1-1s
 target-query: "how to run effective 1:1 meetings with direct reports"
 funnel-stage: solution-aware
 meta-description: "A complete guide to running 1:1s that work: cadence choices, a copy-paste agenda template, question banks, follow-through discipline, and common mistakes."
-status: DRAFT — CAD-11173, not published
 ---
 
 # How to Run Effective 1:1s: A Repeatable Structure, Agenda Template, and Cadence

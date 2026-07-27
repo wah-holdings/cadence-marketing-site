@@ -5,7 +5,6 @@ slug: /resources/measure-culture-without-survey-fatigue
 target-query: "how to measure team culture without survey fatigue"
 funnel-stage: solution-aware
 meta-description: Why annual engagement surveys under-deliver, how to run pulse surveys people keep answering, and how behavioral signals build an honest org-health view.
-status: DRAFT — CAD-11173, not published
 ---
 
 # How to Measure Team Culture and Org Health Without Survey Fatigue

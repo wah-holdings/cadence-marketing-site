@@ -6,7 +6,6 @@ pdf: /resources/pdf/people-science-glossary.pdf
 target-query: "what is organizational justice / the 9-box / Q12 / feedback intervention theory — people science definitions with sources"
 funnel-stage: pillar-spoke
 meta-description: "A maintained glossary of people-science terms — organizational justice, Q12, 9-box, feedback intervention theory, and more — each pinned to its canonical source."
-status: DRAFT — CAD-11976 spoke (Tier 3), not published, pending Cortana QA
 faq:
   - q: "What is feedback intervention theory?"
     a: "Feedback intervention theory, from Kluger and DeNisi's 1996 meta-analysis, explains why feedback helps on average but fails often: more than one-third of feedback interventions in their review reduced performance. Feedback works best when it directs attention to the task and its details, and worst when it directs attention to the self."

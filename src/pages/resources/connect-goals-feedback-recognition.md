@@ -5,7 +5,6 @@ slug: /resources/connect-goals-feedback-recognition
 target-query: "how to keep goals feedback and recognition connected"
 funnel-stage: problem-aware
 meta-description: Goals in one tool, feedback in another, praise in Slack? Here's why fragmentation quietly taxes your managers — and how to build one connected management record.
-status: DRAFT — CAD-11173, not published
 ---
 
 # How Do You Keep Goals, Feedback, and Recognition Connected Instead of Scattered Across Tools?

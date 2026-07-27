@@ -5,7 +5,6 @@ slug: /resources/ai-that-develops-humans
 target-query: "AI develops humans instead of replacing them people ops"
 funnel-stage: thought-leadership
 meta-description: "Two futures for AI at work: substitution or development. Why people ops is the wrong place to automate humans out — and what development-AI looks like."
-status: DRAFT — CAD-11173, not published
 ---
 
 # AI That Develops Humans, Not AI That Replaces Them

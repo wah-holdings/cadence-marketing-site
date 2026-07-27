@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
+---
+
+<BaseLayout
+  title="Page not found | Cadence"
+  description="The requested Cadence page could not be found."
+  canonicalPath="/404"
+>
+  <main class="not-found">
+    <div class="not-found__content">
+      <p class="not-found__eyebrow">404</p>
+      <h1>This page isn't here.</h1>
+      <p>The address may be outdated or the page may have moved. Start from the Cadence homepage or browse our resources.</p>
+      <div class="not-found__actions">
+        <a href={withBase('/')} class="btn btn-primary">Go to homepage</a>
+        <a href={withBase('/resources')} class="btn btn-secondary">Browse resources</a>
+      </div>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .not-found { min-height: 58vh; display: grid; place-items: center; padding: 80px 24px; background: var(--gray-50); }
+  .not-found__content { max-width: 640px; text-align: center; }
+  .not-found__eyebrow { color: var(--secondary-dark); font-size: 14px; font-weight: 800; letter-spacing: .12em; margin: 0 0 12px; }
+  .not-found h1 { color: var(--primary); font-size: clamp(36px, 6vw, 60px); letter-spacing: -.04em; line-height: 1.05; margin: 0 0 18px; }
+  .not-found p { color: var(--gray-700); font-size: 18px; line-height: 1.6; margin: 0; }
+  .not-found__actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
+</style>

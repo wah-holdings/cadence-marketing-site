@@ -6,7 +6,6 @@ pdf: /resources/pdf/can-ai-be-fair.pdf
 target-query: "can ai be fair in hiring and talent decisions"
 funnel-stage: pillar-spoke
 meta-description: "What research, math, and employment law actually say about fairness in algorithmic talent decisions — and why Cadence's answer is architectural, not aspirational."
-status: DRAFT — CAD-11976 spoke (Tier 3), not published, pending Cortana QA
 faq:
   - q: "Is AI really more accurate than human judgment in talent decisions?"
     a: "On average, yes — for prediction. Meta-analyses spanning decades (Grove et al. 2000; Kuncel et al. 2013) find that mechanical, rule-based combination of information outperforms holistic expert judgment in most comparisons, including selection and admissions decisions. But accuracy and fairness are different properties: a model can predict well on average while distributing its errors unevenly across groups."

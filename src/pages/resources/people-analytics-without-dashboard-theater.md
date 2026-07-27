@@ -6,7 +6,6 @@ pdf: /resources/pdf/people-analytics-without-dashboard-theater.pdf
 target-query: "why isn't our people analytics tool driving decisions"
 funnel-stage: pillar-spoke
 meta-description: "Most people-analytics investments produce charts, not decisions. What the research says separates decision-grade analytics from dashboard theater — and how to fix it."
-status: DRAFT — CAD-11976 spoke (Tier 2), not published, pending Cortana QA
 faq:
   - q: "What is people analytics, actually?"
     a: "CIPD defines people analytics as using people data, HR-system data, and wider business data to solve business problems and improve evidence-based decision-making. The definition runs from data to business problem to decision — not from data to chart. If the output of your analytics program is a report rather than a changed decision, it does not yet meet the definition."
