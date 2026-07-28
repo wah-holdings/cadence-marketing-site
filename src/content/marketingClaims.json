@@ -55,19 +55,18 @@
       "page": "src/pages/pricing.astro",
       "type": "pricing_feature",
       "capability": "nine_box.calibration",
-      "sourceContains": "9-Box Talent Calibration",
-      "publicPromotion": true
+      "sourceContains": "9-Box Talent Calibration — Coming Q3; not included in current purchase access",
+      "publicPromotion": false
     },
     {
       "id": "product.nine_box.registry_flip",
       "page": "src/pages/product.astro",
       "type": "comparison_aeo_staged",
       "capability": "nine_box.calibration",
-      "stagedSourceContains": "blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
-      "liveSourceContains": "Core 9-box calibration is live",
-      "roadmapSourceContains": "KVD nominations, predictive retention, and advanced movement analysis stay roadmap-labeled",
+      "stagedSourceContains": "Blind dual-rating, L1/L2 divergence review, and structured calibration follow-through",
+      "roadmapSourceContains": "9-box talent calibration is Coming Q3 and is not included in current purchase access",
       "registryFlipPublishing": true,
-      "publicPromotion": true
+      "publicPromotion": false
     },
     {
       "id": "pricing.professional.er",
@@ -154,7 +153,7 @@
       "page": "src/pages/resources.astro",
       "type": "competitor_superiority",
       "capability": "culture_scorecard",
-      "sourceContains": "Cadence connects 1:1 quality, ER patterns, recognition ratios, survey sentiment, goal attainment, and core 9-box calibration into one management view.",
+      "sourceContains": "Cadence connects available 1:1 quality, ER patterns, recognition ratios, survey sentiment, and goal attainment into one management view.",
       "publicPromotion": true
     },
     {
@@ -165,7 +164,7 @@
       "stagedSourceContains": "9-Box Talent Calibration",
       "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
-      "publicPromotion": true
+      "publicPromotion": false
     },
     {
       "id": "resources.competitor.engagement_campaigns.registry_flip",
@@ -201,7 +200,7 @@
       "stagedSourceContains": "9-box talent calibration (Coming Q3)",
       "roadmapSourceContains": "~ roadmap",
       "registryFlipPublishing": true,
-      "publicPromotion": true
+      "publicPromotion": false
     },
     {
       "id": "compare.competitor.engagement_campaigns.registry_flip",
