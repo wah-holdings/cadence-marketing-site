@@ -44,6 +44,10 @@ jobs:
       - name: Check People Science PDF leave-behinds
         run: npm run check:pdf-assets
       - run: npm run build
+
+      - name: Verify unknown paths render as 404s
+        run: npm run check:not-found-fallback
+
       - run: npm run a11y:ci
 
   preview:
