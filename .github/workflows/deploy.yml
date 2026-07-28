@@ -139,15 +139,18 @@ jobs:
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: staging
+      # A first deploy to a new Pages branch alias 404s for ~60s while the alias
+      # propagates. curl --retry alone does NOT retry HTTP 4xx, so --retry-all-errors
+      # is what makes this a wait rather than an instant false failure.
       - name: Verify rendered staging revision and compare route
         env:
           RELEASE_SHA: ${{ needs.build-release.outputs.release_sha }}
           RELEASE_TAG: ${{ needs.build-release.outputs.release_tag }}
         shell: bash
         run: |
-          curl --fail --show-error --silent --retry 5 --retry-delay 4 "$STAGING_URL/build-info.json" |
+          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$STAGING_URL/build-info.json" |
             jq -e --arg sha "$RELEASE_SHA" --arg tag "$RELEASE_TAG" '.sha == $sha and .tag == $tag'
-          curl --fail --show-error --silent --retry 5 --retry-delay 4 "$STAGING_URL/compare" >/dev/null
+          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$STAGING_URL/compare" >/dev/null
 
   deploy-production:
     name: Promote same tagged artifact to production
@@ -173,6 +176,6 @@ jobs:
           RELEASE_TAG: ${{ needs.build-release.outputs.release_tag }}
         shell: bash
         run: |
-          curl --fail --show-error --silent --retry 5 --retry-delay 4 "$PRODUCTION_URL/build-info.json" |
+          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$PRODUCTION_URL/build-info.json" |
             jq -e --arg sha "$RELEASE_SHA" --arg tag "$RELEASE_TAG" '.sha == $sha and .tag == $tag'
-          curl --fail --show-error --silent --retry 5 --retry-delay 4 "$PRODUCTION_URL/compare" >/dev/null
+          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$PRODUCTION_URL/compare" >/dev/null
