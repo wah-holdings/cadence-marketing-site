@@ -139,18 +139,29 @@ jobs:
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: staging
-      # A first deploy to a new Pages branch alias 404s for ~60s while the alias
-      # propagates. curl --retry alone does NOT retry HTTP 4xx, so --retry-all-errors
-      # is what makes this a wait rather than an instant false failure.
+      # The Pages branch alias repoints ASYNCHRONOUSLY: for up to a couple of
+      # minutes after publish it still serves the PREVIOUS deployment. curl retry
+      # flags cannot express that wait -- curl succeeds with a 200, it is the
+      # assertion that is wrong -- so poll until the revision marker matches, and
+      # fail loudly with the body we actually got if it never does.
       - name: Verify rendered staging revision and compare route
         env:
           RELEASE_SHA: ${{ needs.build-release.outputs.release_sha }}
           RELEASE_TAG: ${{ needs.build-release.outputs.release_tag }}
         shell: bash
         run: |
-          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$STAGING_URL/build-info.json" |
-            jq -e --arg sha "$RELEASE_SHA" --arg tag "$RELEASE_TAG" '.sha == $sha and .tag == $tag'
-          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$STAGING_URL/compare" >/dev/null
+          deadline=$((SECONDS + 240))
+          until curl --fail --show-error --silent --retry 5 --retry-delay 4 --retry-all-errors "$STAGING_URL/build-info.json" |
+            jq -e --arg sha "$RELEASE_SHA" --arg tag "$RELEASE_TAG" '.sha == $sha and .tag == $tag' >/dev/null; do
+            if (( SECONDS > deadline )); then
+              echo "::error::$STAGING_URL never served $RELEASE_TAG ($RELEASE_SHA) within 240s; last body was:"
+              curl --silent "$STAGING_URL/build-info.json" || true
+              exit 1
+            fi
+            sleep 6
+          done
+          echo "staging is serving $RELEASE_TAG ($RELEASE_SHA)"
+          curl --fail --show-error --silent --retry 5 --retry-delay 4 --retry-all-errors "$STAGING_URL/compare" >/dev/null
 
   deploy-production:
     name: Promote same tagged artifact to production
@@ -170,12 +181,26 @@ jobs:
           directory: dist
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: main
+      # The Pages branch alias repoints ASYNCHRONOUSLY: for up to a couple of
+      # minutes after publish it still serves the PREVIOUS deployment. curl retry
+      # flags cannot express that wait -- curl succeeds with a 200, it is the
+      # assertion that is wrong -- so poll until the revision marker matches, and
+      # fail loudly with the body we actually got if it never does.
       - name: Verify rendered production revision and compare route
         env:
           RELEASE_SHA: ${{ needs.build-release.outputs.release_sha }}
           RELEASE_TAG: ${{ needs.build-release.outputs.release_tag }}
         shell: bash
         run: |
-          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$PRODUCTION_URL/build-info.json" |
-            jq -e --arg sha "$RELEASE_SHA" --arg tag "$RELEASE_TAG" '.sha == $sha and .tag == $tag'
-          curl --fail --show-error --silent --retry 10 --retry-delay 6 --retry-all-errors "$PRODUCTION_URL/compare" >/dev/null
+          deadline=$((SECONDS + 240))
+          until curl --fail --show-error --silent --retry 5 --retry-delay 4 --retry-all-errors "$PRODUCTION_URL/build-info.json" |
+            jq -e --arg sha "$RELEASE_SHA" --arg tag "$RELEASE_TAG" '.sha == $sha and .tag == $tag' >/dev/null; do
+            if (( SECONDS > deadline )); then
+              echo "::error::$PRODUCTION_URL never served $RELEASE_TAG ($RELEASE_SHA) within 240s; last body was:"
+              curl --silent "$PRODUCTION_URL/build-info.json" || true
+              exit 1
+            fi
+            sleep 6
+          done
+          echo "production is serving $RELEASE_TAG ($RELEASE_SHA)"
+          curl --fail --show-error --silent --retry 5 --retry-delay 4 --retry-all-errors "$PRODUCTION_URL/compare" >/dev/null
