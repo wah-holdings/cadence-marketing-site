@@ -119,7 +119,7 @@ Then check movement. The most informative question next cycle isn't "where is ev
 
 Cadence is a management operating plane for hybrid and remote-first teams, built on a simple position: AI develops humans; humans own the decisions. Calibration is a clean example of the boundary — the placements and the judgment stay with your managers, and the tooling's job is to make the evidence honest and the process consistent.
 
-**9-box talent calibration is live in [Cadence Professional](https://cadencehr.ai/pricing).** You run calibration cycles in the same system where the evidence already lives: structured 1:1 agendas and meeting records, goal and OKR tracking, and the recognition history that accumulates all year. That closes the biggest gap in most calibrations — pre-work stops being an archaeology project, because a manager assembling a placement can draw on documented 1:1 threads, goal progress against stated expectations, and recognition patterns from the actual review window instead of the last six weeks of memory. Placements carry their rationale with them, so next cycle starts from the written record rather than a re-argument.
+**9-box talent calibration is Coming Q3 and is not included in current Cadence purchase access.** The intended workflow will bring calibration cycles alongside structured 1:1 agendas and meeting records, goal and OKR tracking, and recognition history. Until production proof exists for paying tenants, do not buy Cadence on the strength of this module; run the process from your documented evidence and chosen current system.
 
 Cadence does not place anyone in a box, and it never will — AI-generated summaries and surfaced patterns are decision support for the humans in the room, not a rating engine. Discipline, promotion, and performance judgments stay human.
 
@@ -143,4 +143,4 @@ Three structural moves: require written, evidence-based pre-work before the sess
 
 ---
 
-*Running calibration on spreadsheets and memory? See how 9-box calibration works alongside 1:1 records, goals, and recognition at [cadencehr.ai/product](https://cadencehr.ai/product) — no demo required to look around.*
+*Running calibration on spreadsheets and memory? Review Cadence’s live workflows and Coming Q3 roadmap labels at [cadencehr.ai/product](https://cadencehr.ai/product) before evaluating a future calibration module.*

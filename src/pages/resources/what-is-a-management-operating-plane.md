@@ -129,7 +129,7 @@ You don't buy your way into an operating rhythm; tooling makes a rhythm durable,
 3. **Add signal:** a simple recurring pulse, reviewed by managers, discussed in 1:1s.
 4. **Then connect it.** When the doc-and-spreadsheet version starts fraying — usually somewhere between 50 and a few hundred people — move the rhythm onto a connected plane so it survives manager load, turnover, and scale.
 
-If you're evaluating platforms at step four, [Cadence](https://cadencehr.ai/product) is built as exactly this layer — 1:1s, goals and OKR cascading, recognition, pulse surveys, ER case context, job architecture, culture scorecard, and 9-box calibration on one plane, with self-serve plans at $12/seat/month (Essentials) and $24/seat/month (Professional), billed annually. But the category argument stands regardless of vendor: **your managers are already running an operating system — it's just unwritten, unconnected, and unfair to everyone your leaders don't physically see.**
+If you're evaluating platforms at step four, [Cadence](https://cadencehr.ai/product) is built as exactly this layer — 1:1s, goals and OKR cascading, recognition, pulse surveys, ER case context, job architecture, and culture scorecard on one plane, with self-serve plans at $12/seat/month (Essentials) and $24/seat/month (Professional), billed annually. 9-box calibration is Coming Q3 and not included in current purchase access. But the category argument stands regardless of vendor: **your managers are already running an operating system — it's just unwritten, unconnected, and unfair to everyone your leaders don't physically see.**
 
 ## FAQ
 

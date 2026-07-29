@@ -40,9 +40,9 @@ export const proofScreenshots = [
     text: "Preview of the in-development Personality surface, planned as working-style context for coaching support — never scoring.",
   },
   {
-    title: "9-Box calibration matrix",
+    title: "9-Box calibration preview — Coming Q3",
     image: "/screenshots/cadence-9box-calibration-matrix-view-2026-05-14.png",
-    text: "Rendered 9-box calibration matrix with dual-rating context and roadmap-adjacent claims kept separate.",
+    text: "Preview of the in-development 9-box calibration surface; it is not included in current purchase access.",
   },
 ];
 

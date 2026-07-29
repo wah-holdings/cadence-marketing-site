@@ -102,8 +102,8 @@ export const personaPages: PersonaPage[] = [
         label: 'Calibration Context',
         headline: 'Know where performance conversations need more rigor.',
         detail:
-          'Core 9-box calibration with blind L1/L2 inputs and divergence review is live in Professional and Enterprise.',
-        status: 'Live',
+          '9-box calibration, blind L1/L2 inputs, and divergence review are Coming Q3 and not included in current purchase access.',
+        status: 'Coming',
       },
       {
         label: 'Recognition Ratio',
@@ -142,8 +142,8 @@ export const personaPages: PersonaPage[] = [
       {
         label: 'Calibration',
         headline: 'Track calibration participation and divergence.',
-        detail: 'Independent 9-box ratings and convergence views are live.',
-        status: 'Live',
+        detail: 'Independent 9-box ratings and convergence views are Coming Q3 and unavailable in current purchase access.',
+        status: 'Coming',
       },
       {
         label: 'Survey Signal',
@@ -169,7 +169,7 @@ export const personaPages: PersonaPage[] = [
     eyebrow: 'For CHROs and People Leaders',
     headline: 'Operational command, not just reporting.',
     description:
-      'Cadence gives People leaders a management operating view across live 1:1, ER, recognition, survey, goal, org-health, and 9-box calibration signals.',
+      'Cadence gives People leaders a management operating view across live 1:1, ER, recognition, survey, goal, and org-health signals. 9-box calibration is Coming Q3.',
     trustLine: 'A command center for accountable human leaders, not an automated employment-decision engine.',
     primaryCta: { label: 'Start a People team trial', href: g1SignupHref('chro', 'persona_cta') },
     secondaryCta: { label: 'Review pricing', href: '/pricing?persona=chro' },
@@ -193,10 +193,10 @@ export const personaPages: PersonaPage[] = [
       },
       {
         label: 'Calibration Command',
-        headline: 'See 9-box cycle progress and divergence.',
+        headline: '9-box cycle progress and divergence — Coming Q3.',
         detail:
-          '9-box calibration is live. KVD nominations and predictive intervention workflows remain roadmap previews.',
-        status: 'Live',
+          '9-box calibration, KVD nominations, and predictive intervention workflows remain roadmap previews.',
+        status: 'Coming',
       },
       {
         label: 'Retention Risk',
@@ -214,7 +214,7 @@ export const personaPages: PersonaPage[] = [
     eyebrow: 'For CEOs',
     headline: 'A strategic altitude view of whether the org is healthy.',
     description:
-      'Cadence gives CEOs high-level Culture Scorecard metrics, manager-effectiveness hotspots, live 9-box calibration context, and focused drill-down.',
+      'Cadence gives CEOs high-level Culture Scorecard metrics, manager-effectiveness hotspots, and focused drill-down. 9-box calibration is Coming Q3.',
     trustLine: 'Signal, not noise. Drill down only when leadership action is needed.',
     primaryCta: { label: 'Start an executive trial', href: g1SignupHref('ceo', 'persona_cta') },
     secondaryCta: { label: 'Explore executive signal', href: '/solutions#ceo' },
@@ -232,7 +232,7 @@ export const personaPages: PersonaPage[] = [
       {
         label: 'Intervention Coverage',
         headline: 'Know whether at-risk situations have accountable follow-through.',
-        detail: 'Live ER, goals, and calibration context make leadership follow-up visible.',
+        detail: 'Live ER and goals context make leadership follow-up visible; calibration context is Coming Q3.',
         status: 'Live',
       },
       {
