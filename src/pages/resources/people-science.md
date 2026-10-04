@@ -23,6 +23,10 @@ faq:
 
 **Why evidence-based management practices compound when they operate in one system**
 
+<div class="hero-credibility-box">
+<p><strong>This is a research synthesis, not a Cadence customer-outcome claim.</strong> We cite the science behind the practices Cadence operationalizes; customer outcome studies will follow after deployment data exists.</p>
+</div>
+
 It's 9:04 on a Tuesday morning when the resignation lands. The engineer leaving is the strongest person on a team that has scored green on every dashboard for a year. Now the reconstruction begins: HR pulls exit-survey history from one tool, goal records from another, 1:1 notes from a manager's private doc that turns out to be empty since March, a recognition feed nobody checked, and an ER case from last spring that was closed as "resolved." Every one of those artifacts was a warning. Each lived in a different system, so nobody saw the pattern until the person was already gone.
 
 There is a name for this way of running an organization: **management by archaeology**. You find out what happened to your people by excavating the fragments afterward. Most companies don't choose it — they assemble it, one point tool at a time, until the signals that should converge are guaranteed never to meet.
