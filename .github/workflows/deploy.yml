@@ -64,14 +64,17 @@ jobs:
       - run: npm ci
       - run: npm run build
       - name: Publish preview
-        uses: cloudflare/pages-action@v1
+        id: preview
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.CLOUDFLARE_PROJECT }}
-          directory: dist
+          command: pages deploy dist --project-name=${{ env.CLOUDFLARE_PROJECT }} --branch=${{ github.head_ref }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.head_ref }}
+      - name: Preview URL
+        run: |
+          echo "Preview deployment: ${{ steps.preview.outputs.deployment-url }}"
+          echo "Preview branch alias: ${{ steps.preview.outputs.pages-deployment-alias-url }}"
 
   build-release:
     name: Build immutable release artifact
@@ -135,14 +138,12 @@ jobs:
         with:
           name: marketing-release-${{ github.run_id }}
       - name: Publish immutable artifact to the staging Pages branch
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.CLOUDFLARE_PROJECT }}
-          directory: dist
+          command: pages deploy dist --project-name=${{ env.CLOUDFLARE_PROJECT }} --branch=staging
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: staging
       # The Pages branch alias repoints ASYNCHRONOUSLY: for up to a couple of
       # minutes after publish it still serves the PREVIOUS deployment. curl retry
       # flags cannot express that wait -- curl succeeds with a 200, it is the
@@ -177,14 +178,12 @@ jobs:
         with:
           name: marketing-release-${{ github.run_id }}
       - name: Publish the verified staging artifact to the production Pages branch
-        uses: cloudflare/pages-action@v1
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: ${{ env.CLOUDFLARE_PROJECT }}
-          directory: dist
+          command: pages deploy dist --project-name=${{ env.CLOUDFLARE_PROJECT }} --branch=main
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
       # The Pages branch alias repoints ASYNCHRONOUSLY: for up to a couple of
       # minutes after publish it still serves the PREVIOUS deployment. curl retry
       # flags cannot express that wait -- curl succeeds with a 200, it is the
