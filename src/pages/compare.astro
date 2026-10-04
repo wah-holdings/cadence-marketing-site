@@ -126,6 +126,14 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
   box-shadow: 0 1px 3px rgba(30,58,95,0.04);
   background: white;
 }
+.matrix-note {
+  max-width: 860px;
+  margin: 16px auto 0;
+  color: var(--gray-700);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
 .matrix {
   width: 100%;
   border-collapse: collapse;
@@ -235,7 +243,6 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
       <li>Cadence current claims are limited to live or explicitly enabled workflows; staged capabilities are marked preview or roadmap.</li>
       <li>✓ = scoped current coverage · ~ = partial, preview, roadmap, or source-limited comparison · — = not assessed in this matrix.</li>
       <li>9-box calibration and blind dual-rating are roadmap items. Predictive retention and full cross-signal movement analysis also remain roadmap or preview until the registry marks them GA and marketable.</li>
-      <li>Connected agents / external AI access (MCP) is a demo-only preview and is not included in current purchase access. External customer connections open after scope-consent and scoped audit logging ship.</li>
     </ul>
   </div>
 </div>
@@ -280,6 +287,7 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
         </tbody>
       </table>
     </div>
+    <p class="matrix-note">Connected agents / external AI access (MCP): <strong>Preview-demo-only — not included in current purchase access.</strong> External customer connections open after scope-consent and scoped audit logging ship.</p>
   </div>
 </section>
 
