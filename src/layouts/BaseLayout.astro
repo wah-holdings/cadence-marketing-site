@@ -1,6 +1,7 @@
 ---
 import { withBase } from '../lib/paths';
 import { g1SignupHref } from '../lib/g1CampaignLinks';
+import { TRUTH_GATED_CANONICAL_DESCRIPTION, TRUTH_GATED_CANONICAL_SHORT } from '../lib/canonicalStatement';
 
 export interface Props {
   title: string;
@@ -11,7 +12,7 @@ export interface Props {
 }
 const {
   title,
-  description = 'The AI-powered operating plane that makes every manager your best manager.',
+  description = TRUTH_GATED_CANONICAL_DESCRIPTION,
   activeNav,
   canonicalPath,
   structuredData = [],
@@ -39,14 +40,54 @@ const pageSchema = {
     '@id': `${siteOrigin}#website`,
     name: 'Cadence',
     url: siteOrigin,
+    description: TRUTH_GATED_CANONICAL_SHORT,
+    publisher: {
+      '@type': 'Organization',
+      '@id': `${siteOrigin}#organization`,
+      name: 'Cadence',
+      url: siteOrigin,
+      description: TRUTH_GATED_CANONICAL_SHORT,
+    },
   },
   publisher: {
     '@type': 'Organization',
+    '@id': `${siteOrigin}#organization`,
+    name: 'Cadence',
+    url: siteOrigin,
+    description: TRUTH_GATED_CANONICAL_SHORT,
+  },
+};
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  '@id': `${siteOrigin}#software-application`,
+  name: 'Cadence',
+  url: siteOrigin,
+  description: TRUTH_GATED_CANONICAL_DESCRIPTION,
+  applicationCategory: 'BusinessApplication',
+  applicationSubCategory: 'People operating platform',
+  operatingSystem: 'Web',
+  offers: {
+    '@type': 'Offer',
+    url: `${siteOrigin}/pricing`,
+    priceCurrency: 'USD',
+    price: '12',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      priceCurrency: 'USD',
+      price: '12',
+      unitText: 'per seat per month (Essentials, billed annually)',
+    },
+  },
+  publisher: {
+    '@type': 'Organization',
+    '@id': `${siteOrigin}#organization`,
     name: 'Cadence',
     url: siteOrigin,
   },
 };
 const pageSchemaJson = JSON.stringify(pageSchema).replace(/</g, '\\u003c');
+const softwareApplicationSchemaJson = JSON.stringify(softwareApplicationSchema).replace(/</g, '\\u003c');
 const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [structuredData])
   .map((schema) => JSON.stringify(schema).replace(/</g, '\\u003c'));
 ---
@@ -84,6 +125,7 @@ const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [st
   }
 </script>
 <script type="application/ld+json" set:html={pageSchemaJson}></script>
+<script type="application/ld+json" set:html={softwareApplicationSchemaJson}></script>
 {structuredDataJson.map((schemaJson) => <script type="application/ld+json" set:html={schemaJson}></script>)}
 <!-- Privacy-friendly analytics by Plausible -->
 <script async src="https://plausible.io/js/pa-y43F0IpV5uMSLp_dayM-v.js"></script>
