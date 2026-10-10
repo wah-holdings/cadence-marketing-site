@@ -2,6 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { withBase } from '../lib/paths';
 import { heroMessaging, proofScreenshots, trustChips } from '../content/marketingData';
+
+const siteOrigin = 'https://cadencehr.ai';
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  '@id': `${siteOrigin}#software`,
+  name: 'Cadence',
+  url: siteOrigin,
+  applicationCategory: 'BusinessApplication',
+  description:
+    'Cadence is an AI-powered management operating plane for remote and hybrid organizations. It connects management workflows and organizational signals, while humans retain accountability for decisions.',
+};
 ---
 <style>
 /* ── HOME-SPECIFIC ── */
@@ -346,7 +358,11 @@ import { heroMessaging, proofScreenshots, trustChips } from '../content/marketin
 }
 </style>
 
-<BaseLayout title="Cadence — Management Operating Plane for Distributed Teams" description="Close the remote-contributor management chasm with structured 1:1s, goals, ER, recognition, surveys, and culture signal in one human-owned operating plane.">
+<BaseLayout
+  title="Cadence — Management Operating Plane for Distributed Teams"
+  description="Cadence is an AI-powered management operating plane for remote and hybrid organizations. It connects management workflows and organizational signals, while humans retain accountability for decisions."
+  structuredData={softwareApplicationSchema}
+>
 
 <!-- HERO -->
 <section class="hero-light" id="hero">
