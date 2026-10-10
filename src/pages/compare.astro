@@ -17,7 +17,7 @@ const matrixRows = [
   ['Surveys', 'Manager-level signal attribution (Cadence preview)', '~ preview', '~', '~', '~', '—', '—', '—'],
   ['Security & Compliance', 'Enterprise SSO (OIDC)', '✓', '✓', '✓', '✓', '—', '—', '✓'],
   ['Security & Compliance', 'SAML SSO', '~ Q4 roadmap', '✓', '✓', '✓', '—', '—', '✓'],
-  ['Platform Openness', 'Connected agents / external AI access (MCP)', '✓', '~', '~', '~', '~', '~', '~'],
+  ['Platform Openness', 'Connected agents / external AI access (MCP)', '~ preview', '~', '~', '~', '~', '~', '~'],
   ['Intelligence Layer', 'Manager scorecard and org-health heatmap', '✓', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed', 'not assessed'],
   ['Intelligence Layer', 'Cross-signal turnover prediction (Cadence roadmap preview)', '~ roadmap', '~', '—', '~', '—', '—', '—'],
 ];
@@ -125,6 +125,14 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
   border: 1px solid var(--gray-100);
   box-shadow: 0 1px 3px rgba(30,58,95,0.04);
   background: white;
+}
+.matrix-note {
+  max-width: 860px;
+  margin: 16px auto 0;
+  color: var(--gray-700);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
 }
 .matrix {
   width: 100%;
@@ -279,6 +287,7 @@ const matrixRowsWithGroup = matrixRows.map((row) => {
         </tbody>
       </table>
     </div>
+    <p class="matrix-note">Connected agents / external AI access (MCP): <strong>Preview-demo-only — not included in current purchase access.</strong> External customer connections open after scope-consent and scoped audit logging ship.</p>
   </div>
 </section>
 
