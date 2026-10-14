@@ -6,16 +6,17 @@ import pa11y from "pa11y";
 const port = Number(process.env.A11Y_PORT || 4174);
 const host = "127.0.0.1";
 const baseUrl = process.env.A11Y_BASE_URL || `http://${host}:${port}`;
-// This scan serves Astro's static `dist` output. Keep Pages Function routes out
-// of this list until the runner uses `wrangler pages dev`; otherwise the preview
-// server silently substitutes its static 404 page and records the wrong route.
-const defaultRoutes = "/,/product,/solutions,/pricing,/security,/compare,/resources,/beta,/resources/managing-remote-hybrid-visibility,/resources/why-1-1s-fail,/resources/what-is-a-management-operating-plane,/resources/connect-goals-feedback-recognition,/resources/management-chasm-signs,/resources/how-to-run-effective-1-1s,/resources/9-box-talent-calibration-guide,/resources/job-architecture-from-scratch,/resources/measure-culture-without-survey-fatigue,/resources/ai-in-performance-management,/resources/manager-coaching-at-scale,/resources/choose-people-management-platform,/resources/ai-native-hr-software-2026,/resources/build-vs-buy-people-stack,/resources/ai-people-ops-privacy,/resources/ai-that-develops-humans,/resources/management-record-system-of-record";
+const functionStatuses = new Map([
+  // Withdrawn article: the Pages Function must return 410, never Astro's 404 fallback.
+  ["/resources/byoa-bring-your-own-agent-hr", 410],
+]);
+const defaultRoutes = "/,/product,/solutions,/pricing,/security,/compare,/resources,/beta,/resources/managing-remote-hybrid-visibility,/resources/why-1-1s-fail,/resources/what-is-a-management-operating-plane,/resources/connect-goals-feedback-recognition,/resources/management-chasm-signs,/resources/how-to-run-effective-1-1s,/resources/9-box-talent-calibration-guide,/resources/job-architecture-from-scratch,/resources/measure-culture-without-survey-fatigue,/resources/ai-in-performance-management,/resources/byoa-bring-your-own-agent-hr,/resources/manager-coaching-at-scale,/resources/choose-people-management-platform,/resources/ai-native-hr-software-2026,/resources/build-vs-buy-people-stack,/resources/ai-people-ops-privacy,/resources/ai-that-develops-humans,/resources/management-record-system-of-record";
 const routes = (process.env.A11Y_ROUTES || defaultRoutes)
   .split(",")
   .map((route) => route.trim())
   .filter(Boolean);
 
-const startCommand = process.env.A11Y_START_COMMAND || `npm run preview -- --host ${host} --port ${port}`;
+const startCommand = process.env.A11Y_START_COMMAND || `./node_modules/.bin/wrangler pages dev dist --ip ${host} --port ${port} --log-level error`;
 const maxAttempts = Number(process.env.A11Y_READY_ATTEMPTS || 60);
 const retryDelayMs = Number(process.env.A11Y_READY_DELAY_MS || 1000);
 const routeTimeoutMs = Number(process.env.A11Y_ROUTE_TIMEOUT_MS || 15000);
@@ -34,7 +35,7 @@ function request(url) {
   return new Promise((resolve, reject) => {
     const req = http.get(url, (res) => {
       res.resume();
-      resolve(res.statusCode || 0);
+      resolve({ status: res.statusCode || 0, contentType: res.headers["content-type"] || "" });
     });
     req.on("error", reject);
     req.setTimeout(2000, () => {
@@ -46,8 +47,8 @@ function request(url) {
 async function waitForServer() {
   for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
     try {
-      const status = await request(baseUrl);
-      if (status >= 200 && status < 500) {
+      const response = await request(baseUrl);
+      if (response.status === 200) {
         return;
       }
     } catch {
@@ -136,6 +137,18 @@ try {
   for (const route of routes) {
     const url = new URL(route, baseUrl).toString();
     console.log(`SCAN a11y ${route}`);
+    const response = await request(url);
+    const expectedStatus = functionStatuses.get(route) || 200;
+    if (response.status !== expectedStatus) {
+      throw new Error(`${route} returned ${response.status}, expected ${expectedStatus}; check the Pages Function route`);
+    }
+    if (expectedStatus !== 200) {
+      console.log(`PASS a11y ${route}: Pages Function returned ${expectedStatus}`);
+      continue;
+    }
+    if (!response.contentType.includes("text/html")) {
+      throw new Error(`${route} returned ${response.contentType || "no content type"}, expected HTML`);
+    }
     const result = await pa11y(url, {
       standard: "WCAG2AA",
       runners: ["axe"],
