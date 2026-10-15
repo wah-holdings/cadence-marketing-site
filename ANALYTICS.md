@@ -36,3 +36,9 @@ The tracking snippet lives ONCE in the shared head of `src/layouts/BaseLayout.as
 Use `plausible('EventName', {props:{...}})` in the browser, or server-side
 `POST https://plausible.io/api/event` with `{"name":"...","url":"...","domain":"cadencehr.ai"}`.
 Wire signup / checkout-start / activation events here for the source-attributed funnel (CAD-3590 lineage).
+
+## Signup CTA click event (CAD-13040)
+Before 2026-10, only pageviews were recorded, so signup-CTA clicks were invisible (funnel showed 22 pricing views,
+0 clicks, 8 signups). `BaseLayout.astro` now sends `Signup CTA Click` with props `location` (utm_content / source),
+`tier`, `page` for any link to `app.cadencehr.ai/signup`. **A human must register `Signup CTA Click` as a goal in the
+Plausible site settings** (and allow the props) before it appears in funnels.
