@@ -91,6 +91,19 @@ const structuredDataJson = (Array.isArray(structuredData) ? structuredData : [st
  window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
  plausible.init()
 </script>
+<script>
+  // CAD-13040: record signup-CTA clicks (the base snippet only counts pageviews).
+  document.addEventListener('click', (e) => {
+    const a = (e.target as Element | null)?.closest?.('a[href^="https://app.cadencehr.ai/signup"]');
+    if (!a) return;
+    try {
+      const q = new URL((a as HTMLAnchorElement).href).searchParams;
+      (window as any).plausible?.('Signup CTA Click', {
+        props: { location: q.get('utm_content') || q.get('source') || 'unknown', tier: q.get('tier') || 'none', page: location.pathname },
+      });
+    } catch {}
+  }, { capture: true });
+</script>
 <slot name="head" />
 </head>
 <body>
